@@ -1,0 +1,23 @@
+= upush =
+
+#type: vex
+#context: all
+#group: array
+
+"""Добавляет единый атрибут в массив."""
+
+:usage: `void upush(<type> &array[]; <type> value)`
+
+    Вставляет единой значение в массив для всех процессоров [SIMD|Wp:SIMD] (независимо от состояния процессора).
+
+    Это очень специализированная функция, в основном используемая для управления экспортом света в освещении PBR.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/upush]
+
+@related
+
+- [Vex:push]
+

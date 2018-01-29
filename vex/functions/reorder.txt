@@ -1,0 +1,34 @@
+= reorder =
+
+#type: vex
+#context: all
+#group: array
+
+"""Переупорядочивает элементы в массиве или строке."""
+
+:usage: `string reorder(string value; int indices[])`
+    Возвращает переупорядоченную версию _символов_ (не байтов) в строчном `value` UTF-8 в соответствии с позициями в `indices`. Результатом является строка в кодировке UTF-8.
+
+:usage: `<type>[] reorder(<type> values[]; int indices[])`
+    Возвращает переупорядоченную версию элементов в `values` в соответствии с позициями в `indices`.
+    
+Обычно используется список индексов, сгенерированных [Vex:argsort]. Смотрите страницу [Vex:argsort] для примера.
+
+* Отрицательные числа в списке индексов будут читаться с конца массива.
+
+* Длина результирующего массива/строки такая же, как количество `indices`. 
+
+* Вне границ значений вставляются нули, но это следует считать ошибкой.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/reorder]
+
+@related
+
+- [/vex/arrays]
+- [Vex:argsort]
+- [Vex:reverse]
+- [Vex:sort]
+

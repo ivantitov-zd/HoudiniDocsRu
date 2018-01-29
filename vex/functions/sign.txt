@@ -1,0 +1,28 @@
+= sign =
+
+#type: vex
+#context: all
+#tags: math
+#group: math
+
+"""Возвращает -1, 0, или 1 в зависимости от знака аргумента."""
+
+:usage: `int sign(int n)`
+:usage: `float sign(float n)`
+
+    Для скалярного значения возвращает `-1` в случае отрицательного числа, `0` для числа 0 и `+1` для положительного числа.
+    
+:usage: `vector2 sign(vector2 v)`
+:usage: `vector sign(vector v)`
+:usage: `vector4 sign(vector4 v)`
+
+    Для векторных значений знак отдельных компонентов возвращается в виде вектора.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/sign]
+
+@related
+
+- [Vex:abs]

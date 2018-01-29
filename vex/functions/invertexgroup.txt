@@ -1,0 +1,31 @@
+= invertexgroup =
+
+#type: vex
+#context: all
+#tags: vertex, groups
+#group: groups
+
+"""Возвращает 1, если вершина, указанная номером вершины, входит в группу, указанную строкой."""
+
+:usage: `int invertexgroup(string filename, string groupname, int vertexnum)`
+:usage: `int invertexgroup(int opinput, string groupname, int vertexnum)`
+
+[Include:_common#geometry]
+
+:arg:vertexnum:
+    Линейный номер вершины.
+    
+    Чтобы преобразовать номер примитива и номер вершины в рамках этого примитива в линейный индекс для параметра `vertexnum`, используйте функцию [Vex:vertexindex].
+
+:returns:
+    Возвращает `1`, если группа существует и вершина принадлежит этой группе, или `0` в противном случае.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/invertexgroup]
+
+@related
+
+- [Vex:inpointgroup]
+- [Vex:inprimgroup]

@@ -1,0 +1,29 @@
+= push =
+
+#type: vex
+#context: all
+#group: array
+
+"""Добавляет элемент в массив."""
+
+:usage: `void push(<type> &array[]; <type> value)`
+
+    Добавляет заданное значение в конец массива. Увеличивает размер `array` на 1. Это то же самое, что [append(array, value)|Vex:append].
+
+:usage: `void push(<type> &array[]; <type> values[])`
+
+    Добавляет значения из массива `values` в конец `array`. Увеличивает размер массива на `len(values)`. Это то же самое, что [append(array, values)|Vex:append].
+
+[Include:append#array_set_item]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/push]
+
+@related
+
+- [/vex/arrays]
+- [Vex:len]
+- [Vex:append]
+- [Vex:resize]

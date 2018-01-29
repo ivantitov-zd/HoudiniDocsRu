@@ -1,0 +1,17 @@
+= VEX |> Функции =
+
+Смотрите [контексты VEX|/vex/contexts/], чтобы узнать о различных контекстах (таких как шейдеры поверхности и шейдеры дисплейсмента (смещения), в которых доступны различные функции и [операторы|/vex/statement].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions]
+
+@subtopics Функции
+
+:list:
+    #query: type:vex OR type:vexstatement
+    #groupedby: group
+    #sortedby: title
+    #sortable: true
+    #labels: _groups_en.ini

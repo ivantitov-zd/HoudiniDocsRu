@@ -1,0 +1,20 @@
+= isconnected =
+
+#type: vex
+#context: chop cop2 pop sop
+#tags: utility
+#group: nodes
+
+"""Возвращает 1, если вход с номером opinput подключен, или 0, если не подключен."""
+
+:usage: `int isconnected(int opinput)`
+
+[Include:_common#opinput_arg]
+
+:returns:
+    1, если вход с номером opinput подключен, или 0, если не подключен.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/isconnected]

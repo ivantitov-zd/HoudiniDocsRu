@@ -1,0 +1,40 @@
+= setvertexgroup =
+
+#type: vex
+#context: all
+#tags: vertex, groups
+#group: groups
+
+"""Добавляет или удаляет вершину в/из группы в геометрии."""
+
+:usage: `int setvertexgroup(int geohandle, string name, int prim_num, int vertex_num, int value, string mode="set")`
+
+[Include:_common#geohandle_arg]
+
+*Для использования линейного индекса вершины*, установите в `prim_num` *линейный индекс вершины* и `vertex_num` в `-1`. Обратите внимание, что *это отличается* от того, как работают большинство других функций вершин.
+
+:arg:name:
+    Имя группы для изменения.
+
+:arg:prim_num:
+    Номер примитива, содержащего вершину, которую вы хотите добавить/удалить.
+
+:arg:vertex_num:
+    Номер вершины в примитиве, которую вы хотите добавить/удалить.
+
+:arg:value:
+    `1` для добавления вершины в группу, `0` для удаления вершины из группы. Данное значение игнорируется, если `mode` равен `"toggle"`.
+
+:arg:mode:
+    Используйте `"set"` для установки членства вершины в соответствии с `value`. Используйте `"toggle"` для переключения членства вершины независимо от `value`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setvertexgroup]
+
+@related
+- [/vex/groups]
+- [Vex:setprimgroup]
+- [Vex:setpointgroup]
+- [Vex:vertexindex]

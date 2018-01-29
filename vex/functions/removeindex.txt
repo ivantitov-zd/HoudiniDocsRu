@@ -1,0 +1,25 @@
+= removeindex =
+
+#type: vex
+#context: all
+#group: array
+
+"""Удаляет из массива элемент с заданным индексом."""
+
+:usage: `<type> removeindex(<type> &array[]; int index)`
+
+    Удаляет из `array` элемент в позиции `index` и возвращает это значение. Это то же самое, что `pop(array, index)`, но имеет более четкое имя.
+    
+    Отрицательный индекс отсчитывается с конца массива, поэтому `removeindex(array, -2)` удаляет второй элемент с конца.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/removeindex]
+
+@related
+
+- [/vex/arrays]
+- [Vex:pop]
+- [Vex:removevalue]
+

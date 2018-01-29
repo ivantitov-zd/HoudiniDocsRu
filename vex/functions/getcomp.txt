@@ -1,0 +1,35 @@
+= getcomp =
+
+#type: vex
+#context: all
+#tags: data
+#group: utility
+
+"""Извлекает один компонент из вектора, матрицы, массива или строки."""
+
+:usage: `float getcomp(<vector> v; int index)`
+
+    Возвращает компонент вектора по заданному индексу. Это то же самое, что `v[index]`.
+
+:usage: `float getcomp(<matrix> m; int row, int column)`
+
+    Возвращает компонент матрицы в заданной позиции.
+
+:usage: `<type> getcomp(<type> array[]; int index)`
+
+    Возвращает элемент массива по заданному индексу. Это то же самое, что `array[index]`.
+
+:usage: `string getcomp(string value, int index)`
+
+    Возвращает _символ_ по заданному индексу. Это то же самое, что `value[index]`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/getcomp]
+
+@related
+
+- [/vex/arrays]
+- [Vex:setcomp]
+

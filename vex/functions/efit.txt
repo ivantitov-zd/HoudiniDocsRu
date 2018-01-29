@@ -1,0 +1,39 @@
+= efit =
+
+#type: vex
+#context: all
+#tags: interp
+#group: interp
+
+"""Принимает значение в одном диапазоне и меняет его на соответствующее значение в новом диапазоне."""
+
+:usage: `float efit(float value, float omin, float omax, float nmin, float nmax)`
+
+    Принимает значение в диапазоне (<<omin>>, <<omax>>) и меняет его на соответствующее значение в новом диапазоне (<<nmin>>, <<nmax>>).
+    В отличие от [Vex:fit], данная функция не ограничивает значения заданным диапазоном.
+
+:usage: `<vector> efit(<vector> value, <vector> omin, <vector> omax, <vector> nmin, <vector> nmax)`
+:usage: `<vector> efit(<vector> value, <vector> omin, <vector> omax, float nmin, float nmax)`
+
+    Для векторов это происходит покомпонентно. Вы можете указать для каждого компонента минимальные и максимальные значения с помощью векторов или общего числа для всех компонентов (`float`). 
+
+
+@examples
+
+{{{
+#!vex
+efit(3, 0, 1, 10, 20) == 40
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/efit]
+
+@related
+- [Vex:clamp]
+- [Vex:fit]
+- [Vex:fit01]
+- [Vex:fit10]
+- [Vex:fit11]
+

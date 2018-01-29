@@ -1,0 +1,50 @@
+= adddetailattrib =
+
+#type: vex
+#context: all
+#tags: attrib, detail
+#group: attrib
+
+"""Добавляет атрибут класса detail к геометрии."""
+
+Если вы не знаете класс атрибута до выполнения, используйте [Vex:addattrib].
+
+:usage: `int adddetailattrib(int geohandle, string name, <type> defvalue)`
+:usage: `int adddetailattrib(int geohandle, string name, <type> defvalue[])`
+
+    Добавляет атрибут класса detail к заданной геометрии.
+
+:usage: `int adddetailattrib(int geohandle, string name, <type> defvalue, string typeinfo)`
+:usage: `int adddetailattrib(int geohandle, string name, <type> defvalue[], string typeinfo)`
+
+    Добавляет атрибут класса detail с заданным преобразованием. Смотрите [Vex:attribtypeinfo] для получения дополнительной информации.
+
+:box:
+    #id: info
+    
+    [Include:_common#geohandle_arg]
+
+    :arg:name:
+        Имя создаваемого атрибута.
+
+    :arg:defvalue:
+        Значение по умолчанию для атрибута и определяет тип создаваемого атрибута. Строки и массивы не могут иметь значения по умолчанию, поэтому в их случаях указывается только тип.
+    
+    :returns:
+        В случае успеха возвращает `geohandle` или `-1` при неудаче.
+    
+    * Если атрибут с тем же именем уже существует, функция попытается преобразовать его в новый тип.
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/adddetailattrib]
+
+
+@related
+
+- [Vex:addattrib]
+- [Vex:addprimattrib]
+- [Vex:addpointattrib]
+- [Vex:addvertexattrib]

@@ -1,0 +1,21 @@
+= ow_vspace =
+
+#type: vex
+#context: all
+#tags: transform
+#group: transform
+
+"""Преобразует вектор направления из пространства объекта (Object space) в мировое пространство (World space)."""
+
+:usage: `vector ow_vspace(vector v)`
+
+Преобразует вектор направления из пространства объекта (Object space) в мировое пространство (World space).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/ow_vspace]
+
+@related
+
+- [Vex:wo_vspace]

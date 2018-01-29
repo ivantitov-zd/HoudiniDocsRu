@@ -1,0 +1,57 @@
+= slice =
+
+#type: vex
+#context: all
+#group: array
+
+"""Вырезает подстроку или подмассив из строки или массива."""
+
+:usage: `string slice(string s; int start; int end)`
+:usage: `string slice(string s; int start; int end; int step)`
+
+    Извлекает строку из большей строки.
+
+:usage: `<type>[] slice(<type> s[]; int start; int end)`
+:usage: `<type>[] slice(<type> s[]; int start; int end; int step)`
+
+    Извлекает подмассив из большего массива.
+
+:usage: `string slice(string s; int hasstart; int start; int hasend; int end; int hasstep; int step)`
+:usage: `<type>[] slice(<type> array[]; int hasstart; int start; int hasend; int end; int hasstep; int step)`
+
+    Универсальная сигнатура для поддержки синтаксиса срезов. Если `hasstart` равен `0`, то `start` игноируется и используется `0`. Если `hasend` равен `0`, то `end` игнорируется и используется длина массива. Если `hasstep` равен `0`, то `step` игнорируется и используется `1`.
+
+* Эта функция эквивалент использования синтаксиса среза `value[start:end:step]`.
+
+* Если `start` или `end` отрицательные, они отсчитываются с конца строки/массива.
+
+* Вычисленный диапазон ограничивается рамками оригинальной строки/массива.
+
+* Если `step` равен `0`, функция возвращает пустую строку/массив.
+
+* Если `step` отрицательный, элементы возвращаются в обратном порядке, и `end` будет меньше `start`.
+
+
+@examples
+
+{{{
+#!vex
+int[] nums = {10, 20, 30, 40, 50, 60};
+slice(nums, 1, 3) == {20, 30};  // nums[1:3]
+slice(nums, 1, -1) == {20, 30, 30, 40, 50};  // nums[1:-1]
+slice(nums, 0, len(nums), 2) == {20, 40, 60};  // nums[0:len(nums):2]
+slice(nums, 0, 0, 0, 0, 1, 2) == {20, 40, 60};  // nums[::2]
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/slice]
+
+@related
+
+- [/vex/arrays]
+- [Vex:len]
+- [Vex:push]
+- [Vex:append]
+- [Vex:resize]

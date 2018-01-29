@@ -1,0 +1,50 @@
+= xyzdist =
+
+#type: vex
+#context: all
+#tags: measure, proximity
+#group: measure
+
+"""Определяет расстояние от точки до геометрии."""
+
+:usage: `float xyzdist(<geometry>, vector origin)`
+
+    Определяет расстояние от <<origin>> до ближайшей точки на геометрии.
+
+:usage: `float xyzdist(<geometry>, vector origin, int &prim, vector &uv)`
+:usage: `float xyzdist(<geometry>, vector origin, int &prim, vector &uv, float maxdist)`
+
+    Определяет расстояние от <<origin>> до ближайшей точки на геометрии, а также выдает номер примитива и UV координаты для ближайшей точки.
+
+:usage: `float xyzdist(<geometry>, string primgroup, vector origin)`
+:usage: `float xyzdist(<geometry>, string primgroup, vector origin, int &prim, vector &uv)`
+:usage: `float xyzdist(<geometry>, string primgroup, vector origin, int &prim, vector &uv, float maxdist)`
+
+    Определяет расстояние от <<origin>> до ближайшей точки на геометрии в заданной группе примитивов.
+
+Возвращает расстояние до ближашей точки на геометрии. Эта функция находит позиции на поверхности геометрии, а не только позиции точек.
+
+[Include:_common#geometry]
+
+:arg:primgroup:
+    Имя группы примитивов или шаблон для создания группы примитивов. Использует ту же семантику, что и группы в SOP, поэтому пустые строки соответствуют всем примитивам. Также можно использовать шаблоны вроде `@Cd.x>0`, но, возможно, что потребуется экранирование `@` обратным слэшем в ноде [Snippet VOP|Node:vop/snippet].
+
+:arg:origin:
+    Позиция в пространстве, от которой ищется ближайшая точка на геометрии.
+
+:arg:&prim:
+    Функция перезаписывает эту переменную номером ближайшего примитива или `-1`, если примитив не найден.
+
+:arg:&uv:
+    Функция перезаписывает эту переменную uv координатами ближайшей точки ближайшего примитива. Вы можете использовать функцию [Vex:primuv] для получения значения атрибута в этом месте.
+
+:arg:maxdist:
+    Максимальное расстояние для поиска в uv пространстве. Операцию можно ускорить, если снизить расстояние поиска.
+
+:returns:
+    Возвращает расстояние от указанной точки до ближайшей точки на геометрии.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/xyzdist]

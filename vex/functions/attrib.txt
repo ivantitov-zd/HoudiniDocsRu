@@ -1,0 +1,32 @@
+= attrib =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+#redirect: ../attrib_suite#attrib
+
+"""Читает значение атрибута из геометрии."""
+
+:usage: `<type> attrib(<geometry>, string attribclass, string name, int elemnum)`
+:usage: `<type>[] attrib(<geometry>, string attribclass, string name, int elemnum)`
+
+    Эта общая форма позволяет указать "класс" атрибута во время выполнения. Это может быть полезно для написания общего кода, который может работать с разными классами. Если вы заранее знаете класс атрибута, который хотите прочитать, использование [Vex:detail], [Vex:prim], [Vex:point], или [Vex:vertex] может быть быстрее.
+
+[Include:_common#geometry]
+
+[Include:_common#attribclass]
+
+:arg:name:
+    Имя атрибута, группы или встроенной функции (intrinsic) для чтения.
+
+:arg:elemnum:
+    Номер элемента для чтения, например, номер точки, номер примитива или номер вершины. Игнорируется для атрибутов класса detail. Вы можете использовать функцию [Vex:vertexindex] для преобразования пары примитив/точка в номер вершины.
+
+:returns:
+    Возвращает пустое или нулевое значение, если атрибут не существует. Используйте функцию [Vex:getattrib], если вы хотите проверить, существует ли атрибут.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/attrib]

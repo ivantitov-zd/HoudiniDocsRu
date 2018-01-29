@@ -1,0 +1,30 @@
+= ch4 =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал (или параметр) и возвращает его значение."""
+
+:usage: `matrix ch4(string channel)`
+:usage: `matrix ch4(string channel, float time)`
+
+Если параметр ноды, на который ссылается функция, является матрицей, базовое имя параметра может использоваться для возврата всех компонентов в качестве матрицы.
+
+[Include:ch#ch_functions]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/ch4]
+
+@related
+
+- [Vex:ch]
+- [Vex:chf]
+- [Vex:chs]
+- [Vex:chi]
+- [Vex:chv]
+- [Vex:ch3]
+- [Vex:chramp]

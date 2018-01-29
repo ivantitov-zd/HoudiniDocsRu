@@ -1,0 +1,130 @@
+#type: include
+
+:arg:`<geometry>`:
+    #id: geometry
+    
+    При запуске в контексте ноды (например, Wrangle SOP) этот аргумент может быть целым числом, представляющим номер входа (начиная с 0), с которого функция будет читать атрибуты.
+    
+    В качестве альтернативы аргумент может быть строкой, определяющей файл геометрии (например, `.bgeo`) для чтения. При запуске внутри Houdini это может быть ссылкой `op:/путь/до/sop`.
+
+:arg:opinput:
+    #id: opinput_arg
+    
+    Номер входа для чтения, начиная с 0. Например, номер первого входа - 0, второй - 1, и так далее.
+
+:arg:opinput:
+    #id: chop_opinput_arg
+    
+    Номер входа для чтения, начиная с 0. Например, номер первого входа - 0, второй - 1, и так далее.
+    
+    Если вы укажете `-1`, функция будет использовать текущий узел CHOP или вход `0`, если он имеет подключение.
+
+:arg:geometry:
+    #id: geometry_output
+    
+    Строка, определяющая файл геометрии (например, `.bgeo`) для чтения. При запуске внутри Houdini это может быть ссылкой `op:/путь/до/sop`.
+
+:arg:geohandle:
+    #id: geohandle_arg
+    
+    Идентификатор геометрии для записи. В настоящее время единственным допустимым значением является `0` или [Vex:geoself], что означает текущую геометрию в ноде. Этот аргумент может использоваться в будущем, чтобы разрешить запись в другие геометрии.
+
+:arg:attribclass:
+    #id: attribclass
+    
+    Один из `"detail"` (или `"global"`), `"point"`, `"prim"`, или `"vertex"`.
+    
+    Вы также можете использовать `"primgroup"`, `"pointgroup"` или `"vertexgroup"` для [чтения из групп|/vex/groups].
+
+:arg:attribute_name:
+    #id: attribname
+    
+    Имя атрибута (или встроенной функции - intrinsic) для чтения.
+
+:arg:elemnum:
+    #id: elemnum
+    
+    Номер точки/примитива/вершины для чтения значения атрибута. Для атрибутов класса `detail` используйте `0` (аргумент игнорируется для атрибутов класса `detail`).
+    
+    Для получения линейного номера вершины по заданному номеру примитива и номеру его вершины, используйте функцию [Vex:primvertex].
+
+:arg:intrinsic_name:
+    #id: intrinsicname
+    
+    Имя внутреннего атрибута для чтения. Например, `"pointattributes"`, `"pointcount"`, или `"bounds"`.
+
+:null:
+    #id: attrib_typeinfo_values
+    
+    `"none"` |
+        Don't transform.
+    `"point"` |
+        Apply scales, rotations, and transformations.
+    `"hpoint"` |
+        Apply scales, rotations, and transformations to this vector4.
+    `"vector"` |
+        Apply scales and rotations, but not transformations.
+    `"normal"` |
+        Apply rotations, apply scales with inverse-transpose.
+    `"color"` |
+        Don't transform.
+    `"matrix"` |
+        Apply scales, rotations, and transformations to this matrix.
+    `"quaternion"` |
+        Apply rotations.
+    `"indexpair"` |
+        Don't transform.
+    `"integer"` |
+        Do not blend this value when points are averaged.
+    `"integer-blend"` |
+        Integer values that blend when points are averaged.
+
+:null:
+    #id: set_attrib_info
+    
+    Returns the value of `geohandle` on success or `-1` on failure.
+    
+    NOTE:
+        If the attribute does not exist, this function *creates the attribute* with a default value of zero, empty string, or an empty array.
+        If you want to control the default value of a numeric attribute, use [Vex:addattrib] before setting the attribute.
+
+:arg:mode:
+    #id: set_attrib_mode
+    
+    (Optional) if given, this controls how the function modifies any existing value in the attribute.
+
+    `"set"` |
+        Overwrite the attribute with the given value.
+    `"add"` |
+        Add to the attribute the value.
+    `"min"`, `"minimum"` |
+        Set the attribute to the minimum of itself and the value.
+    `"max"`, `"maximum"` |
+        Set the attribute to the maximum of itself and the value.
+    `"mult"`, `"multiply"` |
+        Multiply the attribute by the value.  For matrices, this will do matrix multiplication.  For vectors, component-wise.
+    `"toggle"` |
+        Toggles the attribute, independent of the source value.  Useful for toggling group membership.
+    `"append"` |
+        Valid for string and array attributes.  Appends the source value to the end of the original value.
+
+:arg:linearvertex:
+    #id: linearvertex
+    
+    The linear index of a vertex.
+    If you have a point number and point vertex number, you can use [Vex:vertexindex] to convert them to a linear index.
+
+:null:
+    #id: noiselinks
+
+    - [/vex/random]
+    - [Vex:anoise]
+    - [Vex:curlnoise]
+    - [Vex:flownoise]
+    - [Vex:noise]
+    - [Vex:onoise]
+    - [Vex:pnoise]
+    - [Vex:snoise]
+    - [Vex:vnoise]
+    - [Vex:wnoise]
+    - [Vex:xnoise]

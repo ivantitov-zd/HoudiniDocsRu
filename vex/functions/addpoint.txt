@@ -1,0 +1,33 @@
+= addpoint =
+
+#type: vex
+#context: all
+#tags: point, create
+#group: geo
+
+"""Добавляет точку в геометрию."""
+
+:usage: `int addpoint(int geohandle, int point_number)`
+
+    Создает новую точку со всеми атрибутами и группами точки с заданным номером.
+
+:usage: `int addpoint(int geohandle, vector pos)`
+
+    Создает новую точку в заданной позиции.
+
+[Include:_common#geohandle_arg]
+
+:returns:
+    Возвращает номер точки для созданной созданной точки или `-1`, если точка не может быть создана.
+    
+    Вы можете использовать возвращаемое значение в функции [Vex:setpointattrib] для установки атрибутов в новой точке, однако это может быть не конечный номер точки.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/addpoint]
+
+@related
+
+- [Vex:addvertex]
+- [Vex:addprim]

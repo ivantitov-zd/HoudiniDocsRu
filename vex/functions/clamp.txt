@@ -1,0 +1,32 @@
+= clamp =
+
+#type: vex
+#context: all
+#tags: interp
+#group: interp
+
+"""Возвращает значение ограниченное минимумом и максимумом."""
+
+:usage: `int clamp(int value, int min, int max)`
+:usage: `float clamp(float value, float min, float max)`
+
+    Возвращает <<value>> ограниченное между <<min>> и <<max>>.
+
+:usage: `vector2 clamp(vector2 value, vector2 min, vector2 max)`
+:usage: `vector clamp(vector value, vector min, vector max)`
+:usage: `vector4 clamp(vector4 value, vector4 min, vector4 max)`
+
+    Для векторов выполняется покомпонентно.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/clamp]
+
+@related
+
+- [Vex:fit]
+- [Vex:fit01]
+- [Vex:fit10]
+- [Vex:fit11]
+- [Vex:efit]

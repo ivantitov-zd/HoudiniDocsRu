@@ -1,0 +1,30 @@
+= expandpointgroup =
+
+#type: vex
+#context: all
+#tags: groups
+#group: groups
+
+"""Возвращает список точек указанной группы."""
+
+:usage: `int [] expandpointgroup(<geometry>, string groupname)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает список точек указанной группы.
+
+    В данном случае в качестве группы можно использовать шаблоны вроде `0-3` и `@Cd.x>0.5`. Поведение поля группы совпадает с поведением в SOP. Пустая строка означает все точки.
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/expandpointgroup]
+
+
+@related
+
+- [Vex:inpointgroup]
+- [Vex:npointsgroup]
+- [Vex:hasattrib]

@@ -1,0 +1,28 @@
+= sin =
+
+#type: vex
+#context: all
+#tags: math, trig
+#group: math
+
+"""Возвращает синус аргумента."""
+
+:usage: `float sin(float n)`
+
+    Возвращает синус `n`, где `n` в радианах.
+
+:usage: `<vector> sin(<vector> n)`
+
+    Возвращает новый вектор, в котором функция применена к каждому компоненту.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/sin]
+
+@related
+
+- [Vex:sinh]
+- [Vex:cos]
+- [Vex:tan]
+- [Vex:asin]

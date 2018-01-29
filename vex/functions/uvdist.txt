@@ -1,0 +1,35 @@
+= uvdist =
+
+#type: vex
+#context: all
+#tags: texture, measure
+#group: measure
+
+"""Определяет расстояние от uv координаты до геометрии в uv пространстве."""
+
+:usage: `float uvdist(<geometry>, string uvname, vector uv, int &prim, vector &primuv)`
+:usage: `float uvdist(<geometry>, string uvname, vector uv, int &prim, vector &primuv, float maxdist)`
+
+Возвращает расстояние до ближайшей uv координаты на геометрии в uv пространстве. Функция находит позиции на поверхности геометрии, а не просто позиции точек.
+
+[Include:_common#geometry]
+
+:arg:uvname:
+    Имя атрибута точек или вершин в геометрии <<geometry>> для использования в качестве uv пространства. Геометрия будет развернута в месте, основанном на этом атрибуте. Атрибутом может быть не только 2D UV и 3D UVW, но и любой векторный атрибут.
+
+:arg:uv:
+    Позиция в uv пространстве для нахождения ближайшей позиции в геометрии.
+
+:arg:prim:
+    Номер ближайшего примитива. -1, если примитив не найден.
+
+:arg:primuv:
+    Примитивные uv координаты ближайшего примитива. Функция `primuv` может использоваться для вычисления атрибутов в этом месте.
+
+:arg:maxdist:
+    Максимальное расстояние для поиска в uv пространстве. Операцию можно ускорить, если снизить расстояние поиска.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/uvdist]

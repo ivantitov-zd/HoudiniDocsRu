@@ -1,0 +1,21 @@
+= join =
+
+#type: vex
+#context: all
+#tags: string
+#group: string
+
+"""Объединяет все строки массива через общий разделитель."""
+
+:usage: `string join(const string s[]; const string spacer)`
+
+Объединяет все строки в массиве, формируя единую строку. Разделитель вставляется между каждой парой строк.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/join]
+
+@related
+
+- [Vex:concat]

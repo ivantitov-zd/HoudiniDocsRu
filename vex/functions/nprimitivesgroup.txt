@@ -1,0 +1,25 @@
+= nprimitivesgroup =
+
+#type: vex
+#context: all
+#tags: count, prim, groups
+#group: groups
+
+"""Возвращает количество примитивов в группе."""
+
+:usage: `int nprimitivesgroup(<geometry>, string groupname)`
+
+[Include:_common#geometry]
+
+:arg:groupname:
+    Точное имя группы, а не шаблон.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/nprimitivesgroup]
+
+@related
+- [Vex:expandprimgroup]
+- [Vex:inprimgroup]
+- [Vex:hasattrib]

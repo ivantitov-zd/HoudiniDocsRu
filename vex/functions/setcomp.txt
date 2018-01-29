@@ -1,0 +1,36 @@
+= setcomp =
+
+#type: vex
+#context: all
+#tags: data
+#group: utility
+
+"""Задает один компонент вектора, матрицы или элемент в массиве."""
+
+:usage: `void|float setcomp(<vector> &target, float value, int index)`
+
+    Задает значение компонента вектора `target` в позиции `index` на `value`.
+    
+    Возвращает `value`, если вызывается с возвращаемым типом `float`.
+
+:usage: `void|float setcomp(<matrix> &target, float value, int row, int column)`
+
+    Задает значение комппонента матрицы `target` в позиции `row` и `column` на `value`.
+    
+    Возвращает `value`, если вызывается с возвращаемым типом `float`.
+
+:usage: `<type> setcomp(<type> &array[]; <type> value, int index)`
+
+    Задает значение элемента массива `array` в позиции `index` на `value` и возвращает `value`.
+    
+    Это то же самое, что `array[index] = value`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setcomp]
+
+@related
+
+- [/vex/arrays]
+- [Vex:getcomp]

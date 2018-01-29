@@ -1,0 +1,23 @@
+= volumevoxeldiameter =
+
+#type: vex
+#context: all
+#tags: volume
+#group: volume
+
+"""Вычисляет приблизительный диаметр вокселя."""
+
+:usage: `float volumevoxeldiameter(<geometry>, int primnum)`
+:usage: `float volumevoxeldiameter(<geometry>, string primname)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает диаметр вокселя в заданном volume примитиве. Для нахождения длины стороны разделите полученное значение на `sqrt(3)`.
+    
+    Возвращает `0`, если `primnum` находится вне допустимого диапазона, геометрия недействительна или заданный примитив не является volume примитивом.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/volumevoxeldiameter]

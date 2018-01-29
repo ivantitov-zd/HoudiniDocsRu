@@ -1,0 +1,25 @@
+= isvalidindex =
+
+#type: vex
+#context: all
+#tags: array, string
+#group: array
+
+"""Проверяет, является ли заданный индекс действительным для массива или строки."""
+
+:usage: `int isvalidindex(<type> &array[], int index)`
+:usage: `int isvalidindex(string str, int index)`
+    
+    Возвращает `1`, если `index` находится в пределах диапазона для данной строки/массива, или `0` в противном случае.
+    
+    Это эквивалентно `index < len(array) && index >= -len(array)`.
+    
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/isvalidindex]
+
+@related
+
+- [/vex/arrays]
+- [Vex:len]

@@ -1,0 +1,21 @@
+= toupper =
+
+#type: vex
+#context: all
+#group: string
+
+"""Преобразует все символы строки к верхнему регистру."""
+
+:usage: `string toupper(const string str)`
+
+Возвращает строку с заменой a-z на A-Z.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/toupper]
+
+@related
+
+- [Vex:tolower]
+- [Vex:titlecase]

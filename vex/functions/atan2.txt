@@ -1,0 +1,26 @@
+= atan2 =
+
+#type: vex
+#context: all
+#tags: trig
+#group: math
+
+"""Возвращает арктангенс y/x."""
+
+:usage: `float atan2(float y, float x)`
+
+Возвращает основное значение арктангенса y/x, используя знаки обоих аргументов для определения квадранта результата. Возвращаемое значение находится в диапазоне от -&pi; до &pi;.
+
+Смотрите [atan2|Wp:Atan2] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/atan2]
+
+@related
+
+- [Vex:atan]
+- [Vex:tan]
+- [Vex:sin]
+- [Vex:cos]

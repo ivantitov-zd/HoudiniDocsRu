@@ -1,0 +1,17 @@
+= chsraw =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Возвращает необработанное значение канала (или параметра)."""
+
+:usage: `string chsraw(string channel)`
+
+Возвращает необработанное значения выражения канала без проведения вычисления содержимого.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chsraw]

@@ -1,0 +1,25 @@
+= inpointgroup =
+
+#type: vex
+#context: all
+#tags: point, groups
+#group: groups
+
+"""Возвращает 1, если точка, указанная номером точки, входит в группу, указанную строкой."""
+
+:usage: `int inpointgroup(<geometry>, string groupname, int pointnum)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает `1`, если группа существует и точка принадлежит этой группе, или `0` в противном случае.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/inpointgroup]
+
+@related
+
+- [Vex:inprimgroup]
+- [Vex:invertexgroup]

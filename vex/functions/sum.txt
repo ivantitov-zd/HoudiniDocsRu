@@ -1,0 +1,36 @@
+= sum =
+
+#type: vex
+#context: all
+#tags: math
+#group: math
+
+"""Возвращает сумму списка чисел."""
+
+:usage: `float sum(float n)`
+:usage: `int sum(int n)`
+
+    Возвращает аргумент.
+
+:usage: `float sum(<vector> v)`
+
+    Возвращает сумму компонентов вектора.
+
+:usage: `int sum(int nums[])`
+:usage: `float sum(float nums[])`
+
+    Возвращает сумму элементов массива.
+
+:usage: `<vector> sum(<vector> arr[])`
+
+    Возвращает новый вектор, в котором каждый компонент является суммой значений соответствующих компонентов в векторах массива.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/sum]
+
+@related
+
+- [Vex:product]
+

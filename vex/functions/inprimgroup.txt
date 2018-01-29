@@ -1,0 +1,25 @@
+= inprimgroup =
+
+#type: vex
+#context: all
+#tags: prim, groups
+#group: groups
+
+"""Возвращает 1, если примитив, указанный номером примитива, входит в группу, указанную строкой."""
+
+:usage: `int inprimgroup(<geometry>, string groupname, int primnum)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает `1`, если группа существует и примитив принадлежит этой группе, или `0` в противном случае.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/inprimgroup]	
+
+@related
+
+- [Vex:inpointgroup]
+- [Vex:invertexgroup]

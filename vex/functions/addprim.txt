@@ -1,0 +1,88 @@
+= addprim =
+
+#type: vex
+#context: all
+#tags: prim, create
+#group: geo
+
+"""Добавляет примитив в геометрию."""
+
+:usage: `int addprim(int geohandle, string type)`
+
+    Создает полигон (polygon) или полилинию (polyline) без каких-либо точек. Затем вы можете добавить к примитиву вершины с помощью функции [Vex:addvertex].
+    
+    Обязательно добавьте хотя бы одну вершину к созданному примитиву. Хоть Houdini и умеет работать с пустыми полигонами, возможно, они могут вызвать странные результаты или ошибки.
+
+:usage: `int addprim(int geohandle, string type, int pt0)`
+:usage: `int addprim(int geohandle, string type, int pt0, int pt1)`
+:usage: `int addprim(int geohandle, string type, int pt0, int pt1, int pt2)`
+:usage: `int addprim(int geohandle, string type, int pt0, int pt1, int pt2, int pt3)`
+
+    Создает примитив, используя точки через их номера.
+
+:usage: `int addprim(int geohandle, string type, int points[])`
+
+    Создает примитив, используя точки указанные в массиве в виде их номеров.
+
+:usage: `void addprim(int &prim_num, int geohandle, string type, int pt0, int &vertices[])`
+:usage: `void addprim(int &prim_num, int geohandle, string type, int pt0, int pt1, int &vertices[])`
+:usage: `void addprim(int &prim_num, int geohandle, string type, int pt0, int pt1, int pt2, int &vertices[])`
+:usage: `void addprim(int &prim_num, int geohandle, string type, int pt0, int pt1, int pt2, int pt3, int &vertices[])`
+:usage: `void addprim(int &prim_num, int geohandle, string type, int points[], int &vertices[])`
+
+    Эти сигнатуры заполняют заданный массив `вершин` новыми номерами вершин примитива, соответствующими указанным точкам. Вы можете использовать эти номера в функции [Vex:setvertexattrib], чтобы установить атрибуты на вершинах, однако они могут быть не конечными номерами вершин.
+    
+    Если примитив был создан, но любые точки были недействительными, соответствующие номера вершин в массиве будут равны `-1`.
+    
+    Эти сигнатуры перезаписывают переменную `primnum` номером нового примитива, а не возвращают его.
+
+[Include:_common#geohandle_arg]
+
+:arg:type:
+    Одна из следующих строк:
+
+    `"poly"` |
+        Закрытый полигон. Может использовать 0 и более точек.
+
+    `"polyline"` |
+        Открытый полигон. Может использовать 0 и более точек.
+
+    `"tet"` |
+        Примитив [тетраэдр|Wp:Tetrahedron]. Требуются ровно 4 точки. Вы не можете добавить вершины к этому примитиву.
+
+    `"sphere"`, `"circle"`, `"tube"`, `"metaball"`, `"metasquad"` |
+        Сфера, окружность, труба, метабол или метасуперквадратический примитив. Требуется ровно одна точка. Вы не можете добавить вершины к этим примитивам.
+
+    `"AlembicRef"`, `"PackedDisk"` |
+        Упакованный Alembic или packed disk primitive.  Требуется ровно одна точка. Вы не можете добавить вершины к этим примитивам.
+
+:returns:
+    Возвращает номер созданного примитива или `-1`, если примитив не может быть создан.
+    
+    Вы можете использовать возвращаемое значение в функции [Vex:setprimattrib] для установки атрибутов в новом примитиве, однако это может быть не конечный номер примитива.
+
+Вы можете установить трансформации с помощью функции [Vex:setprimintrinsic], например:
+        
+{{{
+#!vex
+matrix3 transform_value = {{0, 0, 0}, {0, 0, 0}, {1, 1, 1}};
+setprimintrinsic(geoself(), "transform", prim, transform_value);
+}}}
+
+Вы также можете установить интринсики Alembic и packed primitive, например:
+
+{{{
+#!vex
+setprimintrinsic(geoself(), "unexpandedfilename", prim, "test.bgeo");
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/addprim]
+
+@related
+
+- [Vex:addvertex]
+- [Vex:addpoint]
+

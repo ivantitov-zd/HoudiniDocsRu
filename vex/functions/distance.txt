@@ -1,0 +1,22 @@
+= distance =
+
+#type: vex
+#context: all
+#tags: measure
+#group: measure
+
+"""Возвращает расстояние между двумя точками."""
+
+:usage: `float distance(vector2 a, vector2 b)`
+:usage: `float distance(vector a, vector b)`
+:usage: `float distance(vector4 a, vector4 b)`
+
+Если вам необходимо получить квадрат расстояния, используйте [Vex:distance2] вместо этой функции вместе с [Vex:pow]. 
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/distance]
+
+@related
+- [Vex:distance2]

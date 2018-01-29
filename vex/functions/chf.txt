@@ -1,0 +1,28 @@
+= chf =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал (или параметр) и возвращает его значение."""
+
+:usage: `float chf(string channel)`
+:usage: `float chf(string channel, float time_in_sec)`
+
+[Include:ch#ch_functions]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chf]
+
+@related
+
+- [Vex:ch]
+- [Vex:chs]
+- [Vex:chi]
+- [Vex:chv]
+- [Vex:ch3]
+- [Vex:ch4]
+- [Vex:chramp]

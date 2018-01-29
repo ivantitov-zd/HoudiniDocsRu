@@ -1,0 +1,62 @@
+= foreach =
+
+#type: vexstatement
+#group: array
+#context: all
+
+"""Перебирает элементы массива с необязательной нумерацией."""
+
+Длина массива определяется до первой итерации, поэтому, если массив изменяется во время foreach, это не будет отражено в количестве итераций.
+
+
+== Простая форма ==
+
+{{{
+#!vex
+foreach ([element_type] value; array) {
+statement;
+}
+}}}
+
+Перебирает элементы <<array>>. Для каждой итерации *копирует* текущий элемент в <<value>> и выполняет <<statement>>. Например:
+
+{{{
+#!vex
+int an_array[] = {1, 2}
+foreach (int num; an_array) {
+    printf("%d", num);
+}
+}}}
+
+
+== Форма с нумерацией ==
+
+Вторая форма позволяет вам определить переменную нумерации:
+
+{{{
+#!vex
+foreach (index, value; array) statement;
+foreach (int index; element_type value; array) statement;
+}}}
+
+Для каждой итерации эта форма записывает текущую _позицию_ в массиве в <<index>>, *копирует* текущий элемент в <<value>> и выполняет <<statement>>. Например:
+
+{{{
+#!vex
+string days[] = { "Mon", "Tue", "Wed", "Thu", "Fri" }
+foreach (int i; string name; days) {
+    printf("Day number %d is %s", i, name);
+}
+}}}
+
+Это похоже на обычную идиому языка Python `for i, x in enumerate(xs):`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/foreach]
+
+@related
+
+- [/vex/arrays]
+

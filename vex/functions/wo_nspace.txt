@@ -1,0 +1,21 @@
+= wo_nspace =
+
+#type: vex
+#context: all
+#tags: transform
+#group: transform
+
+"""Преобразует вектор нормали из мирового пространства (World space) в пространство объекта (Object space)."""
+
+:usage: `vector wo_nspace(vector v)`
+
+Преобразует вектор нормали из _мирового_ пространства (World space) в пространство _объекта_ (Object space).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/wo_nspace]
+
+@related
+
+- [Vex:ow_nspace]

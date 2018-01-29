@@ -1,0 +1,21 @@
+= tw_nspace =
+
+#type: vex
+#context: all
+#tags: map, transform
+#group: transform
+
+"""Преобразует вектор нормали из текстурного пространства (Texture space) в мировое пространство (World space)."""
+
+:usage: `vector tw_nspace(vector v)`
+
+Преобразует вектор нормали из _текстурного_ пространства (Texture space) в _мировое_ пространство (World space).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/tw_nspace]
+
+@related
+
+- [Vex:wt_nspace]

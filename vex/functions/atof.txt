@@ -1,0 +1,27 @@
+= atof =
+
+#type: vex
+#context: all
+#tags: string, conversion
+#group: convert
+
+"""Преобразует string во float."""
+
+:usage: `float atof(string str)`
+
+Преобразует строку в значение с плавающей запятой.
+
+* Эта функция игнорирует пробелы вокруг числа.
+
+* Возвращает `0.0`, если строка не содержит числа.
+
+* Строка может содержать экспоненциальные обозначения (например, `"1.25e+5"`).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/atof]
+
+@related
+
+- [Vex:atoi]

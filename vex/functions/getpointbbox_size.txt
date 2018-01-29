@@ -1,0 +1,28 @@
+= getpointbbox_size =
+
+#type: vex
+#context: all
+#tags: bbox, measure
+#group: measure
+
+"""Возвращает размер ограничивающего бокса геометрии."""
+
+:usage: `vector getpointbbox_size(<geometry>)`
+:usage: `vector getpointbbox_size(<geometry>, string pointgroup)`
+
+    Это же самое, что [Vex:getbbox_size], за исключением того, что ограничивающий бокс вычисляется для _точек_. Поэтому, если примитив выступает за точки (например, границы примитивной сферы), они не будут включены в бокс.
+
+[Include:_common#geometry]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/getpointbbox_size]
+
+@related
+
+- [Vex:getpointbbox]
+- [Vex:getpointbbox_center]
+- [Vex:getpointbbox_min]
+- [Vex:getpointbbox_max]
+- [Vex:getbbox]

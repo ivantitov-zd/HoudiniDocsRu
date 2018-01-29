@@ -1,0 +1,39 @@
+= len =
+
+#type: vex
+#context: all
+#group: array
+
+"""Возвращает длину массива."""
+
+:usage: `int len(<vector> v)`
+:usage: `int len(<matrix> m)`
+:usage: `int len(<type> array[])`
+:usage: `int len(string s)`
+    
+    Возвращает количество элементов/компонентов в заданном объекте. Для массива это количество элементов в нём. Для матрицы или вектора это количество компонентов.
+    
+    Для строк функция возвращает количество _символов_ (не байтов).
+
+    Не путайте эту функцию с [Vex:length], которая возвращает длину вектора.
+
+
+@examples
+
+{{{
+#!vex
+len("hello") == 5;
+len({ {1,0,0}, {0,1,0}, {0,0,1} }) == 9;
+len({0, 10, 20, 30}) == 4;
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/len]
+
+@related
+
+- [/vex/arrays]
+- [Vex:resize]
+

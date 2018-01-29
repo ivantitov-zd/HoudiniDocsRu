@@ -1,0 +1,25 @@
+= volumeres =
+
+#type: vex
+#context: all
+#tags: volume
+#group: volume
+
+"""Возвращает разрешение volume примитива."""
+
+:usage: `vector volumeres(<geometry>, int primnum)`
+:usage: `vector volumeres(<geometry>, string volumename)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает разрешение volume примитива.
+    
+    Для VDB допустимый диапазон индексов не `0..res-1`, но `volumeindexorigin..volumeindexorigin+res-1`.
+    
+    Возвращает `0`, если `primnum` находится вне допустимого диапазона, геометрия недействительна или заданный примитив не является векторным volume примитивом.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/volumeres]

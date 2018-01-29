@@ -1,0 +1,20 @@
+= chs =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал (или параметр) и возвращает его значение."""
+
+:usage: `string chs(string channel)`
+:usage: `string chs(string channel, float time)`
+
+Вычисляет канал (или параметр) и возвращает его значение.
+
+Время указывается в секундах, а не в кадрах.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chs]

@@ -1,0 +1,17 @@
+= strlen =
+
+#type: vex
+#context: all
+#tags: string
+#group: string
+
+"""Возвращает длину строки."""
+
+:usage: `int strlen(string string)`
+
+Возвращает длину строки в байтах.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/strlen]

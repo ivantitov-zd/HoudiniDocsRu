@@ -1,0 +1,17 @@
+= geoself =
+
+#type: vex
+#context: all
+#tags: util
+#group: geo
+
+"""Возвращает дескриптор текущей геометрии."""
+
+:usage: `int geoself()`
+
+Возвращает дескриптор текущей геометрии, подходящий для операций создания геометрии.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/geoself]

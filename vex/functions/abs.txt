@@ -1,0 +1,43 @@
+= abs =
+
+#type: vex
+#context: all
+#tags: math, number
+#group: math
+
+"""Возвращает абсолютное значение аргумента."""
+
+:usage:`int abs(int n)`
+:usage:`float abs(float n)`
+:usage:`<vector> abs(<vector> v)`
+
+    Возвращает абсолютный (позитивный) эквивалент числа. Для векторов выполняется покомпонентно.
+
+
+@examples
+
+:box:Пример со скаляром
+    {{{
+    #!vex
+    if (abs(n) > 1) {
+        // n больше чем 1 или меньше чем -1
+    }
+    }}}
+
+:box:Пример с вектором
+    {{{
+    #!vex
+    vector v = {1.0, -0.5, 1.1}
+    if (abs(v) > 1.0) {
+        // вектор больше единицы измерения
+    }
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/abs]
+
+@related
+
+- [Vex:sign]

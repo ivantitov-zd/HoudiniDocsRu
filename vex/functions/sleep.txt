@@ -1,0 +1,17 @@
+= sleep =
+
+#type: vex
+#context: all
+#tags: utility
+#group: utility
+
+"""Уступает обработку на определенное количество миллисекунд."""
+
+:usage: `void sleep(int milliseconds)`
+
+Уступает обработку на определенное количество миллисекунд.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/sleep]

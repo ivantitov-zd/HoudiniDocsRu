@@ -1,0 +1,33 @@
+= sinh =
+
+#type: vex
+#context: all
+#tags: math, trig
+#group: math
+
+"""Возвращает гиперболический синус аргумента."""
+
+:usage: `float sinh(float n)`
+
+    Возвращает [гиперболический|Wp:Hyperbolic_function] синус `n`.
+
+:usage: `vector2 sinh(vector2 v)`
+:usage: `vector sinh(vector v)`
+:usage: `vector4 sinh(vector4 v)`
+
+    Для векторов выполняется покомпонентно.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/sinh]
+
+@related
+
+- [Vex:sin]
+- [Vex:cosh]
+- [Vex:tanh]
+- [Vex:cos]
+- [Vex:tan]
+
+

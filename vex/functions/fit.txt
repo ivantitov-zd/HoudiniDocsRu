@@ -1,0 +1,36 @@
+= fit =
+
+#type: vex
+#context: all
+#tags: interp
+#group: interp
+
+"""Принимает значение в одном диапазоне и меняет его на соответствующее значение в новом диапазоне."""
+
+:usage: `float fit(float value, float omin, float omax, float nmin, float nmax)`
+:usage: `<vector> fit(<vector> value, <vector> omin, <vector> omax, <vector> nmin, <vector> nmax)`
+
+    Принимает значение в диапазоне (<<omin>>, <<omax>>) и меняет его на соответствующее значение в новом диапазоне (<<nmin>>, <<nmax>>).
+
+    Функция ограничивает заданное значение диапазоном (<<omin>>, <<omax>>) перед выполнением, поэтому полученное значение гарантированно будет находиться в диапазоне (<<nmin>>, <<nmax>>). Во избежание ограничивания используйте вместо этой функцию [Vex:efit].
+
+
+@examples
+
+{{{
+#!vex
+fit(.3, 0, 1, 10, 20) == 13
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/fit]
+
+@related
+- [Vex:clamp]
+- [Vex:fit01]
+- [Vex:fit10]
+- [Vex:fit11]
+- [Vex:efit]
+

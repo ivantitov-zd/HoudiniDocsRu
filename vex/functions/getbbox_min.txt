@@ -1,0 +1,31 @@
+= getbbox_min =
+
+#type: vex
+#context: all
+#tags: bbox, measure
+#group: measure
+
+"""Возвращает минимум ограничивающего бокса геометрии."""
+
+:usage: `vector getbbox_min(<geometry>)`
+
+    Вычисляет минимум ограничивающего бокса геометрии.
+
+:usage: `vector getbbox_min(<geometry>, string primgroup)`
+
+    Вычисляет минимум ограничивающего бокса примитивов заданной группы.
+
+[Include:_common#geometry]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/getbbox_min]
+
+@related
+
+- [Vex:getbbox]
+- [Vex:getbbox_center]
+- [Vex:getbbox_size]
+- [Vex:getbbox_max]
+- [Vex:getpointbbox]

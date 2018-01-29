@@ -1,0 +1,21 @@
+= translate =
+
+#type: vex
+#context: all
+#tags: matrix, vector
+#group: transform
+
+"""Перемещает матрицу по вектору."""
+
+:usage: `void translate(matrix &m, vector amount)`
+:usage: `void translate(matrix &m, vector4 amount)`
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/translate]
+
+@related
+
+- [Vex:rotate]
+- [Vex:scale]

@@ -1,0 +1,18 @@
+= npoints =
+
+#type: vex
+#context: all
+#tags: point, count
+#group: geo
+
+"""Возвращает количество точек на входе или в файле геометрии."""
+
+:usage: `int npoints(<geometry>)`
+
+[Include:_common#geometry]
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/npoints]

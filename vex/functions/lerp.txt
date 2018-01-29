@@ -1,0 +1,38 @@
+= lerp =
+
+#type: vex
+#context: all
+#tags: interp
+#group: interp
+
+"""Выполняет билинейную интерполяцию между значениями."""
+
+:usage: `float lerp(float value1, float value2, float amount)`
+
+    Выполняет билинейную интерполяцию между значениями.
+
+:usage: `<vector> lerp(<vector> value1, <vector> value2, float amount)`
+
+    Выполняет билинейную интерполяцию между соответствующими компонентами векторов.
+
+:usage: `<vector> lerp(<vector> value1, <vector> value2, <vector> amount)`
+
+    Выполняет билинейную интерполяцию между соответствующими компонентами на конкретные величины для каждой пары компонентов.
+
+:usage: `bsdf lerp( bsdf bsdf1; bsdf bsdf2; float amount)`
+    
+    Returns a BSDF that linearly interpolates between the output of the two given BSDFS.
+
+:arg:amount:
+    Если `amount` находится вне диапазона от 0 до 1, значения будут экстраполироваться линейно.
+
+    Если `amount` равен 0, возвращается первое значение. Если равен 1, возвращается второе значение.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/lerp]
+
+@related
+
+- [Vex:slerp]

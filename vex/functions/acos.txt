@@ -1,0 +1,28 @@
+= acos =
+
+#type: vex
+#context: all
+#tags: math, trig
+#group: math
+
+"""Возвращает арккосинус аргумента."""
+
+:usage: `float acos(float n)`
+    Возвращает [арккосинус|Wp:Inverse_trigonometric_functions#Basic_properties] числа `n`, где `n` в радианах. Возвращаемое значение находится в диапазоне от `0` до &pi;.
+    
+:usage: `vector2 acos(vector2 v)`
+:usage: `vector4 acos(vector4 v)`
+:usage: `vector acos(vector v)`
+    Для векторов выполняется покомпонентно.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/acos]
+
+@related
+
+- [Vex:cos]
+- [Vex:sin]
+- [Vex:tan]
+

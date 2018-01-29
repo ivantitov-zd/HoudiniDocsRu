@@ -1,0 +1,17 @@
+= itoa =
+
+#type: vex
+#context: all
+#tags: string
+#group: string
+
+"""Преобразует integer в string."""
+
+:usage: `string itoa(int number)`
+
+Преобразует целое число в строку.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/itoa]

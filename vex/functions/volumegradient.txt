@@ -1,0 +1,23 @@
+= volumegradient =
+
+#type: vex
+#context: all
+#tags: volume
+#group: volume
+
+"""Вычисляет градиент volume примитива."""
+
+:usage: `vector volumegradient(<geometry>, int primnum, vector pos)`
+:usage: `vector volumegradient(<geometry>, string volumename, vector pos)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает градиент volume примитива. Градиент - это вектор, указывающий в сторону увеличения значения.
+    
+    Возвращает `0`, если `primnum` находится вне допустимого диапазона, геометрия недействительна или заданный примитив не является volume примитивом.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/volumegradient]

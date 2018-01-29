@@ -1,0 +1,28 @@
+= getpointbbox_max =
+
+#type: vex
+#context: all
+#tags: bbox, measure
+#group: measure
+
+"""Возвращает максимум ограничивающего бокса геометрии."""
+
+:usage: `vector getpointbbox_max(<geometry>)`
+:usage: `vector getpointbbox_max(<geometry>, string pointgroup)`
+
+    Это же самое, что [Vex:getbbox_max], за исключением того, что ограничивающий бокс вычисляется для _точек_. Поэтому, если примитив выступает за точки (например, границы примитивной сферы), они не будут включены в бокс.
+
+[Include:_common#geometry]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/getpointbbox_max]
+
+@related
+
+- [Vex:getpointbbox]
+- [Vex:getpointbbox_center]
+- [Vex:getpointbbox_size]
+- [Vex:getpointbbox_min]
+- [Vex:getbbox]

@@ -1,0 +1,32 @@
+= tan =
+
+#type: vex
+#context: all
+#tags: math, trig
+#group: math
+
+"""Возвращает тригонометрический тангенс аргумента"""
+
+:usage: `float tan(float n)`
+
+    Возвращает [тригонометрический тангенс|Wp:Trigonometric_functions] `n`, где `n` в радианах.
+
+:usage: `vector2 tan(vector2 v)`
+:usage: `vector tan(vector v)`
+:usage: `vector4 tan(vector4 v)`
+
+    Для векторов выполняется покомпонентно.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/tan]
+
+@related
+
+- [Vex:atan]
+- [Vex:tanh]
+- [Vex:sin]
+- [Vex:cos]
+
+

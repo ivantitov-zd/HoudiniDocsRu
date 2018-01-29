@@ -1,0 +1,21 @@
+= tolower =
+
+#type: vex
+#context: all
+#group: string
+
+"""Преобразует все символы строки к нижнему регистру."""
+
+:usage: `string tolower(const string str)`
+
+Возвращает строку с заменой A-Z на a-z.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/tolower]
+
+@related
+
+- [Vex:toupper]
+- [Vex:titlecase]

@@ -1,0 +1,21 @@
+= invert =
+
+#type: vex
+#context: all
+#tags: matrix
+#group: math
+
+"""Возвращает обратную матрицу."""
+
+:usage: `<matrix> invert(<matrix> m)`
+
+:arg:m:
+    Матрица для [инвертирования|Wp:Invertible_matrix].
+
+:returns:
+    Обратная матрица или оригинальная, если она уже обратная.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/invert]

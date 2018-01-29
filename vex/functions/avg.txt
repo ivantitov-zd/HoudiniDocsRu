@@ -1,0 +1,38 @@
+= avg =
+
+#type: vex
+#context: all
+#tags: math, vector
+#group: math
+
+"""Возвращает среднее значение."""
+
+:usage: `int avg(int a)`
+:usage: `float avg(float a)`
+
+    Returns `a`.
+
+:usage: `float avg(float a, float b, ...)`
+
+    Возвращает среднее значение аргументов.
+
+:usage: `float avg(vector2 v)`
+:usage: `float avg(vector v)`
+:usage: `float avg(vector4 v)`
+
+    Возвращает среднее значение компонентов вектора.
+
+:usage: `vector2 avg(vector2 a, vector2 b, ...)`
+:usage: `vector avg(vector a, vector b, ...)`
+:usage: `vector4 avg(vector4 a, vector4 b, ...)`
+
+    Возвращает новый вектор, в котором каждый компонент является средним значением соответствующих компонентов в векторах массива.
+
+:usage: `<type> avg(<type> arr[])`
+
+    Возвращает среднее значение элементов массива.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/avg]

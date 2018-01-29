@@ -1,0 +1,32 @@
+= degrees =
+
+#type: vex
+#context: all
+#tags: math, trig, convert
+#group: convert
+
+"""Преобразует аргумент из радиан в градусы."""
+
+:usage: `float degrees(float num_in_rads)`
+
+    Возвращает заданные радианы в градусах.
+
+:usage: `vector2 degrees(vector2 nums_in_rads)`
+:usage: `vector degrees(vector nums_in_rads)`
+:usage: `vector4 degrees(vector4 nums_in_rads)`
+
+    Для векторов выполняется покомпонентно.
+
+TIP:
+    Большинство функций языка VEX работают с радианами, но большинству пользователей комфортнее с градусами. Вы можете преобразовать градусы из пользовательского интерфейса в радианы для внутреннего использования.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/degrees]
+
+@related
+
+- [Vex:radians]
+
+

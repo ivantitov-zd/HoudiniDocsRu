@@ -1,0 +1,21 @@
+= volumeindexorigin =
+
+#type: vex
+#context: all
+#tags: volume
+#group: volume
+
+"""Возвращает индекс нижней левой части volume примитива."""
+
+:usage: `vector volumeindexorigin(<geometry>, int primnum)`
+:usage: `vector volumeindexorigin(<geometry>, string volumename)`
+
+:returns:
+    Возвращает индекс нижней левой части volume примитива. Для volume примитивов это всегда нуль. Но для VDB это индекс нижнего левого вокселя активной части ограничивающего воксели бокса.
+    
+    Возвращает `0`, если `primnum` находится вне допустимого диапазона, геометрия недействительна или заданный примитив не является volume примитивом.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/volumeindexorigin]

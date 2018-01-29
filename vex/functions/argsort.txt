@@ -1,0 +1,55 @@
+= argsort =
+
+#type: vex
+#context: all
+#group: array
+
+"""Возвращает индексы отсортированной версии массива."""
+
+:usage: `int [] argsort(<type> value[])`
+
+    Возвращает список индексов, который, если применяется к данному массиву, даст упорядоченную последовательность в порядке возрастания.
+    
+    Это позволяет отсортировать массив по некоторому свойству элементов, а не по самим значениям.
+
+[Include:sort#sort_properties]
+
+
+@examples
+
+:box:Sort strings by their length
+    {{{
+    #!vex
+    cvex main()
+    {
+        // Заданный массив строк...
+        string colors[] = {"Red", "Green", "Blue", "Orange", "Violet", "Indigo"};
+
+        // Создает массив с соответствующими длинами
+        int[] lengths = {};
+        foreach (string name; colors) {
+            push(lengths, len(name));
+        }
+
+        // Сортирует длины и возвращает массив, содержащий новый порядок
+        int[] ordering = argsort(lengths);
+
+        // Получает массив имён цветов, отсортированный по длине имени
+        string colors_by_len[] = reorder(colors, ordering);
+
+        printf("%s\n", colors_by_len);
+    }
+    
+    // Печатает {Red, Blue, Green, Orange, Violet, Indigo}
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/argsort]
+
+@related
+
+- [/vex/arrays]
+- [Vex:reorder]
+- [Vex:sort]

@@ -1,0 +1,22 @@
+= chu =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал (или параметр) и возвращает его значение."""
+
+:usage: `vector2 chu(string channel)`
+:usage: `vector2 chu(string channel, float time)`
+
+Вычисляет канал (или параметр) и возвращает его значение.
+
+Если параметр ноды, на который ссылается функция, является вектором, базовое имя параметра может использоваться для возврата всех компонентов в качестве вектора.
+
+Время указывается в секундах, а не в кадрах.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chu]

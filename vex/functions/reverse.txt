@@ -1,0 +1,35 @@
+= reverse =
+
+#type: vex
+#context: all
+#group: array
+
+"""Возвращает массив или строку в обратном порядке."""
+
+:usage: `string reverse(string str)`
+
+    Возвращает строку в кодировке UTF-8 с _символами_ (не байтами) в обратном порядке из строки `str`. Это отличается от того, что возвращает `str[::-1]`.
+
+:usage: `<type>[] reverse(<type> values[])`
+
+    Возвращает обратную копию заданного массива.
+
+
+@examples
+
+{{{
+#!vex
+reverse("hello") == "olleh";
+reverse({1,2,3,4}) == {4, 3, 2, 1};
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/reverse]
+
+@related
+
+- [/vex/arrays]
+- [Vex:reorder]
+- [Vex:sort]

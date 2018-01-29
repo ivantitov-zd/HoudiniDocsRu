@@ -1,0 +1,22 @@
+= resize =
+
+#type: vex
+#context: all
+#group: array
+
+"""Устанавливает длину массива."""
+
+:usage: `void resize(<type> &array[]; int size)`
+    Изменяет размер заданного массива. Если `size` больше текущей длины массива, дополнительные элементы в конце массива могут быть неинициализированными версиями заданного типа (например, `0`, пустая строка, `{0,0,0}`, итд.).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/resize]
+
+@related
+
+- [/vex/arrays]
+- [Vex:append]
+- [Vex:push]
+- [Vex:len]

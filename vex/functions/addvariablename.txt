@@ -1,0 +1,25 @@
+= addvariablename =
+
+#type: vex
+#context: all
+#tags: node
+#group: nodes
+
+"""Добавляет соответствие атрибута локальной переменной."""
+
+:usage: `void addvariablename(string aname, string vname)`
+
+    В контексте с текущей геометрией добавляет соответствие геометрии.
+
+:usage: `int addvariablename(int geohandle, string aname, string vname)`
+
+    Добавляет соответствие в заданную геометрию. Возвращает `geohandle` в случае успеха.
+
+    [Include:_common#geohandle_arg]
+
+Добавляет соответствие атрибута `aname` локальной переменной `vname`. В SOPs, которые поддерживают это, вы будете иметь доступ к локальной переменной `$<<vname>>`, ссылающуюся на атрибут <<aname>>. Данная функция эмулирует поведение [AttribCreate SOP|Node:sop/attribcreate].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/addvariablename]

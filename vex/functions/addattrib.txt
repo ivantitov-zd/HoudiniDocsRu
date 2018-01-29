@@ -1,0 +1,42 @@
+= addattrib =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+
+"""Добавляет атрибут к геометрии."""
+
+Если вы заранее знаете класс атрибута, который хотите добавить, использование [Vex:adddetailattrib], [Vex:addprimattrib], [Vex:addpointattrib], или [Vex:addvertexattrib] может быть быстрее.
+
+:usage: `int addattrib(int geohandle, string attribclass, string name, <type> defvalue)`
+:usage: `int addattrib(int geohandle, string attribclass, string name, <type> defvalue[])`
+
+[Include:_common#geohandle_arg]
+
+[Include:_common#attribclass]
+
+:arg:name:
+    Имя создаваемого атрибута.
+
+:arg:defvalue:
+    Значение по умолчанию для атрибута и определяет тип создаваемого атрибута. Строки и массивы не могут иметь значения по умолчанию, поэтому в их случаях указывается только тип.
+
+:returns:
+    В случае успеха возвращает `geohandle` или `-1` при неудаче.
+
+* Если атрибут с тем же именем уже существует, функция попытается преобразовать его в новый тип.
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/addattrib]
+
+
+@related
+
+- [Vex:adddetailattrib]
+- [Vex:addprimattrib]
+- [Vex:addpointattrib]
+- [Vex:addvertexattrib]

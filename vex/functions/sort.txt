@@ -1,0 +1,43 @@
+= sort =
+
+#type: vex
+#context: all
+#group: array
+
+"""Возвращает массив отсортированный в порядке возрастания."""
+
+:usage: `int[] sort(int values[])`
+:usage: `float[] sort(float values[])`
+:usage: `string[] sort(string values[])`
+
+Возвращает отсортированную в порядке возрастания версию заданного массива.
+
+:box:
+    #id: sort_properties
+    
+    * Функции [Vex:argsort] и [Vex:sort] используют [устойчивую сортировку|Wp:Sorting_algorithm#Stability].
+    
+    * Используйте функцию [Vex:reverse] для изменения порядка сортировки.
+
+
+@examples
+
+:box:Сортировка массива чисел в порядке убывания
+    {{{
+    #!vex
+    int numbers[] = {5, 2, 90, 3, 1};
+    int descending_nums[] = reverse(sort(numbers));  // {90, 5, 3, 2, 1}
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/sort]
+
+@related
+
+- [/vex/arrays]
+- [Vex:argsort]
+- [Vex:reorder]
+- [Vex:reverse]
+

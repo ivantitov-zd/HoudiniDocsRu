@@ -1,0 +1,17 @@
+= normalize =
+
+#type: vex
+#context: all
+#tags: vector
+#group: math
+
+"""Возвращает нормализованный вектор."""
+
+:usage: `<vector> normalize(<vector> v)`
+
+Возвращает [нормализованную|Wp:Unit_vector] версию `v`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/normalize]

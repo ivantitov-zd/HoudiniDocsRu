@@ -1,0 +1,26 @@
+= chexprt =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал с новым выражением сегмента в заданный момент времени."""
+
+:usage: `float chexprt(string channel, string new_expr_function, float time_in_seconds)`
+
+
+Вычисляет канал с новым выражением сегмента в заданный момент времени и возвращает его значение.
+
+NOTE:
+    Данную функцию можно использовать для извлечения значений сегментов, наклонов и ускорений с использованием локальных переменных выражений каналов, таких как $IT, $OT, $IV, $OV.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chexprt]
+
+@related
+
+- [Vex:chexpr]
+- [Vex:chexprf]

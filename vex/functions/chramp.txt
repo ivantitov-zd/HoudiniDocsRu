@@ -1,0 +1,24 @@
+= chramp =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет ramp параметр и возвращает его значение."""
+
+:usage: `float chramp(string channel, float ramppos)`
+:usage: `float chramp(string channel, float ramppos, float time)`
+:usage: `vector chramp(string channel, float ramppos)`
+:usage: `vector chramp(string channel, float ramppos, float time)`
+
+Вычисляет ramp параметр и возвращает его значение.
+
+Параметр `ramppos` ожидает позицию для вычисления значения.
+
+Параметр `time` может использоваться для вычисления в заданный момент времени, если ramp имеет анимацию.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chramp]

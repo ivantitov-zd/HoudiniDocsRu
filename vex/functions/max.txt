@@ -1,0 +1,37 @@
+= max =
+
+#type: vex
+#context: all
+#tags: math
+#group: math
+
+"""Возвращает наибольшее значение."""
+
+:usage: `int max(int value1, int value2, ...)`
+:usage: `float max(float value1, float value2, ...)`
+
+    Возвращает наибольший из аргументов.
+
+:usage: `<vector> max(<vector> value1, <vector> value2, ...)`
+
+    Возвращает вектор, где каждый компонент является наибольшим из всех соответствующих компонентов аргументов.
+
+:usage: `<type> max(<type> values[])`
+
+    Возвращает наибольшее значение в массиве.
+
+:usage: `float max(<vector> values)`
+
+    Возвращает наибольший из компонентов вектора.
+
+:usage: `<type> max(<type> value)`:
+    Возвращает аргумент.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/max]
+
+@related
+
+- [Vex:min]

@@ -1,0 +1,17 @@
+= qmultiply =
+
+#type: vex
+#context: all
+#tags: quaternion
+#group: math
+
+"""Перемножает два кватерниона и возвращает результат."""
+
+:usage: `vector4 qmultiply(vector4 q1, vector4 q2)`
+
+Перемножает два кватерниона и возвращает результат.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/qmultiply]

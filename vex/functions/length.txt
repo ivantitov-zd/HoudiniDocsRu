@@ -1,0 +1,42 @@
+= length =
+
+#type: vex
+#context: all
+#tags: vector, measure
+#group: math
+
+"""Возвращает длину вектора."""
+
+Для получения длины строки или количества элементов в массиве используйте функцию [Vex:len].
+
+
+:usage: `float length(float f)`
+
+    Просто возвращает заданное число `f`.
+
+:usage: `float length(vector2 v)`
+:usage: `float length(vector v)`
+:usage: `float length(vector4 v)`
+
+    Возвращает длину вектора `v`.
+    
+    Если вы хотите квадратную длину, использование функции [Vex:length2] быстрее, чем возведение в квадрат результата этой функции.
+
+
+@examples
+
+{{{
+#!vex
+length({1.0, 0, 0}) == 1.0;
+length({1.0, 1.0, 0}) == 1.41421;
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/length]
+
+@related
+
+- [Vex:length2]
+

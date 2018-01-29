@@ -1,0 +1,38 @@
+= product =
+
+#type: vex
+#context: all
+#tags: math
+#group: math
+
+"""Возвращает произведение списка чисел."""
+
+:usage: `float product(float n)`
+:usage: `int product(int n)`
+
+    Возвращает аргумент.
+
+:usage: `float product(vector2 v)`
+:usage: `float product(vector v)`
+:usage: `float product(vector4 v)`
+
+    Возвращает произведение компонентов вектора.
+
+:usage: `int product(int arr[])`
+:usage: `float product(float arr[])`
+
+    Возвращает произведение элементов массива.
+
+:usage: `<vector> product(<vector> arr[])`
+
+    Возвращает вектор, в котором компоненты являются произведениями соответствующих компонентов в векторах массива.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/product]
+
+@related
+
+- [Vex:sum]
+- [Vex:outerproduct]

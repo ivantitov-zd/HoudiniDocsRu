@@ -1,0 +1,26 @@
+= fit11 =
+
+#type: vex
+#context: all
+#tags: interp
+#group: interp
+
+"""Принимает значение в диапазоне `(-1, 1)` и меняет его на соответствующее значение в новом диапазоне."""
+
+:usage: `float fit11(float value, float nmin, float nmax)`
+:usage: `<vector> fit11(<vector> value, <vector> nmin, <vector> nmax)`
+
+    Принимает значение в диапазоне (-1, 1) и меняет его на соответствующее значение в новом диапазоне (<<nmin>>, <<nmax>>). Для векторов выполняется покомпонентно.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/fit11]
+
+@related
+
+- [Vex:clamp]
+- [Vex:fit]
+- [Vex:fit01]
+- [Vex:fit10]
+- [Vex:efit]

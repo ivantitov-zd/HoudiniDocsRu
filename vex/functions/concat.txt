@@ -1,0 +1,23 @@
+= concat =
+
+#type: vex
+#context: all
+#tags: string
+#group: string
+
+"""Объединяет все указанные строки в одну строку."""
+
+:usage: `string concat(string s1, string s2, ...)`
+
+Объединяет аргументы, формируя единую строку.
+
+Это эквивалентно `s1 + s2 + s3 ...`.  Однако функция `concat()` выполняется немного эффективнее при работе более чем с двумя строками.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/concat]
+
+@related
+
+- [Vex:join]

@@ -1,0 +1,36 @@
+= attribclass =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+
+"""Возвращает класс атрибута геометрии."""
+
+:usage: `string attribclass(<geometry>, string attribute_name)`
+
+[Include:_common#geometry]
+
+:arg:attribute_name:
+    Имя атрибута для чтения.
+
+    Если атрибуты с тем же именем существуют на нескольких "уровнях", возвращает _самый низкий уровень_, на котором существует атрибут. Например, если есть атрибут `foo` класса primitive и атрибут `foo` класса vertex, `attribclass(0, "foo")` вернет `"vertex"`.
+
+:returns:
+    Возвращает строку, описывающую класс (`"detail"`, `"prim"`, `"point"`, или `"vertex"`) заданного атрибута. Если атрибут не существует, возвращается пустая строка (`""`).
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/attribclass]
+
+
+@related
+
+- [Vex:addattrib]
+- [Vex:attrib]
+- [Vex:getattrib]
+- [Vex:attribtype]
+
+

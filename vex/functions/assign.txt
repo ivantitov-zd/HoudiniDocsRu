@@ -1,0 +1,22 @@
+= assign =
+
+#type: vex
+#context: all
+#tags: data
+#group: utility
+
+"""Эффективный способ извлечения компонентов вектора или матрицы в переменные типа float."""
+
+:usage: `void assign(float &c1, float &c2, vector2 source)`
+:usage: `void assign(float &c1, float &c2, float &c3, vector source)`
+:usage: `void assign(float &c1, float &c2, float &c3, float &c4, vector4 source)`
+:usage: `void assign(float &c1, float &c2, float &c3, float &c4, matrix2 source)`
+:usage: `void assign(float &c1, float &c2, float &c3, float &c4, float &c5, float &c6, float &c7, float &c8, float &c9, matrix3 source)`
+:usage: `void assign(float &c1, float &c2, float &c3, float &c4, float &c5, float &c6, float &c7, float &c8, float &c9, float &c10, float &c11, float &c12, float &c13, float &c14, float &c15, float &c16, matrix source)`
+
+Эта функция перезаписывает переменные типа `float` компонентами вектора или матрицы из последнего аргумента.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/assign]

@@ -1,0 +1,17 @@
+= luminance =
+
+#type: vex
+#context: all
+#tags: color, convert
+#group: color
+
+"""Вычисляет яркость цвета RGB, заданного параметрами."""
+
+:usage: `float luminance(const vector rgb)`
+:usage: `float luminance(const vector4 rgb)`
+:usage: `float luminance(const float r, float g, float b)`
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/luminance]

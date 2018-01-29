@@ -1,0 +1,35 @@
+= setpointgroup =
+
+#type: vex
+#context: all
+#tags: point, groups
+#group: groups
+
+"""Добавляет или удаляет точку в/из группы в геометрии."""
+
+:usage: `int setpointgroup(int geohandle, string name, int point_num, int value, string mode="set")`
+
+[Include:_common#geohandle_arg]
+
+:arg:name:
+    Имя группы для изменения.
+
+:arg:point_num:
+    Номер точки для добавления или удаления из группы.
+
+:arg:value:
+    `1` для добавления точки в группу, `0` для удаления точки из группы. Данное значение игнорируется, если `mode` равен `"toggle"`.
+
+:arg:mode:
+    Используйте `"set"` для установки членства точки в соответствии с `value`. Используйте `"toggle"` для переключения членства точки независимо от `value`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setpointgroup]
+
+@related
+
+- [/vex/groups]
+- [Vex:setprimgroup]
+- [Vex:setvertexgroup]

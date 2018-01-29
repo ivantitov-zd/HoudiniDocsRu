@@ -1,0 +1,52 @@
+= ch =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал (или параметр) и возвращает его значение."""
+
+:usage: `float ch(string channel)`
+:usage: `float ch(string channel, float time_in_sec)`
+:usage: `string ch(string channel)`
+:usage: `string ch(string channel, float time_in_sec)`
+
+:box:
+    #id: ch_functions
+    
+    Вычисляет канал (или параметр) и возвращает его значение. Время указывается в _секундах_, а не в кадрах. Если вы не укажете время, функция вернет значение в текущий момент времени.
+
+    Houdini имеет несколько функций для вычисления каналов/параметров разных типов.
+    
+    * Для получения числа или строки без необходимости знать тип параметра используйте [Vex:ch].
+    * Для получения числа используйте [Vex:chf].
+    * Для получения строки используйте [Vex:chs].
+    * Для целочисленных параметров используйте [Vex:chi]
+    * Для параметров с типа матрица используйте [Vex:ch3] или [Vex:ch4].
+    * Для параметра ramp используйте [Vex:chramp].
+
+
+@examples
+
+{{{
+#!vex
+// Получение значения перемещения box1 по оси X в момент 1.5 сек в анимации
+float tx = ch("/obj/geo1/box1/tx", 1.5)
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/ch]
+
+@related
+
+- [Vex:attrib]
+- [Vex:chf]
+- [Vex:chs]
+- [Vex:chi]
+- [Vex:chv]
+- [Vex:ch3]
+- [Vex:ch4]
+- [Vex:chramp]

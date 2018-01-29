@@ -1,0 +1,31 @@
+= pop =
+
+#type: vex
+#context: all
+#group: array
+
+"""Удаляет последний элемент массива и возвращает его."""
+
+:usage: `<type> pop(<type> &array[])`
+
+    Удаляет последний элемент массива и возвращает его.
+
+:usage: `<type> pop(<type> &array[]; int index)`
+
+    Удаляет из массива элемент по его `index` и возвращает его.
+    
+    Отрицательный индекс считается с конца списка, поэтому `pop(array, -2)` удаляет второй элемент с конца.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/pop]
+
+@related
+
+- [/vex/arrays]
+- [Vex:len]
+- [Vex:append]
+- [Vex:push]
+- [Vex:resize]
+

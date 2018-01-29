@@ -1,0 +1,26 @@
+= chexpr =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал с новым выражением сегмента."""
+
+:usage: `float chexpr(string channel, string new_expr_function)`
+
+
+Вычисляет канал с новым выражением сегмента и возвращает его значение.
+
+NOTE:
+    Данную функцию можно использовать для извлечения значений сегментов, наклонов и ускорений с использованием локальных переменных выражений каналов, таких как $IT, $OT, $IV, $OV.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chexpr]
+
+@related
+
+- [Vex:chexprf]
+- [Vex:chexprt]

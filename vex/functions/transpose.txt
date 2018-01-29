@@ -1,0 +1,18 @@
+= transpose =
+
+#type: vex
+#context: all
+#tags: matrix
+#group: math
+
+"""Транспонирует заданную матрицу."""
+
+:usage: `void transpose(<matrix> &m)`
+:usage: `<matrix> transpose(<matrix> m)`
+
+    [Транспонирует|Wp:Transpose] заданную матрицу.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/transpose]

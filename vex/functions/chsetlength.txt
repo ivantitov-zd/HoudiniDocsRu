@@ -1,0 +1,16 @@
+= chsetlength =
+
+#type: vex
+#context: chop
+#tags: chop
+#group: CHOP
+
+"""Устанавливает длину данных канала CHOP."""
+
+:usage: `int chsetlength(int clip_length)`
+    Устанавливает длину данных канала.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chsetlength]

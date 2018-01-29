@@ -1,0 +1,24 @@
+= rotate =
+
+#type: vex
+#context: all
+#tags: matrix
+#group: transform
+
+"""Применяет поворот к заданной матрице."""
+
+:usage: `void rotate(matrix2 &m, float amount)`
+:usage: `void rotate(matrix3 &m, float amount, vector axis)`
+:usage: `void rotate(matrix &m, float amount, vector axis)`
+
+Применяет поворот к заданной матрице. Угол должен быть задан в радианах, а ось должна быть нормализована.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/rotate]
+
+@related
+
+- [Vex:translate]
+- [Vex:scale]

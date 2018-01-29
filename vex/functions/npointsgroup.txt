@@ -1,0 +1,26 @@
+= npointsgroup =
+
+#type: vex
+#context: all
+#tags: count, point, groups
+#group: groups
+
+"""Возвращает количество точек в группе."""
+
+:usage: `int npointsgroup(<geometry>, string groupname)`
+
+[Include:_common#geometry]
+
+:arg:groupname:
+    Точное имя группы, а не шаблон.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/npointsgroup]
+
+@related
+
+- [Vex:expandpointgroup]
+- [Vex:inpointgroup]
+- [Vex:hasattrib]

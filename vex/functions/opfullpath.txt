@@ -1,0 +1,31 @@
+= opfullpath =
+
+#type: vex
+#context: all
+#group: nodes
+
+"""Возвращает полный путь для заданного относительного пути"""
+
+:usage: `string opfullpath(const string relative_path)`
+
+Возвращает полный путь для заданного относительного пути.
+
+Функция в настоящее время имеет смысл только в Houdini.
+
+@examples
+
+* `opfullpath(".")` - Вычислит полный путь до текущей ноды
+* `opfullpath("..")` - Вычислит полный путь до родительской ноды
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/opfullpath]
+
+@related
+
+- [Vex:split]
+- [Vex:opdigits]
+- [Vex:splitpath]
+- [Vex:relativepath]
+

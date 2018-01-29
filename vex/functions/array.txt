@@ -1,0 +1,30 @@
+= array =
+
+#type: vex
+#context: all
+#group: array
+
+"""Эффективно создает массив из своих аргументов."""
+
+:usage: `<type>[] array(...)`
+    Возвращает массив элементов заданного типа.
+
+Вы должны использовать приведение функции, чтобы гарантировать, что члены массива имеют правильный тип.
+
+@examples
+{{{
+#!vex
+vector v[] = vector[](array( 1, {1,2,3}, 3, s, t, Cl, P, N));
+float  f[] = float[](array(1, 2, s, t, length(P-L), length(N)));
+}}}
+
+:bubble:
+    #dir: right	
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/array]
+
+@related
+
+- [/vex/arrays]
+- [Vex:len]
+- [Vex:resize]

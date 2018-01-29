@@ -1,0 +1,21 @@
+= volumepostoindex =
+
+#type: vex
+#context: all
+#tags: volume
+#group: volume
+
+"""Преобразует позицию в индекс вокселя volume примитива."""
+
+:usage: `vector volumepostoindex(<geometry>, int primnum, vector position)`
+:usage: `vector volumepostoindex(<geometry>, string volumename, vector position)`
+
+:returns:
+    Возвращает индекс вокселя volume примитива в заданной позиции.
+    
+    Возвращает `0`, если `primnum` находится вне допустимого диапазона, геометрия недействительна или заданный примитив не является volume примитивом.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/volumepostoindex]

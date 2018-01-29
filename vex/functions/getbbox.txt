@@ -1,0 +1,39 @@
+= getbbox =
+
+#type: vex
+#context: all
+#tags: bbox, measure
+#group: measure
+
+"""Устанавливает два вектора в минимальный и максимальный углы ограничивающего бокса геометрии."""
+
+
+:usage: `void getbbox(<geometry>, vector &min, vector &max)`
+
+    Устанавливает два вектора в минимальный и максимальный углы ограничивающего бокса геометрии. Это выведет примитивный ограничивающий бокс, который включает в себя выступы примитивной сферы и объемов.
+
+:usage: `void getbbox(<geometry>, string primgroup, vector &min, vector &max)`
+
+    Выводит ограничивающий бокс примитивов заданной группы. При пустой строке <<primgroup>> включаются все примитивы. В данном случае строка может содержать шаблоны вроде `0-10` и `@Cd.x>0`.
+
+:usage: `void getbbox(vector &min, vector &max)`
+
+
+[Include:_common#geometry]
+
+    #status: deprecated
+WARNING:
+    Эта форма `getbbox` устарела и может быть удалена в будущем. При необходимости используйте другие формы.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/getbbox]
+
+@related
+
+- [Vex:getbbox_center]
+- [Vex:getbbox_max]
+- [Vex:getbbox_min]
+- [Vex:getbbox_size]
+- [Vex:getpointbbox]

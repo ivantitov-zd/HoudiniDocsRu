@@ -1,0 +1,45 @@
+= insert =
+
+#type: vex
+#context: all
+#tags: array, string
+#group: array
+
+"""Вставляет элемент, массив или строку в массив или строку."""
+
+:usage: `void insert(string &str; int index; string value)`
+
+    Вставляет `value` в строку `str` в заданный `index`.
+    
+    Если `index` больше длины строки, `value` просто будет добавлено к существующей строке `str`.
+
+:usage: `void insert(<type> &array[]; int index; <type> value)`
+:usage: `void insert(<type> &array[]; int index; <type> values[])`
+
+    Вставляет элемент или элементы в `array`, начиная с заданного `index`.
+    
+*  Если `index` больше текущей длины `array`, функция заполняет пробелы неинициализированными значениями (например, `0` или пустой строкой).
+
+*  Если `index` отрицательный, он отсчитывается от _конца_ строки или массива, в который вставляется элемент. (Если отрицательное число больше длины строки или массива, оно ограничивается до `0`.)
+
+    Например, чтобы вставить число `100` во вторую позицию с конца массива:
+    
+    {{{
+    #!vex
+    int numbers[] = array(1, 2, 3, 4, 5, 6);
+    insert(numbers, -1, 100) // == {1, 2, 3, 4, 5, 100, 6}
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/insert]
+
+@related
+
+- [/vex/arrays]
+- [Vex:len]
+- [Vex:push]
+- [Vex:append]
+- [Vex:resize]
+

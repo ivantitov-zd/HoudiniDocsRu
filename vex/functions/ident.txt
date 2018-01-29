@@ -1,0 +1,17 @@
+= ident =
+
+#type: vex
+#context: all
+#tags: matrix
+#group: math
+
+"""Возвращает единичную матрицу."""
+
+:usage: `<matrix> ident()`
+
+    Возвращает единичную матрицу заданного типа.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/ident]	

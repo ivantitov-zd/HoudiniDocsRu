@@ -1,0 +1,60 @@
+= attribtype =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+
+"""Возвращает тип атрибута геометрии."""
+
+Если вы знаете класс атрибута до выполнения, использование [Vex:detailattribtype], [Vex:primattribtype], [Vex:pointattribtype], или [Vex:vertexattribtype] может быть быстрее.
+
+:usage: `int attribtype(<geometry>, string attribclass, string attribute_name)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribclass]
+
+:returns:
+    Возвращает число, которое обозначает тип атрибута:
+
+    `-1` |
+        Атрибут не найден или имеет неизвестный тип.
+
+    `0` |
+        Целое число (Integer)
+    `1` |
+        Число с плавающей запятой или вектор (Float или vector)
+    `2` |
+        Строка (String)
+    `3` |
+        Массив или кортеж целых чисел (Array of integers (or integer tuples))
+    `4` |
+        Массив или кортеж чисел с плавающей запятой (Array of floats (or float tuples))
+    `5` |
+        Массив строк (Array of strings).
+
+
+@examples
+
+{{{
+#!vex
+
+// Получает тип атрибута позиции из файла "defgeo.bgeo"
+int type = attribtype("defgeo.bgeo", "point", "P");
+
+}}}
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/attribtype]
+
+
+@related
+
+- [Vex:addattrib]
+- [Vex:attrib]
+- [Vex:getattrib]
+- [Vex:attribsize]

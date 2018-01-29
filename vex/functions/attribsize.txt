@@ -1,0 +1,52 @@
+= attribsize =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+
+"""Возвращает размер атрибута геометрии."""
+
+Если вы знаете класс атрибута до выполнения, использование [Vex:detailattribsize], [Vex:primattribsize], [Vex:pointattribsize], или [Vex:vertexattribsize] может быть быстрее.
+
+:usage: `int attribsize(<geometry>, string attribclass, string attribute_name)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribclass]
+
+:returns:
+    Возвращает размер _типа_ атрибута.
+
+    * Для типа `vector` возвращает количество компонентов.
+
+    * Возвращает `1` для типов integer, float, или string.
+
+    * Для массивов возвращает размеры кортежей в массиве. Размер кортежа контролируется параметром __Size__ в ноде [Attribute Create|Node:sop/attribcreate].
+
+    Возвращает `0`, если атрибут не существует.
+
+* Данная функция работает с _типом_ атрибута. Она не возвращает размер _значения_ атрибута. Вы не можете использовать эту функцию для получения длины строки или количества значений в массиве.
+
+
+@examples
+
+{{{
+#!vex
+// Get the size of the position attribute of "defgeo.bgeo"
+int size = attribsize("defgeo.bgeo", "point", "P");
+}}}
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/attribsize]
+
+
+@related
+
+- [Vex:addattrib]
+- [Vex:attrib]
+- [Vex:getattrib]
+- [Vex:attribtype]

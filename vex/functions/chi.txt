@@ -1,0 +1,28 @@
+= chi =
+
+#type: vex
+#context: all
+#tags: utility
+#group: nodes
+
+"""Вычисляет канал (или параметр) и возвращает его значение."""
+
+:usage: `int chi(string channel)`
+:usage: `int chi(string channel, float time)`
+
+[Include:ch#ch_functions]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/chi]
+
+@related
+
+- [Vex:ch]
+- [Vex:chf]
+- [Vex:chv]
+- [Vex:chs]
+- [Vex:ch3]
+- [Vex:ch4]
+- [Vex:chramp]

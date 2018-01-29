@@ -1,0 +1,31 @@
+= length2 =
+
+#type: vex
+#context: all
+#tags: vector, measure
+#group: math
+
+"""Возвращает квадрат длины вектора."""
+
+:usage: `float length2(vector2 v)`
+:usage: `float length2(vector v)`
+:usage: `float length2(vector4 v)`
+
+    Возвращает квадрат длины вектора `v`.
+
+
+@examples
+
+{{{
+#!vex
+length2({0.5, 0.75, 0}) == 0.8125;
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/length2]
+
+@related
+
+- [length|Vex:length]

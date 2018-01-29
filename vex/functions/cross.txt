@@ -1,0 +1,21 @@
+= cross =
+
+#type: vex
+#context: all
+#tags: math, vector
+#group: math
+
+"""Возвращает результат вычисления векторного произведения между двумя векторами."""
+
+:usage: `vector cross(vector a, vector b)`
+
+Возвращает [векторное произведение|Wp:Cross_product] между двумя векторами.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/cross]
+
+@related
+
+- [Vex:dot]

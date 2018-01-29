@@ -1,0 +1,36 @@
+= append =
+
+#type: vex
+#context: all
+#group: array
+
+"""Добавляет элемент в массив или строку."""
+
+:usage: `void append(string &array; string value)`
+
+    Добавляет вторую строку к первой.
+
+:usage: `void append(<type> &array[]; <type> value)`
+
+    Добавляет заданное значение в конец `массива`. Увеличивает размер массива на 1. Это то же самое, что [push(array, value)|Vex:push].
+
+:usage: `void append(<type> &array[]; <type> values[])`
+
+    Объединяет значения из массива `values` в конец `array`. Увеличивает размер массива на `len(values)`. Это то же самое, что [push(array, values)|Vex:push].
+
+:tip:
+    #id: array_set_item
+    
+    Вы можете установить отдельный элемент в массиве с помощью `array[n] = x`.
+    
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/append]
+
+@related
+
+- [/vex/arrays]
+- [Vex:len]
+- [Vex:push]
+- [Vex:resize]

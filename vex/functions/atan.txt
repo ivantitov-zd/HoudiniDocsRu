@@ -1,0 +1,32 @@
+= atan =
+
+#type: vex
+#context: all
+#tags: math, trig
+#group: math
+
+"""Возвращает арктангенс аргумента."""
+
+:usage: `float atan(float n)`
+
+    Возвращает [арктангенс|Wp:Inverse_trigonometric_functions#Principal_values] `n`, где `n` в радианах. Возвращаемое значение находится в диапазоне от -&pi;/2 до &pi;/2.
+
+:usage: `float atan(float y, float x)`
+
+    Псевдоним функции [Vex:atan2].
+
+:usage: `<vector> atan(<vector> v)`
+
+    Для векторов выполняется покомпонентно.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/atan]
+
+@related
+
+- [Vex:atan2]
+- [Vex:tan]
+- [Vex:sin]
+- [Vex:cos]

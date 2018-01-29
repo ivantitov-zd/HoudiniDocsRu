@@ -1,0 +1,19 @@
+= determinant =
+
+#type: vex
+#context: all
+#tags: matrix
+#group: math
+
+"""Вычисляет детерминант (определитель) матрицы."""
+
+:usage: `float determinant(matrix2 m)`
+:usage: `float determinant(matrix3 m)`
+:usage: `float determinant(matrix m)`
+
+Смотрите [детерминант матрицы|Wp:Determinant].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/determinant]

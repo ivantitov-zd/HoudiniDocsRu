@@ -1,0 +1,100 @@
+﻿= VEX кулинарная книга =
+
+"""Примеры и советы по программированию на VEX."""
+
+== VEX примеры == (vex_cbook_eg)
+
+    Чтобы увидеть VEX реализацию основанного на VEX оператора:
+
+    steps>>
+        # Добавьте оператор (ноду) в вашу сеть.
+
+        # Откройте меню (ПКМ) и выберете __Type Properties__ (Свойства типа).
+
+    Другой пример исходного кода VEX доступен в Интернете.
+
+== Constant Color COP == (vex_cbook_ccolor)
+
+    Вы можете написать функцию "Constant Color COP" следующим образом:
+
+    {{{
+    #!vex
+    cop
+    constant(vector clr=1; float alpha=1)
+    {
+    R = clr.r;
+    G = clr.g;
+    B = clr.b;
+    A = alpha;
+    }
+    }}}
+    Тем не менее, по возможности вы должны использовать высокоэффективную функцию [assign|Vex:assign] для присвоения.
+
+    {{{
+    #!vex
+    cop
+    constant(vector clr=1; float alpha=1)
+    {
+    assign(R, G, B, clr);
+    A = alpha;
+    }
+    }}}
+== Функции пользовательского шума == (vex_cbook_unoise)
+
+    В этом примере определяются две пользовательские функции, которые генерируют нормализованные множественные октавы [шума Перлина|Wp:Perlin_noise].
+
+    {{{
+    #!vex
+    float
+    myfperlin3d(vector pos; int octaves; float rough)
+    {
+    int    i;
+    float    nval;
+    vector    pp;
+    float    result, sum, scale;
+    // Поскольку параметры передаются по ссылке, а мы на самом деле
+    // не хотим изменить значение параметра. Поэтому мы копируем его
+    // во временную переменную.
+    pp = pos;
+    scale = 1;
+    sum = 0;
+    result = 0;
+    for (i = 0; i <= octaves; i++)
+    {
+        result += noise(pp);
+        sum += scale;
+        pp *= 2;
+        scale *= rough;
+    }
+    return result / sum;
+    }
+    float
+    myfperlin1d(float pos; int octaves; float rough)
+    {
+    int    i;
+    float    nval;
+    float    pp;
+    float    result, sum, scale;
+    // Поскольку параметры передаются по ссылке, а мы на самом деле
+    // не хотим изменить значение параметра. Поэтому мы копируем его
+    // во временную переменную.
+    pp = pos;
+    scale = 1;
+    sum = 0;
+    result = 0;
+    for (i = 0; i <= octaves; i++)
+    {
+        result += noise(pp);
+        sum += scale;
+        pp *= 2;
+        scale *= rough;
+    }
+    return result / sum;
+    }
+    }}}
+    Можно использовать макросы #define для кодирования содержимого функции и просто вызвать макрос для генерации векторных или других измерений шума.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/cookbook]

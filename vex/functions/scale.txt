@@ -1,0 +1,24 @@
+= scale =
+
+#type: vex
+#context: all
+#tags: matrix
+#group: transform
+
+"""Масштабирует заданную матрицу в трёх направлениях одновременно (X, Y, Z - задаются компонентами scale_vector)."""
+
+:usage: `void scale(matrix2 &m, vector2 scale_vector)`
+:usage: `void scale(matrix &m, vector scale_vector)`
+:usage: `void scale(matrix3 &m, vector scale_vector)`
+
+    Масштабирует матрицу в трёх направлениях одновременно по факторам в векторе. Это изменяет матрицу на месте, а не возвращает новую матрицу.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/scale]
+
+@related
+
+- [Vex:translate]
+- [Vex:rotate]

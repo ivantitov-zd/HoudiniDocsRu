@@ -1,0 +1,37 @@
+= addpointattrib =
+
+#type: vex
+#context: all
+#tags: attrib, point, create
+#group: attrib
+
+"""Добавляет атрибут класса point к геометрии."""
+
+Если вы не знаете класс атрибута до выполнения, используйте [Vex:addattrib].
+
+:usage: `int addpointattrib(int geohandle, string name, <type> defvalue)`
+:usage: `int addpointattrib(int geohandle, string name, <type> defvalue[])`
+
+    Добавляет атрибут класса point к заданной геометрии.
+
+:usage: `int addpointattrib(int geohandle, string name, <type> defvalue, string typeinfo)`
+:usage: `int addpointattrib(int geohandle, string name, <type> defvalue[], string typeinfo)`
+
+    Добавляет атрибут класса point с заданным преобразованием. Смотрите [Vex:attribtypeinfo] для получения дополнительной информации.
+
+[Include:adddetailattrib#info]
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/addpointattrib]
+
+
+@related
+
+- [Vex:addattrib]
+- [Vex:adddetailattrib]
+- [Vex:addprimattrib]
+- [Vex:addvertexattrib]
+

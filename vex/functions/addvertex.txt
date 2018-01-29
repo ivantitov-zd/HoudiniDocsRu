@@ -1,0 +1,31 @@
+= addvertex =
+
+#type: vex
+#context: all
+#tags: vertex, create
+#group: geo
+
+"""Добавляет вершину к примитиву в геометрии."""
+
+:usage: `int addvertex(int geohandle, int prim_num, int point_num)`
+
+[Include:_common#geohandle_arg]
+
+:arg:prim_num:
+    Номер примитива для добавления вершины.
+
+:arg:point_num:
+    Номер точки для подключения новой вершины.
+
+:returns:
+    Возвращает _линейный_ индекс вершины или `-1`, если вершина не может быть добавлена. Вы можете использовать возвращаемое значение в функции [Vex:setvertexattrib] для установки атрибутов в новой вершине, однако это может быть не конечный индекс вершины.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/addvertex]
+
+@related
+
+- [Vex:addprim]
+- [Vex:addpoint]

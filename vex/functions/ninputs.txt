@@ -1,0 +1,17 @@
+= ninputs =
+
+#type: vex
+#context: chop
+#tags: utility
+#group: CHOP
+
+"""Возвращает количество входов."""
+
+:usage: `int ninputs()`
+
+Возвращает количество входов текущей ноды.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/ninputs]

@@ -1,0 +1,36 @@
+= setprimgroup =
+
+#type: vex
+#context: all
+#tags: prim, groups
+#group: groups
+
+"""Добавляет или удаляет примитив в/из группы в геометрии."""
+
+:usage: `int setprimgroup(int geohandle, string name, int prim_num, int value, string mode="set")`
+
+[Include:_common#geohandle_arg]
+
+:arg:name:
+    Имя группы для изменения.
+
+:arg:prim_num:
+    Номер примитива для добавления или удаления из группы.
+
+:arg:value:
+    `1` для добавления примитива в группу, `0` для удаления примитива из группы. Данное значение игнорируется, если `mode` равен `"toggle"`.
+
+:arg:mode:
+    Используйте `"set"` для установки членства примитива в соответствии с `value`. Используйте `"toggle"` для переключения членства примитива независимо от `value`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setprimgroup]
+
+@related
+
+- [/vex/groups]
+- [Vex:setpointgroup]
+- [Vex:setvertexgroup]
+

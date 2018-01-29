@@ -1,0 +1,23 @@
+= volumeindexv =
+
+#type: vex
+#context: all
+#tags: volume
+#group: volume
+
+"""Возвращает векторное значение определенного вокселя."""
+
+:usage: `vector volumeindexv(<geometry>, int primnum, vector voxel)`
+:usage: `vector volumeindexv(<geometry>, string volumename, vector voxel)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает векторное значение определенного вокселя в volume примитиве.
+    
+    Возвращает `0`, если `primnum` находится вне допустимого диапазона, геометрия недействительна или заданный примитив не является векторным volume примитивом.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/volumeindexv]

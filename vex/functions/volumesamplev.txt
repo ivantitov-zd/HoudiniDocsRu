@@ -1,0 +1,23 @@
+= volumesamplev =
+
+#type: vex
+#context: all
+#tags: volume
+#group: volume
+
+"""Вычисляет (сэмплирует) векторное значение volume примитива в заданной позиции."""
+
+:usage: `vector volumesamplev(<geometry>, int primnum, vector pos)`
+:usage: `vector volumesamplev(<geometry>, string volumename, vector pos)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает вычисленное (сэмплированное) векторное значение volume примитива в заданной позиции.
+    
+    Возвращает `0`, если `primnum` находится вне допустимого диапазона, геометрия недействительна или заданный примитив не является векторным volume примитивом.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/volumesamplev]
