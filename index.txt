@@ -1,0 +1,120 @@
+= Houdini Help Ru =
+
+#display: notitle inverted notoc
+
+:billboard:
+    #image: /images/billboards/amarok.png
+
+    table width="100%" style="border: none;">>
+        tr>>
+            td width="80%" style="text-align: right; border-right: 1px solid rgba(255,255,255,0.25); padding: 1em">>
+                <h1 style="font-size: 3em; margin: 0; padding: 0;">
+					<span style="font-weight: 100">Справка по </span>
+                    <span style="font-weight: 800">HOUDINI</span>
+                </h1>
+            
+                <p style="margin-top: 0.5em">Инструментарий процедурной анимации и не только</p>
+            td style="padding: 1.5em">>
+                <span style="font-size: 2em">%{HOUDINI_MAJOR_VERSION}.%{HOUDINI_MINOR_VERSION}</span>
+
+
+
+:col:
+    * [Vimeo|https://vimeo.com/goprocedural/videos]
+        #glyph: fa-vimeo-square
+    * [YouTube|https://www.youtube.com/houdini3d]
+        #glyph: fa-youtube
+    * [VK Group|https://vk.com/houdinihelpru]
+        #glyph: fa-vk
+    * [Telegram Channel|https://telegram.me/joinchat/BbU_30E1zLoWMr04k4rwQQ]
+        #glyph: fa-telegram
+:col:
+    * [SideFX.com|https://sidefx.com/]
+        #glyph: fa-globe
+    * [Houdini Forum|http://sidefx.com/forum]
+        #glyph: fa-comments
+    * [ODFORCE Forum|https://forums.odforce.net/]
+        #glyph: fa-comments
+    * [Unofficial Houdini Discord server|https://discord.gg/b8U5Hdy]
+        #glyph: fa-comments-o
+
+
+@subtopics
+#display: notitle
+
+:col:
+    == Начало работы ==
+
+    ::[Что нового в Houdini 16.5|news/16_5/]
+    ::[Основы|basics/]
+    ::[shelf/]
+    ::[Сети и параметры|network/]
+    ::[Примеры|examples/]
+    ::[help/]
+
+    == Использование Houdini ==
+
+    ::[Геометрия|model/]
+    ::[Копирование и instancing|copy/]
+    ::[Анимация|anim/]
+    ::[Персонаж|character/]
+    ::[Рендеринг|render/]
+    ::[Материалы|shade/]
+    ::[Композитинг|composite/]
+    ::[Цифровые ассеты (Digital Assets)|assets/]
+    ::[Импорт и экспорт|io/]
+    ::[Просмотрщик изображений MPlay|mplay/]
+
+    == Динамика ==
+
+    ::[Частицы (Particles)|dopparticles/]
+    ::[Динамика (Dynamics)|dyno/]
+    ::[Пиротехника (Pyro)|pyro/]
+    ::[Жидкости (Fluids)|fluid/]
+    ::[Сыпучие симуляции (Grains)|grains/]
+    ::[Толпа (Crowd)|crowds/]
+    ::[Волосы и Шерсть (Hair and Fur)|fur/]
+    ::[Деформирующиеся объекты (FEM)|finiteelements/]
+    ::[Ткань (Cloth)|cloth/]
+
+:col:
+    == Ноды ==
+
+    ::[Ноды объектов (OBJ)|nodes/obj/]
+    ::[Ноды геометрии (SOP)|nodes/sop/]
+    ::[Ноды динамики (DOP)|nodes/dop/]
+    ::[Ноды визуального программирования на языке VEX (VOP)|nodes/vop/]
+    ::[Ноды рендеринга (ROP)|nodes/out/]
+    ::[Ноды анимационных каналов (CHOP)|nodes/chop/]
+    ::[Ноды композитинга (COP)|nodes/cop2/]
+
+    == Справочная информация ==
+
+    ::[Меню|ref/menus]
+    ::[Панели просмотра|ref/views/]
+    ::[Панели|ref/panes/]
+    ::[Окна|ref/windows/]
+    ::[Автономные утилиты в комплекте с Houdini|ref/utils/]
+    ::[Написание скриптов на Python|hom/]
+    ::[Функции выражений|expressions/]
+    ::[Команды языка HScript|commands/]
+    ::[Язык VEX|vex/]
+    ::[Свойства|props/]
+    ::[Python панели|pypanel/]
+    ::[Галереи|gallery/]
+<!--
+:box:
+    #display: notintoc
+    
+    :col:
+        * [Licenses|licenses/]
+            #glyph: fa-legal
+    :col:
+        * [Credits|credits]
+            #glyph: fa-users
+-->
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/]
