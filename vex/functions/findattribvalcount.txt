@@ -1,0 +1,33 @@
+= findattribvalcount =
+
+#type: vex
+#context: all
+#tags: attrib, search
+#group: attrib
+
+"""Возвращает число элементов, в которых целочисленный или строковый атрибут имеет определенное значение."""
+
+:usage: `int findattribvalcount( <geometry>, string class, string attribute_name, int value)`
+:usage: `int findattribvalcount( <geometry>, string class, string attribute_name, string value)`
+
+Возвращает число элементов, в которых целочисленный или строковый атрибут имеет определенное значение.
+
+[Include:_common#geometry]
+
+:arg:class:
+    Какого класса атрибут: `detail`, `primitive`, `point`, или `vertex`.
+
+:arg:attribute_name:
+    Имя атрибута, например `P` или `Cd`.
+
+:arg:value:
+    Значение для поиска. Должно быть того же типа, что атрибут.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/findattribvalcount]
+
+@related
+
+- [Vex:findattribval]

@@ -1,0 +1,66 @@
+= findattribval =
+
+#type: vex
+#context: all
+#tags: attrib, search
+#group: attrib
+
+"""Находит примитив/точку/вершину, которая имеет определенное значение атрибута."""
+
+:usage: `int findattribval( <geometry>, string attribclass, string attribute_name, int|string value, int which=0)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribclass]
+
+[Include:_common#attribname]
+ 
+:arg:value:
+    Значение, которое необходимо найти в атрибуте.
+
+:arg:which:
+    Контролирует, который элемент будет возвращен в том случае, когда несколько элементов имеют заданное значение атрибута.
+    
+    Если вы ищете несколько элементов с одинаковым значением атрибута, можете использовать функцию [Vex:findattribvalcount] для получения общего количества совпадений, а затем перебрать их, увеличивая значение данного (`which`) аргумента в цикле. Смотрите примеры ниже.
+
+:returns:
+    Возвращает номер первой найденной точки/примитива/вершины, в которой значение указанного атрибута равно `value`. Возвращает `-1`, если ни один элемент не имеет заданного значения атрибута.
+
+TIP:
+    Наиболее распространенные случаи применения (поиск точки/примитива по его `name` или `id` атрибуту) имеют более простые в использовании функции-обёртки: [Vex:nametopoint], [Vex:nametoprim], [Vex:idtopoint] и [Vex:idtoprim].
+
+* Вы можете искать только целочисленные или строковые значения.
+
+
+@examples
+
+:box:Нахождение примитива с `@id` == 10
+    {{{
+    #!vex
+    int prim_num = findattribval(0, "prim", "id", 10);
+    // Note: you can use idtoprim(0, 10) instead
+    }}}
+
+:box:Нахождение всех точек с `@age` == 10
+    {{{
+    #!vex
+    int count = findattribvalcount(0, "point", "age", 10);
+    int point_num;
+    for (int i = 0; i < count; i++) {
+        point_num = findattribval(0, "point", "age", 10, i);
+        // ...делаем что-нибудь с точкой...
+    }
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/findattribval]
+
+@related
+
+- [Vex:nametopoint]
+- [Vex:nametoprim]
+- [Vex:idtopoint]
+- [Vex:idtoprim]
+- [Vex:findattribvalcount]

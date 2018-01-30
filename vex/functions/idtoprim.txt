@@ -1,0 +1,31 @@
+= idtoprim =
+
+#type: vex
+#context: all
+#tags: search, prim
+#group: attrib
+
+"""Находит примитив по атрибуту id."""
+
+:usage: `int idtoprim(<geometry>, int id)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает номер примитива с заданным значением атрибута `id` или `-1`, если ни один из примитивов не имеет данного значения.
+
+    Если геометрия не имеет атрибута `id`, номера примитивов будут использованы в качестве идентификаторов. В этом случае функция вернет заданное значение `id`, если оно не больше, чем количество примитивов в геометрии. В противном случае вернет `-1`.
+
+TIP:
+    Используйте функцию [Vex:nametoprim] для нахождения примитива по его атрибуту `name`. Для нахождения примитива по значению произвольного целочисленного или строкового атрибута используйте функцию [Vex:findattribval].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/idtoprim]
+
+@related
+
+- [Vex:nametoprim]
+- [Vex:idtopoint]
+- [Vex:findattribval]

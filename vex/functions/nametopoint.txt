@@ -1,0 +1,31 @@
+= nametopoint =
+
+#type: vex
+#context: all
+#tags: search, point
+#group: attrib
+
+"""Находит точку по атрибуту name."""
+
+:usage: `int nametopoint(<geometry>, string name)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает номер точки с заданным значением атрибута `name` или `-1`, если ни одна из точек не имеет данного значения или геометрия не имеет атрибута `name`.
+
+TIP:
+    Используйте функцию [Vex:idtopoint] для нахождения точки по её атрибуту `id`. Для нахождения точки по значению произвольного целочисленного или строкового атрибута используйте функцию [Vex:findattribval].
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/nametopoint]
+
+
+@related
+
+- [Vex:idtopoint]
+- [Vex:nametoprim]
+- [Vex:findattribval]
