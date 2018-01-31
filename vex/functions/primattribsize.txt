@@ -1,0 +1,22 @@
+= primattribsize =
+
+#type: vex
+#context: all
+#tags: prim, attrib
+#group: attrib
+
+"""Возвращает размер атрибута класса primitive."""
+
+:usage: `int primattribsize(<geometry>, string attribute_name)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает `0`, если атрибут не существует.
+
+Смотрите [Vex:attribsize] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/primattribsize]

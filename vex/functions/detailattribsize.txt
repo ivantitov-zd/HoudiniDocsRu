@@ -1,0 +1,22 @@
+= detailattribsize =
+
+#type: vex
+#context: all
+#tags: attrib, detail
+#group: attrib
+
+"""Возвращает размер атрибута класса detail."""
+
+:usage: `int detailattribsize(<geometry>, string attribute_name)`
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает `0`, если атрибут не существует.
+
+Смотрите [Vex:attribsize] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/detailattribsize]
