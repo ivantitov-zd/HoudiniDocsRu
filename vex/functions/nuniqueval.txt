@@ -1,0 +1,34 @@
+= nuniqueval =
+
+#type: vex
+#context: all
+#tags: search, attrib
+#group: attrib
+
+"""Возвращает количество уникальных значений из целочисленного или строкового атрибута."""
+
+:usage: `int nuniqueval( <geometry>, string attribclass, string attribute_name)`
+
+Возвращает количество _уникальных_ для всех значений атрибута. Вы можете использовать функцию [Vex:uniqueval] для перебора уникальных значений.
+
+[Include:_common#geometry]
+
+[Include:_common#attribclass]
+
+
+@examples
+
+:box:Проверяет, являются ли все значения атрибута точек `foo` уникальными
+    {{{
+    #!vex
+    int test = nuniqueval(0, "point", "foo") == npoints(0)
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/nuniqueval]
+
+@related
+
+- [Vex:uniqueval]

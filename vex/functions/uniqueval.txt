@@ -1,0 +1,46 @@
+= uniqueval =
+
+#type: vex
+#context: all
+#tags: search, attrib
+#group: attrib
+
+"""Возвращает одно из множества уникальных значений целочисленного или строкового атрибута."""
+
+:usage: `int|string uniqueval( <geometry>, string attribclass, string attribute_name, int which)`
+
+Если любые точки/примитивы/вершины геометрии имеют одинаковое значение заданного атрибута, набор _уникальных_ значений будет меньше, чем общее количество точек/примитивов/вершин. Эта функция позволяет выполнять перебор множества уникальных значений.
+
+Данная функция работает только со строковыми и целочисленными атрибутами.
+
+[Include:_common#geometry]
+
+[Include:_common#attribclass]
+
+[Include:_common#attribname]
+
+:arg:which:
+    Определяет, которое из уникальных значений нужно вернуть. Используйте функцию [Vex:nuniqueval] для получения количества уникальных значений в атрибуте.
+
+
+@examples
+
+:box:Перебирает уникальные значения строкового атрибута точек `@foo`
+    {{{
+    #!vex
+    int count = nuniqueval(0, "point", "foo");
+    for (int i = 0; i < count; i++) {
+        string val = uniqueval(0, "point", "foo", i);
+        // ...do something with the value...
+    }
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/uniqueval]
+
+@related
+
+- [Vex:nuniqueval]
+
