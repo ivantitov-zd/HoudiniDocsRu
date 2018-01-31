@@ -29,22 +29,22 @@ VEX основан на языке C, но заимствует идеи как 
 
 == Язык ==
 
-:: [Справочная информация по языку VEX|lang]
-:: [Операторы - циклы и управление потоком|statement]
-:: [Массивы|arrays]
+:: [lang]
+:: [statement]
+:: [arrays]
 :: [Компилятор VEX (vcc)|vcc]
 :: [Псевдокомментарии компилятора VEX (Pragmas)|pragmas]
-:: [Вызов шейдеров|shadercalls]
+:: [shadercalls]
 
 == Следующие шаги ==
 
 :: [Использование VEX выражений|snippets]
-:: [Функции геометрии|geometry]
-:: [Чтение атрибутов|attrib_suite]
+:: [geometry]
+:: [attrib_suite]
 :: [Написание PBR шейдеров на VEX|pbr]
-:: [Кулинарная книга по VEX|cookbook]
+:: [cookbook]
 :: [Полурёбра (half-edges)|halfedges]
-:: [Шум и случайность|random]
+:: [random]
 :: [Создание SOP или POP нод с помощью VOP или VEX|sopnodes]
 :: [VOP структуры|vop_structs]
 :: [Использование утверждений в VEX|assertions]
@@ -52,5 +52,5 @@ VEX основан на языке C, но заимствует идеи как 
 == Справочная информация ==
 
 :: [Контексты VEX|contexts/]
-:: [Функции VEX|functions/]
+:: [functions/]
 :: [Работа со строками|strings]

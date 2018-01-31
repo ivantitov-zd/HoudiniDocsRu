@@ -1,0 +1,33 @@
+= detail =
+
+#type: vex
+#context: all
+#tags: attrib, detail
+#group: attrib
+#redirect: ../attrib_suite#detail
+
+"""Читает значение атрибута класса detail из геометрии."""
+
+:usage: `<type> detail(<geometry>, string attribute_name, int ignored=0)`
+:usage: `<type>[] detail(<geometry>, string attribute_name, int ignored=0)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribname]
+
+:arg:ignored:
+    Последний аргумент всегда игнорируется. Этот аргумент необходим для того, чтобы вы могли изменить имя функций point/prim/vertex на detail без изменения аргументов (у этих функций в этом месте находится номер элемента).
+
+:returns:
+    Возвращает значение заданного атрибута или `0`, если чтение атрибута не удалось.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/detail]
+
+@related
+
+- [Vex:point]
+- [Vex:prim]
+- [Vex:vertex]

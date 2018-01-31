@@ -1,0 +1,37 @@
+= primattrib =
+
+#type: vex
+#context: all
+#tags: prim, attrib
+#group: attrib
+#redirect: ../attrib_suite#primattrib
+
+"""Читает значение атрибута класса primitive из геометрии и выводит флаг успеха/неудачи операции чтения."""
+
+:usage: `<type> primattrib(<geometry>, string attribute_name, int primnumber, int &success)`
+:usage: `<type>[] primattrib(<geometry>, string attribute_name, int primnumber, int &success)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribname]
+
+:arg:primnumber:
+    Номер примитива для чтения атрибута.
+
+:arg:&success:
+    Функция запишет `1` в данную переменную, если атрибут был успешно прочитан, иначе запишет `0`.
+
+:returns:
+    В случае успешного чтения возвращает значение атрибута в заданном примитиве или `0`, если чтение не было удачным или примитив не существует.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/primattrib]
+
+@related
+
+- [Vex:getattrib]
+- [Vex:detailattrib]
+- [Vex:pointattrib]
+- [Vex:vertexattrib]

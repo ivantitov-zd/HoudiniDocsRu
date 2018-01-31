@@ -1,0 +1,41 @@
+= vertexattrib =
+
+#type: vex
+#context: all
+#tags: vertex, attrib
+#group: attrib
+#redirect: ../attrib_suite#vertexattrib
+
+"""Читает значение атрибута класса vertex из геометрии и выводит флаг успеха/неудачи операции чтения."""
+
+:usage: `<type> vertexattrib(<geometry>, string attribute_name, int linear_vertex_index, int &success)`
+:usage: `<type>[] vertexattrib(<geometry>, string attribute_name, int linear_vertex_index, int &success)`
+
+    В отличие от [Vex:vertex], данная функция не имеет версии, которая работает через номер примитива и номер его вершины. Если вам необходимо получить линейный индекс вершины, используйте функцию [Vex:vertexindex].
+
+[Include:_common#geometry]
+
+[Include:_common#attribname]
+
+:arg:linear_vertex_index:
+    Линейный номер вершины.
+    
+    Чтобы преобразовать номер примитива и номер вершины в рамках этого примитива в линейный индекс для параметра `linear_vertex_index`, используйте функцию [Vex:vertexindex].
+
+:arg:&success:
+    Функция запишет `1` в данную переменную, если атрибут был успешно прочитан, иначе запишет `0`.
+
+:returns:
+    В случае успешного чтения возвращает значение атрибута в заданной вершине или `0`, если чтение не было удачным или вершина не существует.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertexattrib]
+
+@related
+
+- [Vex:getattrib]
+- [Vex:detailattrib]
+- [Vex:pointattrib]
+- [Vex:primattrib]

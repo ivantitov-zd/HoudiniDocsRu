@@ -1,0 +1,33 @@
+= point =
+
+#type: vex
+#context: all
+#tags: point, attrib
+#group: attrib
+#redirect: ../attrib_suite#point
+
+"""Читает значение атрибута класса point из геометрии."""
+
+:usage: `<type> point(<geometry>; string attribute_name; int pointnumber)`
+:usage: `<type>[] point(<geometry>; string attribute_name; int pointnumber)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribname]
+
+:arg:pointnumber:
+    Номер точки для чтения атрибута.
+
+:returns:
+    Возвращает значение заданного атрибута в заданной точке или `0`, если чтение атрибута не удалось или заданная точка не существует.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/point]
+
+@related
+
+- [Vex:detail]
+- [Vex:prim]
+- [Vex:vertex]

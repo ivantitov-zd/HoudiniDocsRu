@@ -1,0 +1,33 @@
+= prim =
+
+#type: vex
+#context: all
+#tags: prim, attrib
+#group: attrib
+#redirect: ../attrib_suite#prim
+
+"""Читает значение атрибута класса primitive из геометрии."""
+
+:usage: `<type> prim(<geometry>, string attribute_name, int primnumber)`
+:usage: `<type>[] prim(<geometry>, string attribute_name, int primnumber)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribname]
+
+:arg:primnumber:
+    Номер примитива для чтения атрибута.
+
+:returns:
+    Возвращает значение заданного атрибута в заданном примитиве или `0`, если чтение атрибута не удалось или заданный примитив не существует.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/prim]
+
+@related
+
+- [Vex:detail]
+- [Vex:point]
+- [Vex:vertex]

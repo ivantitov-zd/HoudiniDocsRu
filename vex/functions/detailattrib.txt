@@ -1,0 +1,37 @@
+= detailattrib =
+
+#type: vex
+#context: all
+#tags: attrib, detail
+#group: attrib
+#redirect: ../attrib_suite#detailattrib
+
+"""Читает значение атрибута класса detail из геометрии и выводит флаг успеха/неудачи операции чтения."""
+
+:usage: `<type> detailattrib(<geometry>, string attribute_name, int ignored, int &success)`
+:usage: `<type>[] detailattrib(<geometry>, string attribute_name, int ignored, int &success)`
+
+[Include:_common#geometry]
+
+[Include:_common#attribname]
+
+:arg:ignored:
+    Данный элемент игнорируется для данного класса, напишите `0`.
+
+:arg:&success:
+    Функция запишет `1` в данную переменную, если атрибут был успешно прочитан, иначе запишет `0`.
+
+:returns:
+    В случае успешного чтения возвращает значение атрибута или `0`, если чтение не было удачным.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/detailattrib]
+
+@related
+
+- [Vex:getattrib]
+- [Vex:pointattrib]
+- [Vex:primattrib]
+- [Vex:vertexattrib]

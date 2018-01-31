@@ -1,0 +1,40 @@
+= getattrib =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+#redirect: ../attrib_suite#getattrib
+
+"""Читает значение атрибута из геометрии и выводит флаг успеха/неудачи операции чтения."""
+
+:usage: `<type> getattrib(<geometry>, string attribclass, string attribute_name, int elemnum, int &success)`
+:usage: `<type>[] getattrib(<geometry>, string attribclass, string attribute_name, int elemnum, int &success)`
+    
+    Эта общая форма позволяет указать "класс" атрибута во время выполнения. Это может быть полезно для написания общего кода, который может работать с разными классами. Если вы заранее знаете класс атрибута, который хотите прочитать, использование [Vex:detailattrib], [Vex:primattrib], [Vex:pointattrib] или [Vex:vertexattrib] может быть быстрее.
+
+[Include:_common#geometry]
+
+[Include:_common#attribclass]
+
+[Include:_common#attribname]
+
+[Include:_common#elemnum]
+
+:arg:&success:
+    Функция запишет `1` в данную переменную, если атрибут был успешно прочитан, иначе запишет `0`.
+
+:returns:
+    В случае успешного чтения возвращает значение атрибута или `0`, если чтение не было удачным.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/getattrib]
+
+@related
+
+- [Vex:detailattrib]
+- [Vex:pointattrib]
+- [Vex:primattrib]
+- [Vex:vertexattrib]

@@ -1,0 +1,37 @@
+= vertex =
+
+#type: vex
+#context: all
+#tags: vertex, attrib
+#group: attrib
+#redirect: ../attrib_suite#vertex
+
+"""Читает значение атрибута класса vertex из геометрии."""
+
+:usage: `<type> vertex(<geometry>, string attribute_name, int linear_vertex_index)`
+:usage: `<type>[] vertex(<geometry>, string attribute_name, int linear_vertex_index)`
+
+    Указание вершины, используя линейный индекс вершины (номер вершины из списка всех вершин).
+
+:usage: `<type> vertex(<geometry>, string attribute_name, int prim_num, int vertex_num)`
+:usage: `<type>[] vertex(<geometry>, string attribute_name, int prim_num, int vertex_num)`
+
+    Указание вершины, используя номер примитива и номер вершины в списке вершин данного примитива.
+
+[Include:_common#geometry]
+
+[Include:_common#attribname]
+
+:returns:
+    Возвращает значение заданного атрибута в заданной вершине или `0`, если чтение атрибута не удалось или заданная вершина не существует.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertex]
+
+@related
+
+- [Vex:detail]
+- [Vex:point]
+- [Vex:prim]
