@@ -1,0 +1,19 @@
+= pointattribtype =
+
+#type: vex
+#context: all
+#tags: point, attrib
+#group: attrib
+
+"""Возвращает тип атрибута класса point."""
+
+:usage: `int pointattribtype(<geometry>, string attribute_name)`
+
+[Include:_common#geometry]
+
+Смотрите [Vex:attribtype] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/pointattribtype]

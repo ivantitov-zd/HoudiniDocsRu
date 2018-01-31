@@ -1,0 +1,17 @@
+= detailattribtype =
+
+#type: vex
+#context: all
+#tags: attrib, detail
+#group: attrib
+
+"""Возвращает тип атрибута класса detail."""
+
+:usage: `int detailattribtype(<geometry>, string attribute_name)`
+
+Смотрите [Vex:attribtype] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/detailattribtype]

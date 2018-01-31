@@ -1,0 +1,19 @@
+= vertexattribtype =
+
+#type: vex
+#context: all
+#tags: vertex, attrib
+#group: attrib
+
+"""Возвращает тип атрибута класса vertex."""
+
+:usage: `int vertexattribtype(<geometry>, string attribute_name)`
+
+[Include:_common#geometry]
+
+Смотрите [Vex:attribtype] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertexattribtype]

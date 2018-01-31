@@ -45,12 +45,10 @@ int type = attribtype("defgeo.bgeo", "point", "P");
 
 }}}
 
-
 :bubble:
     #dir: right
     #display: gray
     [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/attribtype]
-
 
 @related
 

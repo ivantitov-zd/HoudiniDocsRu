@@ -1,0 +1,19 @@
+= primattribtype =
+
+#type: vex
+#context: all
+#tags: prim, attrib
+#group: attrib
+
+"""Возвращает тип атрибута класса primitive."""
+
+:usage: `int primattribtype(<geometry>, string attribute_name)`
+
+[Include:_common#geometry]
+
+Смотрите [Vex:attribtype] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/primattribtype]
