@@ -1,0 +1,32 @@
+= primintrinsic =
+
+#type: vex
+#context: all
+#tags: prim, attrib, intrinsic
+#group: attrib
+
+"""Читает значение встроенной функции атрибута класса primitive из геометрии."""
+
+[Include:detailintrinsic#info]
+
+:usage: `<type> primintrinsic(<geometry>, string intrinsic_name, int prim_num)`
+:usage: `<type>[] primintrinsic(<geometry>, string intrinsic_name, int prim_num)`
+
+[Include:_common#geometry]
+
+[Include:_common#intrinsicname]
+
+:arg:prim_num:
+    Номер примитива для чтения.
+
+:returns:
+    Возвращает прочитанное значение или `0`, если указанная встроенная функция не существует.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/primintrinsic]
+
+@related
+
+- [Vex:detailintrinsic]
