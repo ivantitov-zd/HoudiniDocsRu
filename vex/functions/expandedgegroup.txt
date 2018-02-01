@@ -1,0 +1,27 @@
+= expandedgegroup =
+
+#type: vex
+#context: all
+#tags: groups
+#group: groups
+
+"""Возвращает список пар точек рёбер указанной группы."""
+
+:usage: `int [] expandedgegroup(string filename, string groupname)`
+:usage: `int [] expandedgegroup(int input, string groupname)`
+
+:returns:
+    Возвращает список пар точек рёбер указанной группы.
+
+NOTE:
+    В данном случае в качестве группы можно использовать шаблоны вроде `0` и `p0-1`. Поведение поля группы совпадает с поведением в SOP. Пустая строка означает все точки.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/expandedgegroup]
+
+@related
+
+- [Vex:inedgegroup]
+- [Vex:nedgesgroup]
