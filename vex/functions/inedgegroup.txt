@@ -1,0 +1,19 @@
+= inedgegroup =
+
+#type: vex
+#context: all
+#tags: geo, groups
+#group: groups
+
+"""Возвращает 1, если ребро, указанное парой точек, входит в группу, указанную строкой."""
+
+:usage: `int inedgegroup(string filename, string groupname, int pointnum0, int pointnum1)`
+:usage: `int inedgegroup(int input, string groupname, int pointnum0, int pointnum1)`
+
+:returns:
+    Возвращает `1`, если группа существует и пара точек принадлежит этой группе, или `0` в противном случае.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/inedgegroup]
