@@ -51,7 +51,7 @@
 :arg:intrinsic_name:
     #id: intrinsicname
     
-    Имя внутреннего атрибута для чтения. Например, `"pointattributes"`, `"pointcount"`, или `"bounds"`.
+    Имя встроенной функции для чтения. Например, `"pointattributes"`, `"pointcount"`, или `"bounds"`.
 
 :null:
     #id: attrib_typeinfo_values
@@ -82,31 +82,31 @@
 :null:
     #id: set_attrib_info
     
-    Returns the value of `geohandle` on success or `-1` on failure.
+    :returns:
+        Возвращает значение `geohandle` в случае успеха и `-1` при неудаче.
     
     NOTE:
-        If the attribute does not exist, this function *creates the attribute* with a default value of zero, empty string, or an empty array.
-        If you want to control the default value of a numeric attribute, use [Vex:addattrib] before setting the attribute.
+        Если атрибут не существует, эта функция *создаст атрибут* со значением по умолчанию равным нулю, пустой строке или пустому массиву. Если же вы хотите контролировать значение по умолчанию для числового атрибута, используйте функцию [Vex:addattrib] перед записью атрибута.
 
 :arg:mode:
     #id: set_attrib_mode
     
-    (Optional) if given, this controls how the function modifies any existing value in the attribute.
+    (Необязательно) Если задан, определяет, как функция изменяет любое существующее значение в атрибуте.
 
     `"set"` |
-        Overwrite the attribute with the given value.
+        Перезаписать существующее значение заданным.
     `"add"` |
-        Add to the attribute the value.
+        Сложить заданное значение и существующее.
     `"min"`, `"minimum"` |
-        Set the attribute to the minimum of itself and the value.
+        Записать минимальное из заданного значения и существующего.
     `"max"`, `"maximum"` |
-        Set the attribute to the maximum of itself and the value.
+        Записать максимальное из заданного значения и существующего.
     `"mult"`, `"multiply"` |
-        Multiply the attribute by the value.  For matrices, this will do matrix multiplication.  For vectors, component-wise.
+        Перемножить заданное значение и существующее. Для матриц - матричное умножение. Для векторов - покомпонентное.
     `"toggle"` |
-        Toggles the attribute, independent of the source value.  Useful for toggling group membership.
+        Переключить атрибут независимо от исходного значения. Полезно для включения членства в группе.
     `"append"` |
-        Valid for string and array attributes.  Appends the source value to the end of the original value.
+        Данный режим действителен лишь для атрибутов строки и массива. Добавляет заданное значение в конец существующего.
 
 :arg:linearvertex:
     #id: linearvertex

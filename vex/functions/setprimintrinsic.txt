@@ -1,0 +1,33 @@
+= setprimintrinsic =
+
+#type: vex
+#context: all
+#tags: prim, intrinsic
+#group: attrib
+
+"""Записывает значение записываемой встроенной функции атрибута класса primitive."""
+
+:usage: `int setprimintrinsic(int geohandle, string name, int prim_num, <type> value, string mode="set")`
+:usage: `int setprimintrinsic(int geohandle, string name, int prim_num, <type> value[], string mode="set")`
+
+Несмотря на название, в некоторые встроенные функции атрибутов класса primitive можно производить запись.
+
+[Include:_common#geohandle_arg]
+
+:arg:name:
+    Имя встроенной функции для записи.
+
+:arg:prim_num:
+    Номер примитива для изменения значения.
+
+[Include:_common#set_attrib_mode]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setprimintrinsic]
+
+@related
+
+- [Vex:setattrib]
+- [Vex:setprimattrib]

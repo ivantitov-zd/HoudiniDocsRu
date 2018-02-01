@@ -1,0 +1,40 @@
+= setprimattrib =
+
+#type: vex
+#context: all
+#tags: prim, attrib
+#group: attrib
+
+"""Записывает значение атрибута класса primitive в геометрию."""
+
+Eсли вы не знаете класс атрибута до выполнения, используйте [Vex:setattrib].
+
+:usage: `int setprimattrib(int geohandle, string name, int prim_num, <type> value, string mode="set")`
+:usage: `int setprimattrib(int geohandle, string name, int prim_num, <type> value[], string mode="set")`
+
+[Include:_common#geohandle_arg]
+
+:arg:name:
+    Имя атрибута для изменения.
+    
+:arg:prim_num:
+    Номер примитива.
+
+:arg:value:
+    Значение для записи в атрибут.
+
+[Include:_common#set_attrib_mode]
+
+[Include:_common#set_attrib_info]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setprimattrib]
+
+@related
+- [Vex:setattrib]
+- [Vex:setpointattrib]
+- [Vex:setvertexattrib]
+- [Vex:setdetailattrib]
+- [Vex:prim]

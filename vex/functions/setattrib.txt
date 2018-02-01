@@ -1,0 +1,52 @@
+= setattrib =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+
+"""Записывает значение атрибута в геометрию."""
+
+Если вы заранее знаете класс атрибута, в который хотите записать значение, использование [Vex:setdetailattrib], [Vex:setprimattrib], [Vex:setpointattrib] или [Vex:setvertexattrib] может быть быстрее.
+
+:usage: `int setattrib(int geohandle; string attribclass; string attribute_name; int element_num, int vertex_num, <type> value, string mode="set")`
+:usage: `int setattrib(int geohandle; string attribclass; string attribute_name; int element_num, int vertex_num, <type> value[], string mode="set")`
+
+[Include:_common#geohandle_arg]
+
+[Include:_common#attribclass]
+
+:arg:attribute_name:
+    Имя атрибута для изменения.
+
+:arg:element_num:
+    Номер точки или примитива для изменения атрибута.
+    
+    Для атрибутов класса detail установите `0` в данный аргумент (для класса detail данный аргумент игнорируется).
+    
+    Для атрибутов класса vertex это номер примитива, к которому относится вершина.
+
+:arg:vertex_num:
+    Для атрибутов класса vertex это номер вершины в примитиве, указанном в `element_num`.
+    
+    Чтобы использовать линейный индекс вершины, установите `-1` в `element_num` и используйте здесь линейный индекс вершины.
+    
+    Для атрибутов класса detail, primitive или point установите `0` в данный аргумент (в этих классах данный аргумент игнорируется).
+
+:arg:value:
+    Значение для записи в атрибут. Если тип данного аргумента несовместим с типом атрибута, запись завершится неудачно и функция вернет `-1`.
+
+[Include:_common#set_attrib_mode]
+
+[Include:_common#set_attrib_info]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setattrib]
+
+@related
+- [Vex:setattrib]
+- [Vex:setpointattrib]
+- [Vex:setvertexattrib]
+- [Vex:setprimattrib]

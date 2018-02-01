@@ -1,0 +1,40 @@
+= setpointattrib =
+
+#type: vex
+#context: all
+#tags: point, attrib
+#group: attrib
+
+"""Записывает значение атрибута класса point в геометрию."""
+
+Eсли вы не знаете класс атрибута до выполнения, используйте [Vex:setattrib].
+
+:usage: `int setpointattrib(int geohandle, string name, int point_num, <type> value, string mode="set")`
+:usage: `int setpointattrib(int geohandle, string name, int point_num, <type> value[], string mode="set")`
+
+[Include:_common#geohandle_arg]
+
+:arg:name:
+    Имя атрибута для изменения.
+    
+:arg:point_num:
+    Номер точки.
+
+:arg:value:
+    Значение для записи в атрибут.
+
+[Include:_common#set_attrib_mode]
+
+[Include:_common#set_attrib_info]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setpointattrib]
+
+@related
+- [Vex:setattrib]
+- [Vex:setvertexattrib]
+- [Vex:setprimattrib]
+- [Vex:setdetailattrib]
+- [Vex:point]

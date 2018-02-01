@@ -1,0 +1,46 @@
+= setvertexattrib =
+
+#type: vex
+#context: all
+#tags: vertex, attrib
+#group: attrib
+
+"""Записывает значение атрибута класса vertex в геометрию."""
+
+Eсли вы не знаете класс атрибута до выполнения, используйте [Vex:setattrib].
+
+:usage: `int setvertexattrib(int geohandle, string name, int prim_num, int vertex_num, <type> value, string mode="set")`
+:usage: `int setvertexattrib(int geohandle, string name, int prim_num, int vertex_num, <type> value[], string mode="set")`
+
+NOTE:
+    *Для использования линейного индекса вершины*, установите в `prim_num` *линейный индекс вершины* и `vertex_num` в `-1`. Обратите внимание, что *это отличается* от того, как работают большинство других функций вершин.
+
+[Include:_common#geohandle_arg]
+
+:arg:name:
+    Имя атрибута для изменения.
+
+:arg:prim_num:
+    Номер примитива, который содержит вершину.
+
+:arg:vertex_num:
+    Номер вершины в примитиве, который указан в "prim_num".
+
+:arg:value:
+    Значение для записи в атрибут.
+
+[Include:_common#set_attrib_mode]
+
+[Include:_common#set_attrib_info]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setvertexattrib]
+
+@related
+- [Vex:setattrib]
+- [Vex:setpointattrib]
+- [Vex:setprimattrib]
+- [Vex:setdetailattrib]
+- [Vex:vertex]
