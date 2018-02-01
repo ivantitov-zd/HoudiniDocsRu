@@ -1,0 +1,24 @@
+= hsvtorgb =
+
+#type: vex
+#context: all
+#tags: color, convert
+#group: convert
+
+"""Преобразование цветового пространства HSV в цветовое пространство RGB."""
+
+:usage: `vector hsvtorgb(vector hsv)`
+:usage: `vector hsvtorgb(float hue, float sat, float val)`
+
+Преобразование цветового пространства HSV в цветовое пространство RGB.
+
+:returns:
+    Возвращает вектор, представляющий RGB. Оттенок (`hue`) должен находиться в диапазоне от `0` до `1`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/hsvtorgb]
+
+@related
+- [Vex:rgbtohsv]
