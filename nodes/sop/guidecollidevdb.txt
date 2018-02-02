@@ -1,0 +1,49 @@
+#type:     node
+#context:  sop
+#internal: guidecollidewithvdb
+#icon:     SOP/guidecollidevdb
+
+= Guide Collide With VDB =
+
+"""Решает коллизии направляющих кривых с VDB signed distance fields."""
+
+@parameters
+
+Blend:
+    #id: blend
+
+    Общее влияние эффекта.
+
+Visualize Masks:
+    #id: vismasks
+
+    Визуализация масок.
+
+[Include:/nodes/sop/fur_common#skinmask]
+
+[Include:/nodes/sop/fur_common#curvemask]
+
+== Collision Resolution ==
+
+Collide With Skin:
+    #id: collidewithskin
+
+    Решает коллизии с VDB поверхности кожи, а также с любыми VDB подающимися на 4 вход.
+
+Surface Offset:
+    #id: isooffset
+
+    Смещает [изоповерхность|Wp:Isosurface] VDB вольюмов.
+
+Push Range:
+    #id: pushrange
+
+    Дополнительно к решению кривых, проникающих в поверхность кожи, устанавливает ограничение расстояния на которое будут выталкиваться кривые от VDB поверхности. 
+
+Push Amount:
+    #id: pushamount
+
+    Выталкивает кривые на данное расстояние.
+
+@related
+- [Node:sop/guideadvect]
