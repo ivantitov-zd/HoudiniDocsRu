@@ -1,0 +1,21 @@
+= removeprim =
+
+#type: vex
+#context: all
+#tags: prim, delete
+#group: geo
+
+"""Удаляет примитив из геометрии."""
+
+:usage: `int removeprim(int geohandle, int prim_number, int andpoints)`
+
+Удаляет примитив в геометрии, заданной `geohandle`.
+
+Ничего не происходит, если `prim_number` равен `-1`.
+
+Если `andpoints` равен 1, точки, которые принадлежат примитиву, также будут удалены, если нет других примитивов, которые все еще ссылаются на них.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/removeprim]

@@ -1,0 +1,22 @@
+= removepoint =
+
+#type: vex
+#context: all
+#tags: point, delete
+#group: geo
+
+"""Удаляет точку из геометрии."""
+
+:usage: `int removepoint(int geohandle, int point_number)`
+:usage: `int removepoint(int geohandle, int point_number, int andprims)`
+
+Удаляет точку в геометрии, заданной `geohandle`.
+
+Ничего не происходит, если `point_number` равен `-1`.
+
+Если `andprims` равен `1`, любые допустимые, но дегенеративные примитивы (например, замкнутые многоугольники с менее чем тремя вершинами или открытые многоугольники с менее чем двумя вершинами ), которые ссылаются на указанную точку, будут удалены. Если `andprims` равен `0`, примитивы будут удаляться только если они становятся недопустимыми (например, тетраэдры не могут иметь меньше 4 вершин, а volumes не могут иметь нулевые вершины).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/removepoint]
