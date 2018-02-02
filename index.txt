@@ -18,7 +18,7 @@
                 <span style="font-size: 2em">%{HOUDINI_MAJOR_VERSION}.%{HOUDINI_MINOR_VERSION}</span>
 
 
-
+<!--
 :col:
     * [Vimeo|https://vimeo.com/goprocedural/videos]
         #glyph: fa-vimeo-square
@@ -26,7 +26,7 @@
         #glyph: fa-youtube
     * [VK Group|https://vk.com/houdinihelpru]
         #glyph: fa-vk
-    * [Telegram Channel|https://telegram.me/joinchat/BbU_30E1zLoWMr04k4rwQQ]
+    * [Telegram Group|]
         #glyph: fa-telegram
 :col:
     * [SideFX.com|https://sidefx.com/]
@@ -37,7 +37,7 @@
         #glyph: fa-comments
     * [Unofficial Houdini Discord server|https://discord.gg/b8U5Hdy]
         #glyph: fa-comments-o
-
+-->
 
 @subtopics
 #display: notitle
