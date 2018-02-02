@@ -1,0 +1,29 @@
+= primpoints =
+
+#type: vex
+#context: all
+#tags: prim, point
+#group: geo
+
+"""Возвращает список точек, принадлежащих примитиву."""
+
+:usage: `int [] primpoints(<geometry>, int primnum)`
+
+[Include:_common#geometry]
+
+:arg:primnum:
+    Номер примитива.
+
+:returns:
+    Возвращает массив точек в том же порядке, что и в самом примитиве.
+
+    Если номер примитива недействителен, массив будет пустым.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/primpoints]
+
+@related
+
+- [Vex:pointprims]

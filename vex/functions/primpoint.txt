@@ -1,0 +1,26 @@
+= primpoint =
+
+#type: vex
+#context: all
+#tags: prim, point
+#group: geo
+
+"""Преобразует пару примитив/вершина в номер точки."""
+
+:usage: `int primpoint(<geometry>, int primnum, int vertex)`
+
+[Include:_common#geometry]
+
+:arg:primnum:
+    Номер примитива.
+
+:arg:vertex:
+    Номер вершины в примитиве `primnum`. `0` - первая вершина.
+
+:returns:
+    Возвращает номер точки, к которой подсоединена вершина. Возвращает `-1`, если не удалось найти соответствующую точку.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/primpoint]

@@ -1,0 +1,29 @@
+= pointprims =
+
+#type: vex
+#context: all
+#tags: point, prim
+#group: geo
+
+"""Возвращает список примитивов, содержащих точку."""
+
+:usage: `int [] pointprims(<geometry>, int ptnum)`
+
+[Include:_common#geometry]
+
+:arg:ptnum:
+    Номер точки.
+
+:returns:
+    Возвращает массив номеров примитивов. Вы не должны полагаться на числа, находящиеся в определенном порядке.
+    
+    Если данная точка не принадлежит ни одному примитиву, массив будет пустым.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/pointprims]
+
+@related
+
+- [Vex:primpoints]
