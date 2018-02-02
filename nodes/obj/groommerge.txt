@@ -1,0 +1,112 @@
+#type:     node
+#context:  obj
+#internal: groommerge
+#icon:     OBJ/groommerge
+
+= Groom Merge =
+
+"""Объединяет данные груминга нескольких объектов в один."""
+
+Эта нода позволяет вам настраивать груминг используя несколько отдельных [Node:obj/guidegroom], а затем объединить их в один поток для деформации, симуляции и рендеринга.
+
+@parameters
+
+== General ==
+
+Groom Objects:
+    #id: sourcegroomobjects
+    Список объектов груминга для объединения.
+
+Groom File:
+    #id: sourcegroomfile
+
+    Загрузить данные груминга из этого файла
+
+
+Isolate Groom Objects:
+    #id: isolategroomobjects
+
+    Только перечисленные здесь объекты будут объединены.
+
+    Это можно использовать для работы с небольшой частью груминга.
+
+    TIP:
+	    Быстрый способ частично изолировать груминг - использовать [Isolate Groom Parts|/shelf/groom_isolateparts] с полки инструментов. Он использует этот параметр, но, кроме того, устанавливает display флаги для последующих объектов генерации волос.
+
+
+Additional Skin SOPs: 
+    #id: skinsops
+
+    В дополнение к объединенным объектам груминга объединяются также атрибуты взятые с исходных поверхностей.
+
+== Guides ==
+
+Create Groups:
+    #id: creategroups
+
+    Создает группу для направляющих каждого объединенного объекта груминга. Имя объекта груминга используется как имя группы.
+
+Create Name Attribute:
+    #id: createguidenameattrib
+
+    Создает атрибут имени примитива и присваивает его каждой направляющей исходного объекта [Node:obj/guidegroom].
+
+Name Attribute:
+    #id: guidenameattrib
+
+    Название атрибута имени.
+
+Create Path Attribute:
+    #id: createguidepathattrib
+
+     Создает атрибут пути примитива и присваивает его каждой направляющей исходного объекта [Node:obj/guidegroom].
+
+Path Attribute:
+    #id: guidepathattrib
+
+     Название атрибута пути.
+
+Reset Primitive IDs:
+    #id: reseteids
+
+    Присваивает атрибуту `id` каждого примитива новый номер.
+
+    Это решает проблему совпадения `id` при объединении нескольких объектов груминга, в которых все ID начинаются с `0`.
+
+Point Attributes:
+    #id: guidepointattribs
+
+    Список атрибутов точек направляющих требующих сохранения.
+
+Vertex Attributes:
+    #id: guidevertexattribs
+
+    Список атрибутов вершин направляющих требующих сохранения.
+
+Primitive Attributes:
+    #id: guideprimattribs
+
+    Список атрибутов примитивов направляющих требующих сохранения.
+
+Detail Attributes:
+    #id: guidedetailattribs
+
+    Список атрибутов класса Detail направляющих требующих сохранения.
+
+== Skin ==
+
+Point Attributes:
+    #id: skinpointattribs
+
+    Список атрибутов поверхности (skin) требующих сохранения.
+
+    Атрибуты, которые находятся на разных поверхностях геометрии объединяются используя атрибут max. Хорошо работает с атрибутами масок.
+
+
+
+@related
+- [Node:obj/guidedeform]
+- [Node:obj/guidegroom]
+- [Node:obj/guidesim]
+- [Node:obj/hairgen]
+

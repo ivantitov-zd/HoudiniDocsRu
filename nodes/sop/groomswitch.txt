@@ -1,0 +1,22 @@
+#type:     node
+#context:  sop
+#internal: groomswitch
+#icon:     SOP/groomswitch
+
+= Groom Switch =
+
+"""Переключение всех компонентов, полученных с обоих потоков груминга."""
+
+@parameters
+
+Select Input:
+    #id: input
+    Выбор между входящими потоками подающимися на выход.
+
+    Когда выбран `0`, то на выход подаются первые 3 входа.
+
+    Когда выбрана `1`, то на выход подаются вторые 3 входа.
+
+@related
+- [Node:sop/guidemask]
+- [Node:sop/groomblend]

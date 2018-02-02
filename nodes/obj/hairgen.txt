@@ -1,0 +1,392 @@
+#type:     node
+#context:  obj
+#internal: hairgen
+#icon:     OBJ/hairgen
+
+= Hair Generate =
+
+"""Генерирует волосы из геометрии кожи и направляющих кривых."""
+
+Извлекает требуемую геометрию кожи и направляюшие кривые из объектов груминга таких как [Guide Groom|Node:obj/guidegroom], [Guide Deform|Node:obj/guidedeform] или [Guide Sim|Node:obj/guidesim]. Эти ноды также могут записывать свои данные груминга в файлы, которые могут быть импортированы этой нодой.
+
+Сгенерированные волосы можно настроить с помощью инструментов на полках __Guide Process__ и __Guide Brushes__.  Они добавляют ноды SOP в редактируемую сеть, содержащуюся в этой ноде.
+
+@parameters
+
+== Groom Source ==
+
+Загружает груминг для генерации волос.
+
+[Include:/nodes/sop/fur_common#groomdata]
+
+[Include:/nodes/sop/fur_common#sourcemode]
+
+[Include:/nodes/sop/fur_common#sourcegroomobject]
+
+[Include:/nodes/sop/fur_common#sourcegroomfile]
+
+[Include:/nodes/sop/hairgen#group]
+
+[Include:/nodes/sop/fur_common#group]
+
+Use Animation:
+    #id: useanim
+
+    Создает волосы, используя анимированную геометрию кожи и направляющие. Когда это отключено, волосы генерируются в положении покоя.
+
+Material:
+    #id: shop_materialpath
+
+    Материал для рендеринга сгенерированных волос. Обычно это [Hair Shader|Node:mat/hairshader].
+
+
+[Include:/nodes/sop/fur_common#skinvdb]
+
+== General ==
+
+=== Distribution ===
+
+[Include:/nodes/sop/hairgen#density]
+
+Seed:
+    #id: seed
+
+    Значение seed, используемое для разбрасывания кривых. Изменяя этот параметр, генерируется другое случайное распределение с той же плотностью.
+
+[Include:/nodes/sop/hairgen#scatterrelaxiterations]
+
+
+=== Guide Interpolation ===
+
+[Include:/nodes/sop/hairgen#useguides]
+
+[Include:/nodes/sop/hairgen#uniformguidesegments]
+
+[Include:/nodes/sop/hairgen#skininterp]
+
+[Include:/nodes/sop/hairgen#guideblendmethod]
+
+[Include:/nodes/sop/hairgen#guidegroup]
+
+[Include:/nodes/sop/hairgen#influenceradius]
+
+[Include:/nodes/sop/hairgen#influencedecay]
+
+[Include:/nodes/sop/hairgen#maxguidecount]
+
+[Include:/nodes/sop/hairgen#maxguideangle]
+
+[Include:/nodes/sop/hairgen#clumpcrossover]
+
+=== Unguided Hairs ===
+
+[Include:/nodes/sop/hairgen#growunguided]
+
+[Include:/nodes/sop/hairgen#useinitdirattrib]
+
+[Include:/nodes/sop/hairgen#initdirattrib]
+
+[Include:/nodes/sop/hairgen#unguidedsegments]
+
+[Include:/nodes/sop/hairgen#unguidedlength]
+
+[Include:/nodes/sop/hairgen#unguidedminlength]
+
+=== Display ===
+
+Display As Subdivision Curves:
+    #id: displayassubd
+
+    Делит кривые на более мелкие сегменты во вьюпорте для более сглаженного вида.
+
+== Static Generation ==
+
+Perform Hair Generation and Editing at Rest:
+    #id: staticgen
+
+    Генерирует волосы в положении покоя, без временной зависимости, когда это возможно.
+
+    Когда параметр включен, редактируемая сеть SOP, содержащаяся в этом операторе, также работает с волосами в состоянии покоя.
+
+    После этого деформирует волосы с помощью направляющих кривых. Это позволяет избежать повторной готовки содержащихся внутри операций груминга изменяемых во времени. Можно кэшировать один кадр с помощью элементов управления __Rest Cache__.
+
+    Используя этот метод, рендеринг можно выполнить, просто загрузив rest cache и деформировать его с помощью сохраненных весов. 
+
+=== Capture ===
+
+[Include:/nodes/sop/guidedeform#guidecoverage]
+
+[Include:/nodes/sop/guidedeform#computeradius]
+
+[Include:/nodes/sop/guidedeform#radius]
+
+[Include:/nodes/sop/guidedeform#limitguidesegs]
+
+[Include:/nodes/sop/guidedeform#maxguidesegs]
+
+[Include:/nodes/sop/guidedeform#expandradius]
+
+[Include:/nodes/sop/guidedeform#expansioniters]
+
+[Include:/nodes/sop/guidedeform#expansionfactor]
+
+=== Rest Cache ===
+
+Load from Disk:
+    #id: loadresthairfromdisk
+
+    Загружает с диска волосы в состоянии покоя. Они сохранены с весами захвата, необходимыми для деформации.
+
+Geometry File:
+    #id: resthairfile
+
+    Файл для хранения rest cache.
+
+Save to Disk:
+    #id: saveresthairfile
+
+    Сохранить rest cache на диск.
+
+=== Deform ===
+
+[Include:/nodes/sop/guidedeform#xformattribs]
+
+== Optimization ==
+
+=== General ===
+
+Bypass Editable SOP Network:
+    #id: bypasssopnetwork
+
+    Не гоотовит SOP-сеть, содержащуюся в этой ноде. В зависимости от содержимого SOP-сети может значительно ускорить генерацию волос, что может быть полезно при визуализации эффекта определенных параметров или изменений в источнике груминга.
+
+Limit To Bounding Box:
+    #id: limittobbox
+
+    Растит волосы только из тех корневых точек, которые находятся в ограничивающих боксах, определенных параметрами ниже.
+
+Center:
+    #id: displaybboxcenter
+
+    Центр ограничиввающего бокса.
+
+Size:
+    #id: displaybboxsize
+
+    Размер ограничиввающего бокса.
+
+Prune:
+    #id: enablepruning
+    Сокращает процент волос, чтобы ускорить готовку.
+
+Pruning Ratio:
+    #id: pruneratio
+
+    Процент сокращения кривых.
+
+Thicken Remaining Hairs:
+    #id: prunethicken
+
+    Увеличивает толщину волос, оставшихся после сокращения, чтобы зрительно соответствовать густоте волос до сокращения.
+
+=== Adaptive Prune ===
+
+Adaptive Prune:
+    #id: aprune
+
+    Удаляет кривые волос, исходя из их величины по отношению к дистанции камеры.
+
+    Чем дальше элемент, тем меньше он становится, и в конечном итоге удаляется.
+
+    Оставшиеся элементы масштабируются таким образом, чтобы сохранить визуальную плотность совокупности элементов в целом.
+
+[Include:/nodes/sop/adaptiveprune#cam]
+
+[Include:/nodes/sop/adaptiveprune#screensizeunit]
+
+[Include:/nodes/sop/adaptiveprune#screensizethresh]
+
+[Include:/nodes/sop/adaptiveprune#screenagg]
+
+Seed:
+    #id: apruneseed
+
+    Для рандомизации сокращения каждого элемента, значение seed используется в дополнение к __Seed Attribute__.
+
+== Thickness ==
+
+Thickness:
+    #id: thickness
+
+    Максимальное значение толщины сгенерированных волос.
+
+    [Include:fur_common#parmoverride]
+
+Thickness Ramp:
+    #id: thicknessramp
+
+    Профиль толщины каждого волоса.
+
+== Attributes ==
+
+=== Skin Attribute Transfer ===
+
+[Include:/nodes/sop/hairgen#pointattribs]
+
+[Include:/nodes/sop/hairgen#vertattribs]
+
+[Include:/nodes/sop/hairgen#primattribs]
+
+[Include:/nodes/sop/hairgen#detailattribs]
+
+=== Guide Attribute Transfer ===
+
+[Include:/nodes/sop/hairgen#guidepointattribs]
+
+[Include:/nodes/sop/hairgen#guideprimattribs]
+
+=== Output Attributes ===
+
+Point Attributes:
+    #id: keeppointattribs
+
+    Атрибуты точек, требуемые для рендеринга.
+
+Vertex Attributes:
+    #id: keepvertattribs
+
+    Атрибуты вершин, требуемые для рендеринга.
+
+Primitive Attributes:
+    #id: keepprimattribs
+
+    Атрибуты примитивов, требуемые для рендеринга.
+
+Detail Attributes:
+    #id: keepdetailattribs
+
+    Атрибуты класса Detail, требуемые для рендеринга.
+
+== Skin ==
+
+=== Subdivision ===
+
+Move Curves To Subdivision Surface:
+    #id: skinsubd
+
+    Перемещает сгенерированные волосы на поверхность, сглаженную подразделением. Должно быть включено, когда исходная геометрия кожи ренедерится в режиме подразделения поверхности (subdivision surface).
+
+Mode:
+    #id: skinsubdmode
+
+    Match Skin Object:
+	    Перемещает кривые на поверхность кожи, когда включен режим подразделения поверхности при рендеринге.
+
+    Always On:
+	    Всегда перемещает кривые на поверхность, сглаженную подразделением, вне зависимости от того включен режим подразделения на геометрии кожи или нет.
+
+=== Referenced Subdivision Values ===
+
+Enabled:
+    #id: skinsubdenabled
+
+    Отображает, включено ли подразделение на геометрии кожи, в тот момент когда выбран режим __Match Skin Object__.
+
+=== Displacement ===
+
+Displace Curves:
+    #id: displace
+
+    Применяет смещение (displacement) к сгенерированным кривым вдоль нормалей поверхности кожи.
+
+    NOTE:
+	    В настоящее время поддерживается только режим __Displace Along Normal__.
+
+
+Mode:
+    #id: displacemode
+
+    Match Skin Shader (Only Supports Displace Along Normal):
+	    Пытается найти шейдер кожи, на который ссылается груминг, чтобы использовать его значения для смещения (displacement).
+
+	    Это выполняется путем перебора ссылок на объекты груминга, чтобы найти соответствующую ноду Guide Groom, которая ссылается на геометрию кожи. Шейдер, назначенный объекту геометрии, используется для определения значений смещения.
+
+    Match Specified Shader (Only Supports Displace Along Normal):
+	    Использует значения смещения указанного шейдера.
+
+    Displace Along Normal:
+	    Устанавливает значения смещения вручную.
+
+
+Reference Shader:
+    #id: displacerefshader
+    Шейдер для получения значений смещения используемый __Match Specified Shader__.
+
+
+=== Displacement Values ===
+
+Texture:
+    #id: displacetex
+    Текстура смещения указанная вручную.
+
+Offset:
+    #id: displaceoffset
+    Значения общего сдвига для текстуры смещения указанной вручную.
+
+Scale:
+    #id: displacescale
+    Величина смещения указанная вручную.
+
+
+=== Referenced Displacement Values ===
+
+Skin Shader:
+    #id: displaceskinshader
+    Отображает обнаруженный шейдер кожи, когда установлен режим __Match Skin Shader__.
+
+Texture:
+    #id: displacereftex
+    Отображает текстуру обнаруженного или назначенного шейдера, когда этот шейдер включен и имеет настройку смещения.
+
+Offset:
+    #id: displacerefoffset
+    Отображает общий сдвиг смещения обнаруженного или назначенного шейдера, когда этот шейдер включен и имеет настройку смещения.
+
+Scale:
+    #id: displacerefscale
+    Отображает величину смещения обнаруженного или назначенного шейдера, когда этот шейдер включен и имеет настройку смещения.
+
+== Render ==
+
+Hair Generation:
+    #id: vm_auto_engine_procedural
+
+    Use SOP Geometry:
+	    Рендерит ту же геометрию SOP, которую отображает вьюпорт.
+
+    Generate Geometry in Mantra:
+	    Генерирует геометрию волос в рендере. Это позволяет рендерить волосы целиком даже при использовании таких оптимизаций как __Limit to Bounding Box__ и __Pruning__, используемых во вьюпорте.
+
+    NOTE:
+	    Генерация волос в рендере поддерживается только Mantra.
+
+	    Рендеринг сторонними рендерами возможен только при установке параметра в __Use SOP Geometry__, что заставляет волосы генерироваться целиком еще до начала рендеринга.
+
+[IncludeProp:vm_rendervisibility]
+
+[IncludeProp:vm_rendersubd]
+
+[Include:common#render_tab]
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/nodes/obj/hairgen]
+
+@related
+- [Node:obj/guidegroom]
+- [Node:obj/guidedeform]
+- [Node:obj/guidesim]
+- [Node:obj/groommerge]
+

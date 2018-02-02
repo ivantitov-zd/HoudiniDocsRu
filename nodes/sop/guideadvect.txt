@@ -1,0 +1,103 @@
+#type:     node
+#context:  sop
+#internal: guideadvect
+#icon:     SOP/guideadvect
+
+= Guide Advect =
+
+"""Перемещает точки направляющих в соответствии с объемом (полем) скоростей."""
+
+@parameters
+
+== General ==
+
+Group Type:
+    #id: grouptype
+
+    Тип входящей группы.
+
+Group:
+    #id: group
+
+    Группа, используемая в качестве маски. Любые операции будут применены только к примитивам или точкам в этой группе.
+
+Blend:
+    #id: blend
+
+    [Include:fur_common#opblend]
+
+    [Include:fur_common#parmoverride]
+
+Operation:
+    #id: operation
+
+    Constrained Advection:
+	Деформирует входящие кривые в соответствием с полем скорости (velocity), сохраняя точки и длину исходной кривой.
+
+    Fill Collision Field:
+	Повторно генерирует направляющие из корней, ограничивая движение при помощи поля столкновений (collision). Воздействие не оказывается на направляющие с корнями, находящиеся за пределами объема столкновений. [Адвекция|Wp:Advection] прекращается, когда величина поля скорости равна нулю.
+
+    Fill Velocity Field:
+	Деформирует направляющие в соответствием с полем скорости (velocity). [Адвекция|Wp:Advection] прекращается, когда величина поля скорости равна нулю.
+
+
+Output Group of Affected Primitives:
+    #id: outputaffectedgroup
+
+    Создает группу направляющих, подверженных адвекции. Включает в себя направляющие принадлежащие входной группе со значениями выше нуля и ненулевой скоростью в корневой точке.
+
+Output Group:
+    #id: affectedgroup
+
+    Название группы направляющих, подверженных адвекции.
+
+Follow Skin:
+    #id: followskin
+
+    Делает значения поля скоростей касательными к поверхности кожи VDB, подаваемую на третий вход.
+
+Sampling Quality:
+    #id: samplingquality
+
+    Изменяет шаг адвекции. При значении `1` шаг равен диаметру вокселя поля скоростей.
+
+Segment Mode:
+    #id: segmode
+
+    Keep Input Segment Count:
+	Кривые подаются на выход с тем же количеством точек что и на входе.
+
+    Adaptive:
+	Пересчет сегментов кривых в соответствии с указанной длиной.
+
+
+Segment Length:
+    #id: seglength
+    Длина сегмента при использовании режима __Adaptive__ параметра __Segment Mode__.
+
+== Collisions ==
+
+Stop on Collision:
+    #id: stoponcoll
+
+    Прекращает адвекцию при касании изоповерхности поля столкновений (collision).
+
+== Length ==
+
+Limit Length:
+    #id: limitlength
+
+    Прекращает адвекцию при достижении определенной длины кривой.
+
+
+Length:
+    #id: length
+
+    Длина остановки адвекции.
+
+    [Include:fur_common#parmoverride]
+
+@related
+- [Node:sop/volumevelocityfromcurves]
+- [Node:sop/volumevelocityfromsurface]
+- [Node:sop/guidecollidevdb]

@@ -1,0 +1,325 @@
+#type:     node
+#context:  obj
+#internal: guidesim
+#icon:     OBJ/guidesim
+
+= Guide Simulate =
+
+"""Выполняет физическую симуляцию исходных направляющих."""
+
+Извлекает требуемую геометрию кожи и направляюшие кривые из объектов груминга таких как [Guide Groom|Node:obj/guidegroom] или [Guide Deform|Node:obj/guidedeform]. Эти ноды также могут записывать свои данные груминга в файлы, которые могут быть импортированы этой нодой.
+
+@parameters
+
+== Groom Source ==
+
+[Include:/nodes/sop/fur_common#sourcemode]
+
+[Include:/nodes/sop/fur_common#sourcegroomobject]
+
+[Include:/nodes/sop/fur_common#sourcegroomfile]
+
+Use Object Transform:
+    #id: usetransform
+
+    Учитывает трансформацию этого объекта при симуляции кривых.
+
+== Dynamics ==
+
+Enable Dynamics:
+    #id: enabledynamics
+
+    Включает симуляцию динамики.
+
+[Include:dopnet#resimulate]
+
+[Include:dopnet#cacheenabled]
+
+Create External DOP Network:
+    #id: createexternaldopnet
+
+    Копирует внутреннюю DOP сеть во внешнюю для редактирования.
+
+Use External DOP Network:
+    #id: useexternaldopnet
+
+    Получает симуляцию из внешней DOP сети.
+
+Guide DOP Object:
+    #id: guidesdopobject
+
+    Получает результат симуляции из этого DOP объекта.
+
+Use Freeze Frame:
+    #id: usefreezeframe
+
+    Морозит симуляцию в определенное время.
+
+Freeze Frame:
+    #id: freezeframe
+
+    Морозит симуляцию в данном кадре.
+
+== Display ==
+
+Display As Subdivision Curves:
+    #id: displayassubd
+
+    Подразделяет кривые во вьюпорте для более сглаженного вида.
+
+Display Color:
+    #id: displaycolor
+
+    Отображает кривые во вьюпорте в данном цвете.
+
+== Simulation ==
+
+[Include:dopnet#startframe]
+
+[Include:dopnet#timescale]
+
+[Include:/nodes/dop/wiresolver#spatialscale]
+
+[Include:/nodes/dop/wiresolver#minsubsteps]
+
+[Include:/nodes/dop/wiresolver#tol]
+
+[Include:/nodes/dop/wiresolver#resolvemaxpasses]
+
+
+== Physical ==
+
+=== Physical Parameters ===
+
+    [Include:/nodes/dop/standard_wirephys_parms]
+
+=== Elasticity ===
+
+    [Include:/nodes/dop/standard_wireelasticity_parms]
+
+Reference Matching:
+    #id: lengthmatch
+
+    При значениях больше нуля кривые ведут себя также, как если бы они соответствовали __Reference Length__. Это приводит к тому, что волосы, чья длина больше эталонной - сгибаются меньше, соответственно короткие сгибаются больше.
+
+Reference Length:
+    #id: lengthmatchref
+
+    Эталонная длина, используемая __Equal Length Behavior__.
+
+== Plasticity ==
+
+    [Include:/nodes/dop/standard_wireplasticity_parms]
+
+== Forces ==
+
+=== Target ===
+
+Target:
+    #id: enabletarget
+
+    Включает силу, которая заставляет кривые более тщательно следить за их назначенной формой.
+
+[Include:/nodes/dop/standard_wireobjecttabs#targetstiffness]
+
+[Include:/nodes/dop/standard_wireobjecttabs#targetdamping]
+
+=== Gravity ===
+
+Gravity:
+    #id: enablegravity
+
+    Включает гравитацию.
+
+Force:
+    #id: gravityforce
+
+    Величина гравитации.
+
+
+=== Wind ===
+
+Wind:
+    #id: enablewind
+
+    Включает силу ветра.
+
+Velocity:
+    #id: windvel
+
+    Скорость ветра.
+
+Strength:
+    #id: windstrength
+
+    Сила, с которой скорость ветра влияет на кривые.
+
+=== Noise ===
+
+[Include:/nodes/dop/windforce#seed]
+
+[Include:/nodes/dop/windforce#fractaldepth]
+
+[Include:/nodes/dop/windforce#roughness]
+
+[Include:/nodes/dop/windforce#attenuation]
+
+[Include:/nodes/dop/windforce#frequency]
+
+[Include:/nodes/dop/windforce#minvalue]
+
+[Include:/nodes/dop/windforce#maxvalue]
+
+[Include:/nodes/dop/windforce#offsetx]
+
+=== Drag ===
+
+[Include:/nodes/dop/standard_wireobjecttabs#normaldrag]
+
+[Include:/nodes/dop/standard_wireobjecttabs#tangentdrag]
+
+== Constraints ==
+
+=== Roots ===
+
+Root Constraint:
+    #id: rootconstraint
+
+    Управляет тем, каким образом корни кривых ограничены исходным грумингом.
+
+    Position & Orientation:
+	Совмещает позицию и направление корней с исходным грумингом. Это приводит к тому, что кривые торчат из поверхности кожи в соответствии с направлением груминга.
+
+	Устанавливает атрибут корневых точек `gluetoanimation` в `1`.
+
+    Position:
+	Совмещает позицию корней с исходным грумингом. Кривые будут спадать и колыхаться в любом направлении, так как направление ничем не ограничено.
+
+	Устанавливает атрибут корневых точек `pinttoanimation` в `1`.
+
+=== Clumping ===
+
+Create Clump Constraints:
+    #id: createclumpconstraints
+
+    Создает ограничения между направляющими, которые принадлежат к одной и той же пряди волос.
+
+    TIP:
+	Вы можете создавать пряди с помощью инструмента [Clump|/shelf/sop_groom_hairclump]. Его следует использовать на ноде Guide Groom, которая затем может быть подана в эту ноду. Инструмент [Clump|/shelf/sop_groom_hairclump] создает атрибут `clumpid`, который используется для идентификации прядей.
+
+Max Guides Per Clump:
+    #id: clumpguidelimit
+
+    Создает ограничения только для прядей, которые содержат не более чем данное количество направляющих.
+
+    Любые направляющие не принадлежащие ни одной пряди в груминге принадлежат одному и тому же clumpid. Без этого ограничения эти направляющие будут считаться прядью, и между ними создадутся ограничения.
+
+Display Clump Constraints:
+    #id: displayclumpconstraints
+
+    Отображает ограничения прядей во вьюпорте.
+
+== Collisions ==
+
+=== Wire-Wire ===
+
+Self Collisions:
+    #id: collideself
+
+    Вычисляет столкновения с другими частями одной и той же направляющей кривой.
+
+=== Wire-Geometry ===
+
+[Include:/nodes/dop/wiresolver#collisionhandling]
+
+[Include:/nodes/dop/standard_wireobjecttabs#repulsion]
+
+==== Skin ====
+
+Collide With Skin:
+    #id: skincollisions
+
+    Вычисляет столкновения с геометрией кожи.
+
+VDB Source:
+    #id: skinvdbsource
+
+    Compute From Geometry:
+	Вычисляет объем из исходной геометрии кожи, требуемый для расчета столкновений с направляющими, препятствуя их проникновению внутрь. Это делается с использованием объемов VDB.
+
+    SOP Volume:
+	Получает объем для расчета столкновений из заданного пути SOP.
+
+Voxel Size:
+    #id: skinvdbvoxelsize
+
+    Размер вокселя для вычисления объема столкновений.
+
+Fill Interior:
+    #id: skinvdbfillinterior
+
+    Вычисляет значения расстояния для всей внутренней части объекта. Это гарантирует, что обнаружение столкновения работает даже глубоко внутри объекта, но может значительно увеличить время вычисления и требуемый объем VDB.
+
+Interior Band:
+    #id: skinvdbinteriorband
+
+    Как глубоко внутрь вычислять значения расстояний, когда отключен __Fill Interior__.
+
+Volume SOP:
+    #id: skinvdbsop
+
+    Путь SOP для получения объема VDB, когда установлено значение __SOP Volume__ в __VDB Source__.
+
+=== External ===
+
+Collide With External Geometry:
+    #id: extcollisions
+
+
+SOP Path:
+    #id: extsop
+
+    Путь SOP для получения внешней геометрии для расчета столкновений.
+
+VDB Source:
+    #id: extvdbsource
+
+    Compute From Geometry:
+	Вычисляет объем из исходной геометрии кожи, требуемый для расчета столкновений с направляющими, препятствуя их проникновению внутрь. Это делается с использованием объемов VDB.
+
+    SOP Volume:
+	Получает объем для расчета столкновений из заданного пути SOP.
+
+Voxel Size:
+    #id: extvdbvoxelsize
+
+    Размер воксела для вычисления объема столкновений.
+
+Fill Interior:
+    #id: extvdbfillinterior
+
+    Вычисляет значения расстояния для всей внутренней части объекта. Это гарантирует, что обнаружение столкновения работает даже глубоко внутри объекта, но может значительно увеличить время вычисления и требуемый объем VDB.
+
+Interior Band:
+    #id: extvdbinteriorband
+
+    Как глубоко внутрь вычислять значения расстояний, когда отключен __Fill Interior__.
+
+Volume SOP:
+    #id: extvdbsop
+
+    Путь SOP для получения объема VDB, когда установлено значение __SOP Volume__ в __VDB Source__.
+
+== Caching ==
+
+    Смотрите [File Cache SOP|Node:sop/filecache] для получения дополнительной информации.
+
+@locals
+
+
+@related
+- [Node:obj/guidedeform]
+- [Node:obj/guidegroom]
+- [Node:obj/hairgen]
+- [Node:obj/groommerge]
+
