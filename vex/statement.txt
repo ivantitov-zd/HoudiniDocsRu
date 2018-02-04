@@ -58,7 +58,7 @@ if ( needs_zapping() ) {
 
 == Другие операторы циклов ==
 
-Операторы [Vex:forpoints], [Vex:illuminance], и [Vex:gather] позволяют вам обрабатывать данные, обрабатываемые VEX.
+Операторы [Vex:forpoints], [Vex:illuminance], и [Vex:gather] позволяют вам перебирать данные, обрабатываемые VEX.
 
 
 == if ==
