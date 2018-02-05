@@ -1,0 +1,29 @@
+= Mac OS X заметки =
+
+== Требования ==
+
+Houdini для OS X будет работать только на компьютерах Mac с OS X 10.8 или новее.
+
+== Различия ==
+
+=== Строка меню ===
+#display: pull left
+
+Строка меню на OS X не является частью основного окна Houdini. Он интегрирован в заголовок рабочего стола, как и в других приложениях на Mac.
+
+=== Место установки ===
+#display: pull left
+
+По умолчанию Houdini устанавливается в папку `HoudiniX.X.XXX` внутри папки `Houdini`, расположенной в папке Applications. Вы можете запускать приложения из папки Houdini X.X.XXX или перетащить значки в док OS X для удобного доступа.
+
+=== Клавиши ===
+#display: pull left
+
+Большинство горячих клавиш, которые используют ((Ctrl)) на Windows, используют ((Cmd)) на Mac.
+
+Значения клавиш ((Backspace)) (большая клавиша Delete) и ((Del)) заменяются из их соответствий в Windows.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/basics/macosx]

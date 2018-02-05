@@ -1,0 +1,56 @@
+= Основы =
+
+"""Основы работы с пользовательским интерфейсом Houdini."""
+
+@subtopics
+
+:col:
+    == Начало работы ==
+
+    :: [Введение в Houdini|intro]
+    :: [Пользовательский интерфейс|ui]
+    :: [Просмотр сцены|view]
+    :: [Выделение объектов и компонентов|select]
+    :: [Использование манипуляторов (handles)|handles]
+    :: [Работа с объектами|objects]
+    :: [Меню 'Tab'|tabmenu]
+    :: [Сети и параметры|/network/]
+    :: [Mac OS X заметки|macosx]
+
+:col:
+    == Следующие шаги ==
+
+    :: [Радиальные меню|radialmenus]
+    :: [Использование лестницы чисел|ladder]
+    :: [Готовка (Cooking)|cooking]
+    :: [HUD ползунки (sliders)|hud_sliders]
+    :: [Визуализаторы вьюпорта|visualizers]
+    :: [Режим осмотра|inspection]
+    :: [Инструменты кистей|brush]
+    :: [Управление проектами|project]
+
+~~
+
+:col:
+    == Кастомизация ==
+
+    :: [Настройка Houdini|config]
+    :: [Настройка панелей|panes]
+    :: [Кастомизация полки (shelf)|/shelf/customize]
+    :: [Переменные среды|config_env]
+    :: [Кастомизация меню|config_menus]
+    :: [Создание инструментов для полки|/ref/windows/edittool]
+    :: [Настройка горячих клавиш|hotkeys]
+
+:col:
+    == Продвинутый уровень ==
+
+    :: [Создание вариаций с помощью дублей (takes)|takes]
+    :: [Ускорение вашей сцены|optimize]
+    :: [Шейдинг вьюпорта|viewporteffects]
+    :: [Панель памяти инструментов|memorytoolbar]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/basics/index]
