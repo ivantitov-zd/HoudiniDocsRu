@@ -1,0 +1,43 @@
+= vertexprim =
+
+#type: vex
+#context: all
+#tags: vertex, prim
+#group: geo
+
+"""Возвращает номер примитива, содержащего заданную вершину."""
+
+:usage: `int vertexprim(<geometry>, int linearvertex)`
+
+NOTE:
+    Для преобразования линейного индекса вершины в номер примитива и вершины используйте функции [Vex:vertexprim] и [Vex:vertexprimindex].
+
+[Include:_common#geometry]
+
+[Include:_common#linearvertex]
+
+:returns:
+    Возвращает номер примитива, содержашего вершину или `-1`, если вершина не имеет примитива.
+
+
+@examples
+
+{{{
+#!vex
+
+int	pt;
+
+// Получает примитив третьей вершины
+pt = vertexprim("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertexprim]
+
+@related
+
+- [Vex:vertexpoint]
+- [Vex:vertexindex]

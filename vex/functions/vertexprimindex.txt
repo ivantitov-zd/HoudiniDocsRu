@@ -1,0 +1,50 @@
+= vertexprimindex =
+
+#type: vex
+#context: all
+#tags: vertex, prim
+#group: geo
+
+"""Преобразует линейный индекс вершины в номер вершины в содержащем её примитиве."""
+
+:usage: `int vertexprimindex(<geometry>, int linearindex)`
+
+NOTE:
+    Для преобразования линейного индекса вершины в номер примитива и вершины используйте функции [Vex:vertexprim] и [Vex:vertexprimindex].
+
+[Include:_common#geometry]
+
+:arg:linearindex:
+    Линейный индекс вершины
+
+:returns:
+    Возвращает номер вершины внутри содержащего её примитива или `-1`, если вершина не имеет примитива.
+    
+    Для получения номера примитива, содержашего вершину, используйте функцию [Vex:vertexprim].
+
+NOTE:
+    Из-за характера структуры геометрии, в первый раз, когда данная функция выполняется, происходит прохождение по всем примитивам геометрии для генерации таблицы поиска. При множественных вызовах данной функции генерация происходит единожды.
+
+
+@examples
+
+{{{
+#!vex
+
+int prim, vtx;
+
+// Находит номер примитива и номер его вершины по линейному индексу вершины 6.
+prim = vertexprim("defgeo.bgeo", 6);
+vtx = vertexprimindex("defgeo.bgeo", 6);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertexprimindex]
+
+@related
+
+- [Vex:vertexprim]
+- [Vex:vertexindex]
