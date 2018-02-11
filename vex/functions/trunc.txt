@@ -1,0 +1,23 @@
+= trunc =
+
+#type: vex
+#context: all
+#tags: math
+#group: math
+
+"""Удаляет дробную часть числа с плавающей запятой."""
+
+:usage: `float trunc(float x)`
+
+    Возвращает [ceil(x)|Vex:ceil], если аргумент отрицательный, иначе возвращает [floor(x)|Vex:floor].
+
+:usage: `vector2 trunc(vector2 x)`
+:usage: `vector trunc(vector x)`
+:usage: `vector4 trunc(vector4 x)`
+
+    Для векторов выполняется покомпонентно.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/trunc]
