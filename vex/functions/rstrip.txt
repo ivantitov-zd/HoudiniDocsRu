@@ -1,0 +1,25 @@
+= rstrip =
+
+#type: vex
+#context: all
+#tags: string
+#group: string
+
+"""Удаляет символы с  конца строки."""
+
+:usage: `string rstrip(string value)`
+:usage: `string rstrip(string value, string whitespace)`
+
+:returns:
+    Возвращает строку с удаленными символами в конце заданной строки. Если аргумент _whitespace_ не задан, то удаляются пробелы, иначе удаляются заданные символы.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/rstrip]
+
+@related
+
+- [Vex:strip]
+- [Vex:lstrip]
+

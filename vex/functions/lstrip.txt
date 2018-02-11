@@ -1,0 +1,23 @@
+= lstrip =
+#type: vex
+#context: all
+#tags: string
+#group: string
+
+"""Удаляет символы с начала строки."""
+
+:usage: `string lstrip(string value)`
+:usage: `string lstrip(string value, string whitespace)`
+
+:returns:
+    Возвращает строку с удаленными символами в начале заданной строки. Если аргумент _whitespace_ не задан, то удаляются пробелы, иначе удаляются заданные символы.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/lstrip]
+
+@related
+
+- [Vex:rstrip]
+- [Vex:strip]
