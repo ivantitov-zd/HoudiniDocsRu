@@ -1,0 +1,20 @@
+= isfinite =
+
+#type: vex
+#context: all
+#tags: math, float
+#group: math
+
+"""Проверяет, является ли значение нормальным конечным числом."""
+
+:usage: `int isfinite(float x)`
+
+:returns:
+    Возвращает `1`, если заданное значение является нормальным конечным числом.
+
+    Возвращает `0`, если значение является NAN или бесконечным числом. Обратите внимание, что VEX обычно не производит таких значений: результатом вычисления `3/0` является `0`, например.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/isfinite]
