@@ -1,0 +1,22 @@
+= startswith =
+
+#type: vex
+#context: all
+#group: string
+
+"""Возвращает 1, если строка начинается с указанной строки."""
+
+:usage: `int startswith(const string str, const string startswith)`
+
+:returns:
+    Возвращает `1`, если строка начинается с указанной строки, иначе возвращает `0`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/startswith]
+
+@related
+
+- [Vex:endswith]
+
