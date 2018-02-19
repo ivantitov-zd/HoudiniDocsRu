@@ -1,0 +1,24 @@
+= shr =
+
+#type: vex
+#context: all
+#tags: math, integer
+#group: math
+
+"""Арифметический битовый сдвиг целого числа вправо."""
+
+:usage: `int shr(int a, int bits)`
+
+Битовый сдвиг целого числа `a` вправо на `bits`.
+
+Это [арифметический сдвиг|Wp:Bitwise_operation#Arithmetic_shift], знак тоже сдвигается. Таким образом, `shr(-1, 2)` в результате даст `-1`, а не ноль.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/shr]
+
+@related
+
+- [Vex:shl]
+- [Vex:shrz]

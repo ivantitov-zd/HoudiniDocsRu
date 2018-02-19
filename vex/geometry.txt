@@ -1,0 +1,66 @@
+= Функции для работы с геометрией =
+
+== Обзор ==
+
+В Houdini геометрия состоит из _примитивов_, а наиболее распространенными примитивами являются полигональные грани (polygonal faces). Каждый угол полигональной грани является _вершиной_ (vertex). Для хранения отдельных граней вместе как части поверхности, вершины отдельных граней могут быть соединены в _точку_ (point). Когда точка перемещается, Houdini автоматически перемещает каждую из вершин точки.
+
+== Перебор элементов геометрии ==
+
+* Вы можете использовать функцию [Vex:vertexpoint] для получения точки заданной вершины.
+
+* Вы можете использовать функцию [Vex:pointvertex] для получения первой вершины точки и функции [Vex:vertexnext] и [Vex:vertexprev] для прохождения вперед и назад по списку вершин данной точки.
+
+* Для перебора вершин полигональной грани используйте функцию [Vex:primvertexcount], чтобы получить количество вершин, тогда вы сможете использовать номер примитива и счетчик от 0 до `<<количество вершин>>-1` для обращения к вершинам.
+
+* _Номер вершины_ - это отсчитывающийся с `0` индекс вершины некоторого примитива. _Линейный номер вершины_ - это отсчитывающийся с `0` индекс вершины некоторого примитива _во всей геометрии_. Это немного более удобный способ ссылаться на вершину с одним числом вместо двух (номер примитива и номер вершины в примитиве). Вы можете использовать функцию [Vex:vertexindex] для получения линейного номера вершины из номера примитива и номера вершины в нём. Используйте функции [Vex:vertexprim] и [Vex:vertexprimindex] для другого преобразования, из линейного номера вершины в номер примитива и номер вершины в нём.
+
+<style>
+.datatype {font-family: sans-serif; font-weight: bold;
+           padding: 4px; color: white; font-size: 90%;}
+.ptnumber {background-color: #06C;}
+.linvtxnum {background-color: #690;}
+.primnum {background-color: #F30;}
+.vtxnum {background-color: #F80;}
+</style>
+
+Возвращает ||
+    Функция ||
+        Аргумент(ы)||
+
+<span class="datatype ptnumber">Номер точки</span> |
+    [Vex:vertexpoint] |
+        <span class="datatype linvtxnum">Линейный номер вершины</span>
+
+<span class="datatype linvtxnum">Линейный номер вершины</span> |
+    [Vex:pointvertex] |
+        <span class="datatype ptnumber">Номер точки</span>
+
+<span class="datatype linvtxnum">Линейный номер вершины</span> |
+    [Vex:vertexnext] |
+        <span class="datatype linvtxnum">Линейный номер вершины</span>
+
+<span class="datatype linvtxnum">Линейный номер вершины</span> |
+    [Vex:vertexprev] |
+        <span class="datatype linvtxnum">Линейный номер вершины</span>
+
+<span class="datatype linvtxnum">Линейный номер вершины</span> |
+    [Vex:vertexindex] |
+        <span class="datatype primnum">Номер примитива</span>,
+        <span class="datatype vtxnum">Номер вершины</span>
+
+Количество вершин |
+    [Vex:primvertexcount] |
+        <span class="datatype primnum">Номер примитива</span>
+
+<span class="datatype primnum">Номер примитива</span> |
+    [Vex:vertexprim] |
+        <span class="datatype linvtxnum">Линейный номер вершины</span>
+
+<span class="datatype vtxnum">Номер вершины</span> |
+    [Vex:vertexprimindex] |
+        <span class="datatype linvtxnum">Линейный номер вершины</span>
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/geometry]

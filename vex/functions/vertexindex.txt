@@ -1,0 +1,39 @@
+= vertexindex =
+
+#type: vex
+#context: all
+#tags: vertex, prim
+#group: geo
+
+"""Преобразует пару примитив/вершина в линейный индекс вершины."""
+
+:usage: `int vertexindex(<geometry>, int primnum, int vertex)`
+
+[Include:_common#geometry]
+
+:arg:primnum:
+    Номер примитива для получения вершины.
+
+:arg:vertex:
+    Номер вершины в примитиве `primnum`. `0` - первая вершина.
+
+:returns:
+    Возвращает  линейный индекс вершины, соответствующий данной вершине примитива. Возвращает `-1`, если функция не может найти эквивалентный линейный индекс вершины.
+
+
+@examples
+
+{{{
+#!vex
+
+int linearvtx;
+
+// Получаем линейный индекс второй вершины третьего примитива.
+linearvtx = vertexindex("defgeo.bgeo", 3, 2);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertexindex]

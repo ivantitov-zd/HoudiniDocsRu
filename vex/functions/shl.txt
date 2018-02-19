@@ -1,0 +1,22 @@
+= shl =
+
+#type: vex
+#context: all
+#tags: math, integer
+#group: math
+
+"""Битовый сдвиг целого числа влево."""
+
+:usage: `int shl(int a, int bits)`
+
+Битовый сдвиг целого числа `a` влево на `bits`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/shl]
+
+@related
+
+- [Vex:shr]
+- [Vex:shrz]

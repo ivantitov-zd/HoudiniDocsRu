@@ -1,0 +1,180 @@
+= set =
+
+#type: vex
+#context: all
+#tags: data
+#group: utility
+
+"""Создает новое значение, основанное на аргументах, например, создание вектора из компонентов."""
+
+Функция `set()` имеет *широкий набор* форм, позволяющих выполнять множество различных преобразований.
+
+TIP:
+    При заполнении матрицы в Houdini числа заполняют первую строку, затем вторую и т.д. ("главенство строк").
+
+:usage: `vector2 set( float v1; float v2 )`
+:usage: `vector set( float v1; float v2; float v3 )`
+:usage: `vector4 set( float v1; float v2; float v3; float v4 )`
+:usage: `matrix2 set( float v1; float v2; float v3; float v4 )`
+:usage: `matrix3 set( float v1; float v2; float v4; float v4; float v5; float v6; float v7; float v8; float v9 )`
+:usage: `matrix set( float v1; float v2; float v3; float v4; float v5; float v6; float v7; float v8; float v9; float v10; float v11; float v12; float v13; float v14; float v15; float v16 )`
+
+    Создает вектор или матрицу из значений в аргументах.
+    
+    {{{
+    #!vex
+    vector4 v = set(1.0, 2.0, 3.0, 4.0);
+    matrix3 m = set(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0);
+    }}}
+    
+    Функция [Vex:assign] выполняет противоположную операцию (извлечение компонентов в переменные).
+
+:usage: `<vector> set( float nums[] )`
+:usage: `<matrix> set( float nums[] )`
+
+    Создает вектор/матрицу из массива чисел с плавающей запятой.
+    
+    {{{
+    #!vex
+    float[] nums = {1.0, 2.0, 3.0, 4.0};
+    vector4 v = set(nums);
+    }}}
+
+:usage: `<vector> set( float|int v )`
+:usage: `<matrix> set( float|int v )`
+
+    Если вы вектор или матрицу из одного значения, все компоненты вектора/матрицы заполняются этим значением.
+    
+    {{{
+    #!vex
+    vector4 v = set(2.0);  // -> {2.0, 2.0, 2.0, 2.0}
+    }}}
+
+:usage: `matrix2 set( vector2 row1; vector2 row2 )`
+:usage: `matrix3 set( vector row1; vector row2; vector row3 )`
+:usage: `matrix set( vector4 row1; vector4 row2; vector4 row3; vector4 row4 )`
+
+    Создает матрицу из нескольких векторных аргументов одного размера, представляющих строки матрицы.
+    
+    {{{
+    #!vex
+    matrix3 m = set({0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}, {0.0, 1.0, 0.0});
+    }}}
+
+:usage: `matrix3 set( vector rows[] )`
+:usage: `matrix set( vector4 rows[] )`
+
+    Также вы можете создать матрицу из массива векторов, представляющих строки матрицы. Если в массиве недостаточно векторов для заполнения матрицы, дополнительные строки будут содержать нули.
+
+:usage: `vector[] set( matrix3 m )`
+:usage: `vector4[] set( matrix m )`
+
+    Создает массив векторов из строк матрицы того же размера.
+    
+    {{{
+    matrix3 m3 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
+    vector[] vs = set(m3);  // -> array [ {1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0} ]
+    }}}
+
+:usage: `vector set( vector2 v)`
+:usage: `vector4 set( vector2 v)`
+:usage: `vector4 set( vector v)`
+:usage: `matrix3 set( matrix2 m)`
+:usage: `matrix set( matrix2 m)`
+:usage: `matrix set( matrix3 m)`
+
+    Если вы создаете вектор/матрицу большего размера из вектора/матрицы меньшего размера, дополнительные компоненты заполняются нулями.
+    
+    {{{
+    #!vex
+    vector2 v2 = {1.0, 2.0};
+    vector4 v4 = set(v2);  // -> {1.0, 2.0, 0.0, 0.0}
+    }}}
+ 
+:usage: `float set( vector v)`
+:usage: `float set( vector4 v)`
+:usage: `vector2 set( vector4 v)`
+:usage: `vector2 set( vector v)`
+:usage: `vector set( vector4 v)`
+ 
+    Если вы создаете меньший вектор из большего вектора, лишние компоненты будут проигнорированы.
+     
+    {{{
+    #!vex
+    vector4 v4 = {1.0, 2.0, 3.0, 4.0};
+    vector2 v2 = set(v4)  // -> {1.0, 2.0}
+    }}}
+
+:usage: `matrix2 set( matrix3 m)`
+:usage: `matrix2 set( matrix m)`
+:usage: `matrix3 set( matrix m)`
+
+    Если вы создаете меньшую матрицу из матрицы большего размера, меньший тип займет верхний левый угол, остальные компоненты будут проигнорированы.
+    
+    {{{
+    #!vex
+    matrix3 m3 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
+    matrix2 m2 = set(m3);  // -> {1.0, 2.0, 4.0, 5.0}
+    }}}
+
+:usage: `float[] set( <vector> v)`
+:usage: `float[] set( <matrix> m)`
+
+    Создает массив чисел с плавающей запятой из вектора или матрицы.
+
+    {{{
+    #!vex
+    matrix3 m3 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
+    float[] nums = set(m3);  // -> array [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0 ]
+    }}}
+
+:usage: `<vector>[] set( float nums[] )`
+:usage: `<matrix>[] set( float nums[] )` 
+
+    Создает массив векторов/матриц, беря по одному компоненту за раз из массив чисел с плавающей запятой. Это то же самое, что функция [Vex:unserialize].
+    
+    {{{
+    #!vex
+    float[] nums = {1.0, 2.0, 3.0, 4.0};
+    vector2[] vs = set(nums);  // -> [ {1.0, 2.0}, {3.0, 4.0} ]
+    }}}
+
+:usage: `int set(float v)`
+:usage: `float set(int v)`
+:usage: `float[] set( int vs[])`
+:usage: `int[] set( float vs[])`
+
+    Вы можете задать float из int или int из float, массив float из массива int или наоборот.
+    
+    {{{
+    #!vex
+    float[] fracs = { 1.1, 2.2, 3.3, 4.4, 5.5, 6.6 };
+    int[] floored = set(fracs);  // -> array [ 1, 2, 3, 4, 5, 6 ]
+    }}}
+
+:usage: `float[] set( float num )`
+
+    Задает всем элементам массива чисел с плавающей запятой одно и то же значение.
+
+:usage: `float set( float nums[] )`
+
+    Возвращает первый элемент в массиве.
+
+:usage: `<type> set(<type> v)`
+:usage: `<type>[] set(<type> v[])`
+
+    Если вы вызываете функцию `set()` с одинаковым типом аргумента и возвращаемым типом, она просто возвращает значение аргумента.
+
+    {{{
+    #!vex
+    string s = set("Hello");  // -> "Hello"
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/set]
+
+@related
+
+- [Vex:assign]

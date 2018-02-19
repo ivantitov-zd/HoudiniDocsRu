@@ -1,0 +1,21 @@
+= isalpha =
+
+#type: vex
+#context: all
+#group: string
+
+"""Возвращает 1, если все символы в строке являются буквами."""
+
+:usage: `int isalpha(const string str)`
+
+:returns:
+    Возвращает `1`, если все символы в строке являются буквами алфавита, то есть нет цифр, знаков препинания или других специальных символов. Если они присутствуют, возвращается `0`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/isalpha]
+
+@related
+
+- [Vex:isdigit]
