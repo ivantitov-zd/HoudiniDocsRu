@@ -42,7 +42,7 @@ vtx = vertexprimindex("defgeo.bgeo", 6);
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertexprimindex]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/vertexprimindex]
 
 @related
 

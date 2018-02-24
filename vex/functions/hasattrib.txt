@@ -32,7 +32,7 @@ if (hasattrib("defgeo.bgeo", "pointgroup", "pointstouse")) {
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/hasattrib]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hasattrib]
 
 @related
 

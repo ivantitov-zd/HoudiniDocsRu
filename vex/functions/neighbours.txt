@@ -38,7 +38,7 @@ neighbours(int opinput, int ptnum)
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/neighbours]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/neighbours]
 
 @related
 

@@ -30,7 +30,7 @@ len({0, 10, 20, 30}) == 4;
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/len]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/len]
 
 @related
 

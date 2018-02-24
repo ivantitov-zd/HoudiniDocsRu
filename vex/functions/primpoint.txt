@@ -23,4 +23,4 @@
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/primpoint]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/primpoint]

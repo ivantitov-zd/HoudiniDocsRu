@@ -46,7 +46,7 @@ slice(nums, 0, 0, 0, 0, 1, 2) == {20, 40, 60};  // nums[::2]
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/slice]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/slice]
 
 @related
 

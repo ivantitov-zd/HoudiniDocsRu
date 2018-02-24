@@ -120,4 +120,4 @@ string thirdbyte = a_string[2:3];
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/strings]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/strings]
