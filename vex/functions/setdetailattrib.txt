@@ -27,7 +27,7 @@ Eсли вы не знаете класс атрибута до выполнен
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/setdetailattrib]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/setdetailattrib]
 
 @related
 - [Vex:setattrib]

@@ -28,7 +28,7 @@ efit(3, 0, 1, 10, 20) == 40
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/efit]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/efit]
 
 @related
 - [Vex:clamp]

@@ -1,0 +1,46 @@
+= neighbours =
+
+#type: vex
+#context: all
+#tags: point, proximity
+#group: geo
+
+"""Возвращает массив номеров точек соединенных с данной."""
+
+:usage: `int[] neighbours(<geometry>, int ptnum)`
+
+Основанная на массиве замена комбинации [Vex:neighbourcount]/[Vex:neighbour].
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает массив номеров точек соединенных с данной точкой.
+
+
+@examples
+
+Это примерно эквивалентно следующему коду:
+
+{{{
+#!vex
+int []
+neighbours(int opinput, int ptnum)
+{
+    int     i, n;
+    int     result[];
+    n = neighbourcount(input, ptnum);
+    resize(result, n);
+    for (i = 0; i < n; i++)
+        result[i] = neighbour(input, ptnum, i);
+}
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/neighbours]
+
+@related
+
+- [Vex:neighbourcount]
+- [Vex:neighbour]

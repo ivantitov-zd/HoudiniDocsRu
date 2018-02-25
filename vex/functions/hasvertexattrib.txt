@@ -25,7 +25,7 @@ int exists = hasvertexattrib("defgeo.bgeo", "P");
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/hasvertexattrib]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hasvertexattrib]
 @related
 
 - [Vex:hasattrib]

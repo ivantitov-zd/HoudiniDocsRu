@@ -16,7 +16,7 @@
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/distance]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/distance]
 
 @related
 - [Vex:distance2]

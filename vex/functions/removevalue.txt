@@ -22,7 +22,7 @@ removevalue(nums; 2);  // == 1
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/removevalue]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/removevalue]
 
 @related
 

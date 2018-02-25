@@ -23,7 +23,7 @@ VEX основан на языке C, но заимствует идеи как 
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/index]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/index]
 
 @subtopics
 
@@ -43,7 +43,7 @@ VEX основан на языке C, но заимствует идеи как 
 :: [attrib_suite]
 :: [Написание PBR шейдеров на VEX|pbr]
 :: [cookbook]
-:: [Полурёбра (half-edges)|halfedges]
+:: [halfedges]
 :: [random]
 :: [Создание SOP или POP нод с помощью VOP или VEX|sopnodes]
 :: [VOP структуры|vop_structs]

@@ -24,7 +24,7 @@ length2({0.5, 0.75, 0}) == 0.8125;
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/length2]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/length2]
 
 @related
 

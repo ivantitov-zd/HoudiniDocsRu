@@ -25,7 +25,7 @@ fit(.3, 0, 1, 10, 20) == 13
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/fit]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/fit]
 
 @related
 - [Vex:clamp]

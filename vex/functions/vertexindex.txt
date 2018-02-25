@@ -36,4 +36,4 @@ linearvtx = vertexindex("defgeo.bgeo", 3, 2);
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/vertexindex]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/vertexindex]

@@ -21,7 +21,7 @@ float  f[] = float[](array(1, 2, s, t, length(P-L), length(N)));
 :bubble:
     #dir: right	
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/array]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/array]
 
 @related
 

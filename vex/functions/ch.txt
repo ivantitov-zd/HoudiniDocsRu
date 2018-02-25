@@ -38,7 +38,7 @@ float tx = ch("/obj/geo1/box1/tx", 1.5)
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/ch]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/ch]
 
 @related
 

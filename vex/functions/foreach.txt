@@ -54,7 +54,7 @@ foreach (int i; string name; days) {
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/foreach]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/foreach]
 
 @related
 

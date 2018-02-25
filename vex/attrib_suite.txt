@@ -62,4 +62,4 @@ vector uv = vertex("defgeo.bgeo", "uv", 3, 2);
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/attrib_suite]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/attrib_suite]

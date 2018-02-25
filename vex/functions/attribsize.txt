@@ -41,7 +41,7 @@ int size = attribsize("defgeo.bgeo", "point", "P");
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini/vex/functions/attribsize]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/attribsize]
 
 
 @related

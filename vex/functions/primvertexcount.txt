@@ -1,0 +1,38 @@
+= primvertexcount =
+
+#type: vex
+#context: all
+#tags: prim, vertex, count
+#group: geo
+
+"""Возвращает количество вершин в примитиве."""
+
+:usage: `int primvertexcount(<geometry>, int prim_num)`
+
+[Include:_common#geometry]
+
+:arg:prim_num:
+    Номер примитива для подсчета вершин.
+
+:returns:
+    Возвращает количество вершин в заданном примитиве или `-1`, если примитив не существует.
+
+
+@examples
+
+{{{
+#!vex
+int	nvtx;
+
+// Получает количество вершин в примитиве 3
+nvtx = primvertexcount("defgeo.bgeo", 3);
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/primvertexcount]
+
+@related
+
+- [Vex:vertexindex]

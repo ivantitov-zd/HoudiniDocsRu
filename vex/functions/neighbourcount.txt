@@ -1,0 +1,28 @@
+= neighbourcount =
+
+#type: vex
+#context: all
+#tags: point, proximity
+#group: geo
+
+"""Возвращает количество точек, подключенных к указанной точке."""
+
+:usage: `int neighbourcount(<geometry>, int point_num)`
+
+[Include:_common#geometry]
+
+:arg:point_num:
+    Номер точки, соседей которой вы хотите посчитать.
+
+:returns:
+    Возвращает количество точек, подключенных к указанной точке. Точка считается подключеной, если она смежна в каком-либо полигоне или является одной из четырех окружающих точек на поверхности сетки или NURBs. Возвращает `0`, если на входе нет точек или номер точки находится вне диапазона.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/neighbourcount]
+
+@related
+
+- [Vex:neighbour]
+- [Vex:neighbours]
