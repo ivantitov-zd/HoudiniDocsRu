@@ -1,0 +1,38 @@
+= pointvertex =
+
+#type: vex
+#context: all
+#tags: point, vertex
+#group: geo
+
+"""Возвращает линейный номер вершины указанной точки."""
+
+:usage: `int pointvertex(<geometry>, int point_num)`
+
+    Используйте данную функцию, чтобы найти линейный номер первой вершины, прикрепленной к указанной точке. Затем вы можете использовать функцию [Vex:vertexnext] для перебора остальных вершин данной точки.
+
+[Include:_common#geometry]
+
+:returns:
+    Возвращает линейный номер первой вершины заданной точки. Возвращает `-1`, если у данной точки нет вершин.
+
+@examples
+
+{{{
+#!vex
+
+int vtx;
+
+// Получаем линейную вершину точки 3
+vtx = pointvertex("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/pointvertex]
+
+@related
+
+- [Vex:vertexpoint]

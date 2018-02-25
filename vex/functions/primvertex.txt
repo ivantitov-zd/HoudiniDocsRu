@@ -1,0 +1,40 @@
+= primvertex =
+
+#type: vex
+#context: all
+#tags: prim, vertex
+#group: geo
+
+"""Преобразует пару номер примитива/вершины в линейный номер вершины."""
+
+:usage: `int primvertex(<geometry>, int primnum, int vertex)`
+
+[Include:_common#geometry]
+
+:arg:primnum:
+    Номер примитива для получения вершины.
+
+:arg:vertex:
+    Номер вершины в примитиве. 0 - первая вершина.
+
+:returns:
+    Возвращает линейный индекс вершины, соответствующий указанной вершине в примитиве.
+    Возвращает `-1`, если функция не может найти линейный индекс вершины.
+
+
+@examples
+
+{{{
+#!vex
+
+int linearvtx;
+
+// Получаем линейный номер второй вершины третьего примитива
+linearvtx = primvertex("defgeo.bgeo", 3, 2);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/primvertex]

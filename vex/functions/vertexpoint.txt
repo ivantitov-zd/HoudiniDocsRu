@@ -1,0 +1,40 @@
+= vertexpoint =
+
+#type: vex
+#context: all
+#tags: vertex, point
+#group: geo
+
+"""Возвращает номер точки указанной линейной вершины."""
+
+:usage: `int vertexpoint(<geometry>, int linearvertex)`
+
+[Include:_common#geometry]
+
+:arg:linearvertex:
+    Линейный номер вершины. Вы можете использовать функцию [Vex:vertexindex] для вычисления линейного номера вершины из номера примитива и номера вершины в указанном примитиве.
+
+:returns:
+    Возвращает номер точки, связанной с указанной вершиной или `-1`, если вершина не связана с точкой.
+
+
+@examples
+
+{{{
+#!vex
+
+int pt;
+
+// Получаем точку вершины 3
+pt = vertexpoint("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/vertexpoint]
+
+@related
+
+- [Vex:pointvertex]
