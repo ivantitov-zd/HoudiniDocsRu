@@ -1,4 +1,4 @@
-#type:     node
+﻿#type:     node
 #context:  obj
 #internal: guidesim
 #icon:     OBJ/guidesim
@@ -118,7 +118,7 @@ Reference Length:
 Target:
     #id: enabletarget
 
-    Включает силу, которая заставляет кривые более тщательно следить за их назначенной формой.
+    Включает силу, которая заставляет кривые сохранять назначенную форму.
 
 [Include:/nodes/dop/standard_wireobjecttabs#targetstiffness]
 
