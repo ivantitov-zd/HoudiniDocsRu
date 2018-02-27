@@ -1,0 +1,30 @@
+#type:     node
+#context:  sop
+#internal: guidegroup
+#icon:     SOP/guidegroup
+
+= Guide Group =
+
+"""Создает стандартные группы примитивов, используемые инструментами груминга."""
+
+Создает группы направляющих, группируя все примитивы, вычитая любые линии раздела.
+
+@parameters
+
+Guides Group:
+    #id: guidesgroup
+
+    Группирует направляющие кривые под этим именем.
+
+Parting Lines Group:
+    #id: partinglinesgroup
+
+    Вычитает любые примитивы в указанной группе из __Guides Group__.
+
+@related
+- [Node:sop/guidepartition]
+- [Node:sop/guideprocess]
+- [Node:sop/guidegroom]
+- [Node:sop/hairclump]
+- [Node:sop/guidecollidewithvdb]
+
