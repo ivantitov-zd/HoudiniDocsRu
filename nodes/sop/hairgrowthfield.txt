@@ -1,0 +1,11 @@
+= Hair Growth Field =
+
+#type: node
+#context: sop
+#internal: hairgrowthfield
+#icon: SOP/hairgrowthfield
+#tags: fur, volumes, advect, lowlevel
+
+"""Создает поле скорости, основанное на примитивах мазков."""
+
+Данная нода используется внутри [Draw Hair Guides|Node:sop/drawhairguides], для генерации полей VDB, чтобы деформировать волосы в соответствии с ними.
