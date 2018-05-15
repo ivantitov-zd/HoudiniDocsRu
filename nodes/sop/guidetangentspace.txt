@@ -1,0 +1,91 @@
+#type:     node
+#context:  sop
+#internal: guidetangentspace
+#icon:     SOP/guidetangentspace
+
+= Guide Tangent Space =
+
+"""Строит [пространство касательных|Wp:Tangent_space] вдоль кривой."""
+
+Учитывая направление нормали для корневой точки, распространяется нормаль вдоль кривой, минимизируя ориентацию вдоль касательного вектора.
+
+Этот оператор используется в различных инструментах груминга.
+
+@parameters
+
+== Creation ==
+
+Group:
+    #id: group
+
+    Группа примитивов.
+
+
+Normal Mode:
+    #id: normalmode
+    
+    Этот метод используется для определения нормали кривой в корневой точке.
+
+    Guide Normal Attribute:
+        Используется атрибут нормали кривой.
+
+    Skin Tangent Attribute:
+        Используется атрибут касательного вектора к поверхности. Атрибут считывается в позиции, наиболее близкой к корневой точке каждой кривой.
+
+    Skin UV Gradient:
+        Используется вектор градиента UV-координат геометрии кожи в позиции, ближайшей к корневой точке каждой кривой.
+
+
+Guide Normal Attribute:
+    #id: guidenormalattrib
+
+    Используется атрибут нормали при __Normal Mode__, установленном в значение __Guide Normal Attribute__.
+
+Skin Tangent Attribute:
+    #id: skintangentattrib
+
+    Используется атрибут касательной к геометрии кожи при __Normal Mode__, установленном в значение __Skin Tangent Attribute__.
+
+UV Attribute:
+    #id: skinuvattrib
+
+    Используется данный атрибут UV при __Normal Mode__, установленном в значение __Skin UV Gradient__.
+
+== Output ==
+
+outputnormal:
+    #id: outputnormal
+
+    Выводит вычисленный вектор нормали.
+
+
+Normal Name:
+    #id: normalname
+
+    Имя, используемое для вектора нормали.
+
+
+outputtangent:
+    #id: outputtangent
+
+    Выводит вычисленный вектор касательной.
+
+Tangent Name:
+    #id: tangentname
+
+    Имя, используемое для вектора касательной.
+
+outputbitangent:
+    #id: outputbitangent
+
+    Выводит вычисленный вектор [бикасательной|Wp:Bitangent]. ([Векторное произведение|Wp:Cross_product] касательной и вектора нормали)
+
+
+Bitangent Name:
+    #id: bitangentname
+
+    Имя, используемое для вектора бикасательной.
+
+@related
+- [item | /link ]
+
