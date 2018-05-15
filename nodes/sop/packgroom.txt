@@ -1,0 +1,19 @@
+#type:     node
+#context:  sop
+#internal: packgroom
+#icon:     SOP/packgroom
+
+= Groom Pack =
+
+"""Упаковывает компоненты груминга в массив названных упакованных примитивов, чтобы в последствии записать на диск."""
+
+Пакет может содержать как статичные, так и анимированные направляющие кривые и поверхности кожи.
+
+[Unpack Groom SOP|Node:sop/unpackgroom] используется, чтобы распаковать компоненты.
+
+Такие объекты груминга, как [Guide Deform|Node:obj/guidedeform], [Guide Sim|Node:obj/guidesim] и [Hair Generate|Node:obj/hairgen] могут читать запакованный груминг из файла и распаковывать его для дальнейшей обработки или генерации волос и рендеринга.
+
+
+@related
+- [Node:sop/unpackgroom]
+
