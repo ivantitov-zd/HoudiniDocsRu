@@ -1,0 +1,10 @@
+#icon: FUR/animate
+#parent: hairtools
+
+= Deform Guides =
+
+"""Создает объект Guide Deform."""
+
+Этот инструмент создает объект [Guide Deform|Node:obj/guidedeform], который перемещает массив статичных направляющих в соответствии с анимированной геометрией кожи.
+
+Для получения дополнительной информации см. справку [Guide Deform|Node:obj/guidedeform] или [Работа с шерстью|/fur/workflow].
