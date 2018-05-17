@@ -1,0 +1,20 @@
+﻿= Hair tab =
+
+"""Инструменты на вкладке Hair позволяют добавить и уложить шерсть на объекте."""
+
+@subtopics Shelf items
+#display: show-icons
+
+:: [addfur]
+:: [addparting]
+:: [paintfurdensity]
+:: [paintfurthickness]
+:: [paintbasecolor]
+:: [paintfurfrizz]
+:: [paintfurfrizzfrequency]
+:: [paintfurfrizzroughness]
+:: [paintfurclumping]
+:: [paintwhitehairdensity]
+:: [paintguardhairdensity]
+:: [paintguardhairlength]
+:: [furdynamics]

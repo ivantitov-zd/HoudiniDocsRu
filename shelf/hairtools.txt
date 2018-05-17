@@ -1,0 +1,15 @@
+= Hair Utils tab =
+
+"""Инструменты на вкладке Hair Utils позволяют быстро настроить волосы или шерсть на объектах."""
+
+@subtopics Shelf tools
+#display: show-icons
+
+:: [groom_addfur]
+:: [groom_guidegroom]
+:: [groom_groommerge]
+:: [groom_animateguides]
+:: [groom_simguides]
+:: [groom_hairgen]
+:: [groom_isolateparts]
+:: [groom_togglehairdisplay]
