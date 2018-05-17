@@ -1,0 +1,38 @@
+= pointedge =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Находит и возвращает полуребро с заданными конечными точками."""
+
+:usage: `int pointedge(<geometry>, int point1, int point2)`
+
+[Include:_common#geometry]
+
+:arg:`point1`, `point2`:
+    Номера двух точек, которые являются конечными для полуребра. `0` - первая точка.
+
+:returns:
+    Возвращает `-1`, если подходящее полуребро не существует. В противном случае возвращается номер полуребра, начальная точка которого `point1`, а конечная `point2`, либо наоборот.
+
+@examples
+
+{{{
+#!vex
+
+int edge_count = 0;
+
+// Определяет, существует ли ребро между точками 23 и 25:
+int h0 = pointedge("defgeo.bgeo", 23, 25);
+if (h0 != -1)
+{
+// Ребро существует!
+}
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/pointedge]

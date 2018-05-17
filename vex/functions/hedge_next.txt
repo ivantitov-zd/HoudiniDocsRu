@@ -1,0 +1,37 @@
+= hedge_next =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает полуребро, которое следует за заданным полуребром в его примитиве."""
+
+:usage: `int hedge_next(<geometry>, int hedge)`
+
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает номер полуребра, которое следует за полуребром `hedge` в его примитиве. Возвращает `-1`, если полуребро недействительно.
+
+
+@examples
+
+{{{
+#!vex
+
+int nexthedge;
+
+// Получает следующее за полуребром номер 3 полуребро.
+nexthedge = hedge_next("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_next]

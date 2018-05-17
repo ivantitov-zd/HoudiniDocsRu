@@ -1,0 +1,37 @@
+= hedge_prev =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает полуребро, которое предшествует заданному полуребру в том же примитиве."""
+
+:usage: `int hedge_prev(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает номер полуребра, предшествующего (его конец является началом) `hedge` в примитиве, который его содержит.
+    Возвращает `-1`, если `hedge` недействителен.
+
+
+@examples
+
+{{{
+#!vex
+
+int prev;
+
+// Получает предыдущее полуребро полуребра номер 3.
+prevhedge = hedge_prev("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_prev]
