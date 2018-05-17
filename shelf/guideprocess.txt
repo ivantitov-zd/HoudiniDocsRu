@@ -1,0 +1,24 @@
+= Guide Process tab =
+
+"""Инструменты на вкладке Guide Process влияют на положение и ориентацию волос, добавляя атрибуты при помощи рисования по поверхности кожи."""
+
+:vimeo: Guide process
+    #id: 204584593
+
+
+@subtopics Shelf tools
+#display: show-icons
+
+:: [sop_groom_guideinit]
+:: [sop_groom_curveadvect]
+:: [reguide]
+:: [sop_groom_guideprocess_setdir]
+:: [sop_groom_guideprocess_length]
+:: [sop_groom_guideprocess_lift]
+:: [sop_groom_guideprocess_straighten]
+:: [sop_groom_guideprocess_smooth]
+:: [sop_groom_guideprocess_frizz]
+:: [sop_groom_guideprocess_bend]
+:: [sop_groom_hairclump]
+:: [drawpartingline]
+:: [sop_groom_whitehair]
