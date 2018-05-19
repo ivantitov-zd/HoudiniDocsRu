@@ -32,6 +32,7 @@ VEX основан на языке C, но заимствует идеи как 
 :: [lang]
 :: [statement]
 :: [arrays]
+:: [strings]
 :: [Компилятор VEX (vcc)|vcc]
 :: [Псевдокомментарии компилятора VEX (Pragmas)|pragmas]
 :: [shadercalls]
@@ -53,4 +54,3 @@ VEX основан на языке C, но заимствует идеи как 
 
 :: [Контексты VEX|contexts/]
 :: [functions/]
-:: [strings]
