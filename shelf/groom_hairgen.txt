@@ -25,4 +25,4 @@ NOTE:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_togglehairdisplay.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_togglehairdisplay]

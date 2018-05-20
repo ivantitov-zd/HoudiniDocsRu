@@ -317,7 +317,7 @@ Volume SOP:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this pagehttp://www.sidefx.com/docs/houdini16.5/nodes/obj/guidesim.html]
+    [English version of this pagehttp://www.sidefx.com/docs/houdini16.5/nodes/obj/guidesim]
 
 @locals
 

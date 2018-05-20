@@ -41,4 +41,4 @@ Radius:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidetransfer.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidetransfer]

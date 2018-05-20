@@ -12,4 +12,4 @@
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_simguides.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_simguides]

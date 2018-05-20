@@ -412,7 +412,7 @@ Curve Mask Ramp:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidemask.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidemask]
 
 @related
 - [Node:sop/guideprocess]

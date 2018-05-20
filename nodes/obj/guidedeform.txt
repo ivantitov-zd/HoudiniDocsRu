@@ -46,7 +46,7 @@ Display Color:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/guidedeform.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/guidedeform]
 
 @locals
 

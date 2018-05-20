@@ -8,7 +8,7 @@
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/guideprocess.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/guideprocess]
 
 @subtopics Shelf tools
 #display: show-icons

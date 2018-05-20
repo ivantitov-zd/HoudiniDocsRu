@@ -35,4 +35,4 @@ TIP:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/surfacebrush.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/surfacebrush]

@@ -69,7 +69,7 @@ Points:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomblend.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomblend]
 
 @related
 - [Node:sop/guidemask]

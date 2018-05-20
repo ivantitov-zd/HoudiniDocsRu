@@ -105,7 +105,7 @@ Point Attributes:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/groommerge.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/groommerge]
 
 @related
 - [Node:obj/guidedeform]

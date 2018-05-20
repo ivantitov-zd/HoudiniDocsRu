@@ -164,7 +164,7 @@ Detail Attributes:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/guidegroom.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/guidegroom]
 
 @related
 - [Node:obj/guidedeform]

@@ -26,7 +26,7 @@ Fetch Input:
 :bubble:
     #dir: right
     #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomfetch.html]
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomfetch]
 
 @related
 - [Unpack Groom SOP|Node:/sop/unpackgroom]
