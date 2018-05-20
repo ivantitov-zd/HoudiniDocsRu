@@ -1,0 +1,173 @@
+#type:     node
+#context:  obj
+#internal: guidegroom
+#icon:     OBJ/guidegroom
+
+= Guide Groom =
+
+"""Генерирует направляющие кривые из геометрии кожи и выполняет дальнейшую обработку с использованием редактируемой сети SOP, содержащейся в ноде."""
+
+NOTE:
+    Предполагается, что геометрия кожи будет статичной. Используйте [Guide Deform|Node:obj/guidedeform] для смещения кривых в соответствии с анимированной геометрией кожи.
+
+@parameters
+
+== Rest Skin Source ==
+
+Skin Source:
+    #id: skinsource
+
+    SOP Geometry:
+	Извлекает геометрию кожи из Объекта или ноды SOP.
+
+    File:
+	Загружает геометрию кожи из файла.
+
+
+Skin SOP:
+    #id: skinsop
+
+    Извлекает геометрию кожи из этой SOP.
+
+Skin File:
+    #id: skinfile
+
+    Извлекает геометрию кожи из этого файла.
+
+Group:
+    #id: group
+
+    Генерирует направляющие кривые на этой группе примитивов.
+
+[Include:/nodes/sop/fur_common#skinvdb]
+
+== Basic ==
+
+=== Distribution ===
+
+Mode:
+    #id: guidetype
+
+    Scatter On Surface:
+	Разбрасывает направляющие кривые по геометрии кожи.
+
+    Guide Per Point:
+	Генерирует направляющие кривые на каждой точке геометрии кожи.
+
+    Use External Geometry:
+	Извлекает направляющие из внешней геометрии.
+
+
+==== Scatter On Surface Parameters ====
+
+Density:
+    #id: density
+
+    Разбрасывает направляющие с такой плотностью.
+
+    [Include:/nodes/sop/fur_common#parmoverride]
+
+Scatter Seed:
+    #id: scatterseed
+
+    Разбрасывает направляющие используя это значение seed.
+
+
+Relax Iterations:
+    #id: scatterrelaxiterations
+
+    Количество релаксаций позиций направляющих после разбрасывания. Более высокие значения приводят к более равномерному распределению направляющих за счет большего времени вычислений. 
+
+==== External Geometry Parameters ====
+
+Geometry:
+    #id: guidegeo
+
+    Извлекает направляющие кривые из этой ноды SOP.
+
+Resample To Match Fur Segments:
+    #id: guideresample
+
+    Пересчет сегментов направляющих по количеству сегментов, использованных этой нодой.
+
+Reverse Curves:
+    #id: guidereverse
+
+    Меняет направление входящих кривых. Houdini предполагает, что первые вершины кривых являются корнями этих кривых. Используйте эту опцию, если первые вершины направляющих находятся на кончиках.
+
+Snap To Skin:
+    #id: guidemovetoskin
+
+    Перемещает направляющие кривые на поверхность кожи. Решает проблему с направляющими, которые слегка смещены от геометрии кожи.
+
+=== Guide Creation ===
+
+Segments:
+    #id: segments
+
+    Генерирует направляющие кривые с данным количеством сегментов.
+
+Length:
+    #id: length
+
+    Генерирует направляющие кривые с данной начальной длиной.
+
+    [Include:/nodes/sop/fur_common#parmoverride]
+
+=== Display ===
+
+Display As Subdivision Curves:
+    #id: displayassubd
+
+    Подразделяет кривые во вьюпорте для более сглаженного вида.
+
+Display Color:
+    #id: displaycolor
+
+    Отображает кривые во вьюпорте в данном цвете.
+
+=== Optimization ===
+
+Bypass Editable SOP Network:
+    #id: bypasssopnetwork
+
+    Пропускает готовку редактируемой сети внутри этой ноды. Это полезно для получения более быстрой обратной связи при настройке параметров на этой ноде.
+
+=== Skin Attribute Transfer ===
+
+Передает атрибуты геометрии кожи всех типов атрибутам примитивов на сгенерированных кривых.
+
+Point Attributes:
+    #id: pointattribs
+
+    Передает данные атрибуты точек с геометрии кожи.
+
+Vertex Attributes:
+    #id: vertattribs
+
+    Передает данные атрибуты вершин с геометрии кожи.
+
+Primitive Attributes:
+    #id: primattribs
+
+    Передает данные атрибуты примитивов с геометрии кожи.
+
+Detail Attributes:
+    #id: detailattribs
+
+    Передает данные атрибуты класса Detail с геометрии кожи.
+
+== File Cache ==
+
+    Смотрите [File Cache SOP|Node:sop/filecache] для получения дополнительной информации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/guidegroom]
+
+@related
+- [Node:obj/guidedeform]
+- [Node:obj/guidesim]
+- [Node:obj/hairgen]
+- [Node:obj/groommerge]

@@ -1,0 +1,58 @@
+#type:     node
+#context:  obj
+#internal: guidedeform
+#icon:     OBJ/guidedeform
+
+= Guide Deform =
+
+"""Смещает кривые груминга в соответствии с анимированной геометрией кожи (skin)."""
+
+Извлекает входящие кривые и исходную поверхность из объекта груминга такие как [Guide Groom|Node:obj/guidegroom] или [Guide Sim|Node:obj/guidesim].
+
+
+@parameters
+
+== Groom Source ==
+
+[Include:/nodes/sop/fur_common#sourcemode]
+
+[Include:/nodes/sop/fur_common#sourcegroomobject]
+
+[Include:/nodes/sop/fur_common#sourcegroomfile]
+
+Animated Skin:
+    #id: animskin
+
+    Деформирует кривые, используя анимированную геометрию кожи.
+
+Animated Skin Group:
+    #id: animskingroup:
+
+    Группа примитивов, используемая из геометрии кожи.
+
+== Deformation ==
+
+Enable Deformation:
+    #id: enabledeformation
+
+    Включает деформацию, используя анимированную геометрию кожи.
+
+
+Display Color:
+    #id: displaycolor
+
+    Отображает кривые в этом цвете.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/guidedeform]
+
+@locals
+
+
+@related
+- [Node:obj/guidesim]
+- [Node:obj/guidegroom]
+- [Node:obj/hairgen]
+- [Node:obj/groommerge]

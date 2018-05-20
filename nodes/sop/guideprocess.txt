@@ -1,0 +1,578 @@
+#type:     node
+#context:  sop
+#internal: guideprocess
+#icon:     FUR/comb
+
+= Guide Process =
+
+#type: node
+#context: Sop
+#internal: guideprocess
+
+"""Изменяет направляющие или волосы, применяя одну или более операций."""
+
+Эта нода изменяет направляющие кривые, применяя одну или несколько из следующих операций:
+
+* Поворот направляющих в определенном направлении
+* Изменение расстояния между направляющими и поверхностью кожи
+* Увеличение или уменьшение длины направляющих
+* Сглаживание направляющих
+* Изгиб направляющих
+
+Для каждой операции может быть назначена или нарисована маска с атрибутами и текстурами. Операции также могут частично влиять на направляющие кривые с изменяющейся интенсивностью.
+
+@parameters
+
+== General ==
+
+Group Type:
+    #id: grouptype
+
+    Тип группы, подающейся на вход.
+
+Group:
+    #id: group
+
+    Выбор группы, использующейся как маска. Любые операции будут применены только к примитивам или точкам в этой группе.
+
+Random Seed:
+    #id: seed
+
+    Данный seed будет использован во всех операциях, где используются случайные значения. Это приводит к тому, что такие операции как __Set Length__ (с включенным __Randomize__) оказывают различное влияние на каждую кривую.
+
+Visualize Masks:
+    #id: vismasks
+
+    Визуализирует воздействие таких масок, как Skin Mask, Curve Mask и Noise Mask, окрашивая кривые во вьюпорте.
+
+== Input Mask ==
+
+Blend:
+    #id: blend
+
+    [Include:fur_common#opblend]
+
+    [Include:fur_common#parmoverride]
+
+[Include:/nodes/sop/fur_common#curvemask]
+
+== Noise Mask ==
+
+Use Noise Mask:
+    #id: usenoisemask
+    Применяет маску к любой операции, использующую функцию шума.
+
+Amount:
+    #id: noisemaskamount
+    Сила воздействия маски шума.
+
+    [Include:fur_common#parmoverride]
+
+Noise Mask Frequency:
+    #id: noisemaskfreq
+
+    Частота шума.
+
+Gain:
+    #id: noisemaskgain
+    Высокие значения приводят к более контрастному шуму, а средние значения к меньшим площадям заполнения.
+
+Bias:
+    #id: noisemaskbias
+    Смещает шум к низким или высоким значениям.
+
+== Operations ==
+
+Можно применять несколько операций, используя только одну эту ноду.
+
+=== Общие параметры ===
+
+Следующие параметры применяются для всех операций.
+
+Active:
+    #id: active#
+    Включает данную операцию.
+
+Solo:
+    #id: solo#
+    Если в каких-либо операциях включен режим 'Solo', то применяются только те операции.
+
+Operation:
+    #id: op#
+    Выбор операции.
+
+    Set Direction:
+	Поворачивает кривые в выбранном направлении.
+
+    Set Lift:
+	Приподнимает кривые от поверхности кожи, или распрямляет кривые вдоль поверхности.
+
+    Set Length:
+	Удлиняет или укорачивает кривые.
+
+    Displace:
+	Выталкивает точки кривой вдоль нормали поверхности кожи.
+
+    Wave:
+	Добавляет кривым волнистости.
+
+    Smooth:
+	Задает среднее значение формы соседних кривых.
+
+    Frizz:
+	Изгибает кривые, используя шум.
+
+    Bend:
+	Изгибает кривые под определенным углом.
+
+    Set Simulation Attributes:
+	Устанавливает атрибуты, используемые при симуляции волос.
+
+NOTE:
+    Следующие параметры являются специфическими для каждой операции. Они отображаются только в том случае, если соответствующая операция выбрана из раскрывающегося меню __Operation__.
+
+=== Set Direction ===
+
+Blend:
+    #id: setdir_blend#
+
+    [Include:fur_common#opblend]
+
+Uniform Direction:
+    #id: setdir_uniformdir#
+    Односторонее направление вращения.
+
+Direction Attribute:
+    #id: setdir_skinattrib#
+    Атрибут направления вращения.
+
+Direction Amount:
+    #id: setdir_blenddir#
+    Коэффициент силы вращения вокруг нормали поверхности. Изменяется только направление по отношению к плоскости поверхности, не приподнимая кривые от поверхности.
+
+    [Include:fur_common#parmoverride]
+
+Lift Amount:
+    #id: setdir_blendlift#
+    Приподнимает кривые от поверхности кожи, или распрямляет кривые вдоль поверхности в соответствии с заданным направлением. Вращение происходит только по направлению к поверхности и от нее, но не меняется вокруг нормали поверхности.
+
+    [Include:fur_common#parmoverride]
+
+Mode:
+    #id: setdir_mode#
+
+    Rigidly Rotate:
+	Поворчивает кривую целиком от корня.
+
+    Rotate Each Segment:
+	Поворачивает каждый сегмент, позволяя отдельным сегментам вращаться индивидуально в соответствии с __Curve Mask__.
+
+=== Lift ===
+
+Blend:
+    #id: lift_blend#
+
+    [Include:fur_common#opblend]
+
+Randomize:
+    #id: lift_randomize#
+    Задает случайные значения для каждой кривой.
+
+Lift:
+    #id: lift_value#
+    Глобальное значение для операции подъема.
+
+    [Include:fur_common#parmoverride]
+
+Min Lift:
+    #id: lift_liftrandmin#
+    Когда __Randomize__ включен, это самое низкое значение подъема.
+
+Max Lift:
+    #id: lift_liftrandmax#
+    Когда __Randomize__ включен, это самое высокое значение подъема.
+
+Follow Skin Contour:
+    #id: lift_followskincontour#
+    Вызывает распрямление кривых, чтобы не просто следовать направлению всей кривой по касательной, а следовать контуру поверхности кожи.
+
+    Дает более естественный результат, но приводит к более сложным вычислениям.
+
+    [Include:fur_common#parmoverride]
+
+=== Set Length ===
+
+Mode:
+    #id: setlength_mode#
+
+    Set:
+	Приводит длину кривой к абсолютному значению.
+
+    Add:
+	Удлинняет кривые на данное значение.
+
+    Subtract:
+	Укорачивает кривые на данное значение.
+
+    Multiply:
+	Использует множитель длины кривой.
+
+Method:
+    #id: setlength_method#
+
+    Scale:
+	Равномерно изменяет длину кривых вокруг корневой точки.
+
+    Cut Or Extend:
+	Подрезает или вытягивает кончики кривых.
+
+Blend:
+    #id: setlength_blend#
+
+    [Include:fur_common#opblend]
+
+Randomize:
+    #id: setlength_randomize#
+
+    Задает случайные значения для данной операции.
+
+Length:
+    #id: setlength_length#
+
+    Задается значение длины кривых. В режиме __Add__ или __Subtract__ это величина, на которую нужно изменить длину.
+
+    [Include:fur_common#parmoverride]
+
+    NOTE:
+        Это не относится к режиму __Multiply__.
+
+Min Length:
+    #id: setlength_lengthrandmin#
+
+    Наименьшая длина, используемая при включеном __Randomize__.
+
+    [Include:fur_common#parmoverride]
+
+    NOTE:
+        Это не относится к режиму __Multiply__.
+
+Max Length:
+    #id: setlength_lengthrandmax#
+
+    Наибольшая длина, используемая при включеном __Randomize__.
+
+    [Include:fur_common#parmoverride]
+
+    NOTE:
+        Это не относится к режиму __Multiply__.
+
+Scale Factor:
+    #id: setlength_scalefactor#
+    Множитель длины кривой.
+
+    [Include:fur_common#parmoverride]
+
+    NOTE:
+        This only applies to __Multiply__ mode.
+
+Min Scale Factor:
+    #id: setlength_scalefactorrandmin#
+
+    Наименьший множитель, используемый при включеном __Randomize__.
+
+    [Include:fur_common#parmoverride]
+
+    NOTE:
+        Относится только к режиму __Multiply__.
+
+Max Scale Factor:
+    #id: setlength_scalefactorrandmax#
+
+    Наибольший множитель, используемый при включеном __Randomize__.
+
+    [Include:fur_common#parmoverride]
+
+    NOTE:
+	Относится только к режиму __Multiply__.
+
+Cull Threshold:
+    #id: setlength_cullthreshold#
+
+    После изменения длин кривых удаляются любые кривые, которые короче этого значения.
+
+=== Displace ===
+
+Amount:
+    #id: displace_amount#
+
+    [Include:fur_common#blendop]
+
+    [Include:fur_common#parmoverride]
+
+=== Make Wavy ===
+
+Frequency X:
+    #id: makewavy_freqx#
+
+    Частота волн по направлению параллельному поверхности кожи.
+
+Amplitude X:
+    #id: makewavy_ampx#
+
+    Амплитуда волн по направлению параллельному поверхности кожи.
+
+Frequency Y:
+    #id: makewavy_freqy#
+
+    Частота волн по направлению перпендикулярному поверхности кожи.
+
+Amplitude Y:
+    #id: makewavy_ampy#
+
+    Амплитуда волн по направлению перпендикулярному поверхности кожи.
+
+=== Straighten ===
+
+Tangent Straightness:
+    #id: straighten_tangent#
+
+    Выпрямляет кривые в плоскости параллельной к поверхности кожи.
+
+    [Include:fur_common#parmoverride]
+
+Normal Straightness:
+    #id: straighten_normal#
+
+    Выпрямляет кривые в плоскости перпендикулярной к поверхности кожи.
+
+    [Include:fur_common#parmoverride]
+
+=== Smooth ===
+
+Blend:
+    #id: smooth_blend#
+
+    [Include:fur_common#opblend]
+
+Smoothing Mode:
+    #id: smooth_mode#
+
+    Object Space:
+	Задает среднее значение формы и ориентации соседних кривых.
+
+    Skin Space:
+	Задает среднее значение формы соседних кривых, сохраняя их ориентацию относительно поверхности кожи.
+
+Search Radius:
+    #id: smooth_radius#
+
+    Ищет соседние кривые в этом радиусе. Поиск выполняется по корням кривой, поэтому расстояние указывается между корнями.
+
+Num Neighbours:
+    #id: smooth_numneighbours#
+
+    Максимальное количество соседних кривых принятых в расчет. Фактическое число может быть ниже, когда в пределах __Search Radius__ найдено меньшее число соседних кривых.
+
+=== Frizz ===
+
+Frequency:
+    #id: frizz_freq#
+
+    Частота функции шума.
+
+    [Include:fur_common#parmoverride]
+
+Random Frequency:
+    #id: frizz_freqrand#
+
+    Добавляет случайное значение в параметр __Frequency__. Случайное значение генерируется между отрицательным и положительным значением этого параметра.
+
+    [Include:fur_common#parmoverride]
+
+Limit Frequency To Representable Values:
+    #id: frizz_limitfreq#
+
+    Ограничивает частоту диапазоном, который может быть представлен в виде отношения количества точек на единицу длины, найденных на каждой кривой. Без этого высокие значения могут приводить к случайным значениям вместо предсказуемого шума.
+
+Amplitude:
+    #id: frizz_amp#
+
+    Максимальное расстояние смещения точек кривой.
+
+    [Include:fur_common#parmoverride]
+
+Random Amplitude:
+    #id: frizz_amprand#
+
+    Добавляет случайное значение в параметр __Amplitude__. Случайное значение генерируется между отрицательным и положительным значением этого параметра.
+
+    [Include:fur_common#parmoverride]
+
+=== Bend ===
+
+Blend:
+    #id: bend_blend#
+
+    [Include:fur_common#opblend]
+
+Bend Axis Mode:
+    #id: bend_axismode#
+
+    Bend in Root Direction:
+	Изгиб происходит в направлении, заданном точками корней, относительно поверхности кожи.
+
+    Uniform Axis:
+	Указывается глобальная ось, вокруг которой будут вращаться все направляющие.
+
+    Curve Attribute:
+	Используется атрибут на каждой кривой в качестве оси изгиба.
+
+    Skin Attribute:
+	Используется атрибут поверхности кожи в качестве оси изгиба.
+
+
+Bend Axis:
+    #id: bend_axis#
+
+    Выбор оси изгиба в случае, когда параметр __Bend Axis Mode__ установлен в __Uniform Axis__.
+
+Axis Attribute:
+    #id: bend_axiscurveattrib#
+
+    Векторный атрибут кривой, используемый в качестве оси изгиба.
+
+
+Axis Attribute:
+    #id: bend_axisskinattrib#
+
+    Векторный атрибут поверхности кожи, используемый в качестве оси изгиба.
+
+Angle:
+    #id: bend_angle#
+
+    Изгибает кривые под этим углом. Это угол по всей длине кривой.
+
+    [Include:fur_common#parmoverride]
+
+Random Angle:
+    #id: bend_anglerand#
+
+    Добавляет случайное значение в параметр __Angle__. Случайное значение генерируется между отрицательным и положительным значением этого параметра.
+
+    [Include:fur_common#parmoverride]
+
+Randomness Bias:
+    #id: bend_anglerandbias#
+
+    Смещает __Random Angle__ к нижней или верхней части диапазона.
+
+    [Include:fur_common#parmoverride]
+
+=== Set Simulation Attributes ===
+
+Simulation Attributes:
+    #id: simattrib_numattribs
+
+    Список атрибутов для установки или изменения параметров.
+
+Active:
+    #id: simattrib_active#_#
+
+    Включает данный атрибут.
+
+Attribute:
+    #id: simattrib_attrib#_#
+
+    Выбор атрибута. В раскрывающемся меню содержится список всех атрибутов, используемых [Wire Solver|Node:/dop/wiresolver].
+
+    Подробнее о том, как эти атрибуты влияют на поведение объекта 'wire', см. в справке [Wire Object|Node:/dop/wireobject#attributes].
+
+Class:
+    #id: simattrib_class#_#
+
+    Класс атрибута.
+
+    Этот параметр отключен для некоторых атрибутов, в случае, если они должны быть строго определенного класса.
+    
+    Подробнее см. в справке [Wire Object|Node:/dop/wireobject#attributes].
+
+==== Скалярные параметры атрибутов ====
+
+Mode:
+    #id: simattrib_scalarmode#_#
+
+    Определяет, как скалярные значения взаимодействуют с любыми существующими значениями атрибутов.
+
+    Set:
+	Устанавливает значение атрибута без учета существующих значений.
+
+    Add:
+	Добавляет значение параметра к существующему значению атрибута.
+
+    Minimum:
+	Устанавливает значение атрибута, выбирая минимальное из параметра, либо из существующего значения.
+
+    Maximum:
+	Устанавливает значение атрибута, выбирая максимальное из параметра, либо из существующего значения.
+
+    Multiply:
+	Умножает значение параметра на существующее значение атрибута.
+
+
+Value:
+    #id: simattrib_scalarvalue#_#
+
+    Значение для скалярных атрибутов. Обратите внимание, что данный параметр может быть изменен с помощью __VEXpression__ ниже и взаимодействует с существующими атрибутами, в соответствии с операцией, указанной в параметре __Mode__.
+
+VEXpression:
+    #id: simattrib_scalarsnippet#_#
+
+    Результат этого выражения VEX вычисляется и взаимодействует с существующими значениями атрибутов, в соответствии с операцией, указанной в параметре __Mode__.
+
+    Переменная `value` представляет параметр __Value__.
+
+    См. [VEX сниппеты|/vex/snippets] для получения информации о специальном синтаксисе в параметре сниппета. См. [раздел VEX|/vex/] для получения информации о языке VEX.
+
+==== Переключаемые параметры атрибутов ====
+
+Mode:
+    #id: simattrib_togglemode#_#
+
+    Определяет, как переключаемые значения взаимодействуют с любыми существующими значениями атрибутов.
+
+    Set:
+	Устанавливает значение атрибута без учета существующих значений.
+
+    Minimum:
+	Устанавливает значение атрибута, выбирая минимальное из параметра, либо из существующего значения. 
+
+    Maximum:
+	Устанавливает значение атрибута, выбирая максимальное из параметра, либо из существующего значения.
+
+    Toggle:
+	Переключает существующее значение атрибута.
+
+Value:
+    #id: simattrib_togglevalue#_#
+
+    Значение для переключаемых атрибутов. Обратите внимание, что данный параметр может быть изменен с помощью __VEXpression__ ниже и взаимодействует с существующими атрибутами, в соответствии с операцией, указанной в параметре __Mode__.
+
+
+VEXpression:
+    #id: simattrib_togglesnippet#_#
+
+    Результат этого выражения VEX вычисляется и взаимодействует с существующими значениями атрибутов, в соответствии с операцией, указанной в параметре __Mode__.
+
+    Переменная `value` представляет параметр __Value__.
+
+    См. [VEX сниппеты|/vex/snippets] для получения информации о специальном синтаксисе в параметре сниппета. См. [раздел VEX|/vex/] для получения информации о языке VEX.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guideprocess]
+
+@related
+- [Node:sop/guidegroom]
+- [Node:sop/hairclump]
+- [Node:sop/guidecollidevdb]

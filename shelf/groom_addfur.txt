@@ -1,0 +1,32 @@
+#icon: FUR/add_fur
+#parent: hairtools
+
+= Add Fur =
+
+"""Добавляет шерсть на поверхность."""
+
+:vimeo:Grooming hair 1
+    #id: 116178807
+
+Создает объекты [Guide Groom|Node:obj/guidegroom] и [Hair Generate|Node:obj/hairgen] на выбранной геометрии кожи. Обычно это лучший способ начать груминг.
+
+Сначала нужно выбрать статичную геометрию кожи. Далее можно также выбрать и анимированную версию той же самой геометрии. В этом случае инструмент также создает [Guide Deform object|Node:obj/guidedeform], который смещает полученные [Guide Groom|Node:obj/guidegroom] (т.е. уложенные направляющие) в соответствии с анимированной геометрией кожи. Объект [Hair Generate|Node:obj/hairgen] генерирует анимированные волосы из этих направляющих.
+
+Для получения дополнительной информации см. справку [Fur Workflow|/fur/workflow].
+
+== Использование Add Fur == (includeme)
+
+    # Нажмите на инструмент [Icon:FUR/add_fur]__Add Fur__ на вкладке __Hair Utils__.
+    
+    # Выберите объект статичной геометрии, на который вы хотите добавить шерсть, и нажмите ((Enter)).
+    
+    # Выберите анимированную геометрию кожи (если она есть) и нажмите ((Enter)). Если у вас нет анимированной геометрии кожи, нажмите ((Enter)), ничего не выбирая.
+    
+    [Image:/images/fur/addfur.png]
+    
+    После того, как шерсть применится к объекту, вы можете производить ее укладку, используя параметры ноды [Guide Groom|Node:obj/guidegroom].
+    
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_addfur]

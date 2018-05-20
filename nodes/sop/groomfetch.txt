@@ -1,0 +1,33 @@
+#type:     node
+#context:  sop
+#internal: groomfetch
+#icon:     SOP/groomfetch
+
+= Groom Fetch =
+
+"""Получает данные груминга из объектов груминга."""
+
+Этот оператор может использоваться для извлечения данных груминга из объектов груминга.
+
+Данные выводятся через отдельные выходы, аналогичные [Unpack Groom SOP|Node:/sop/unpackgroom].
+
+@parameters
+
+Groom Object:
+    #id: groomobject
+
+    Объект груминга для получения данных.
+
+Fetch Input:
+    #id: fetchinput
+
+    Параметр включает получение данных объекта груминга не с выхода, а со входа.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomfetch]
+
+@related
+- [Unpack Groom SOP|Node:/sop/unpackgroom]
+- [Pack Groom SOP|Node:/sop/packgroom]

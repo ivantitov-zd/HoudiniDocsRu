@@ -1,0 +1,44 @@
+= Guide Transfer =
+
+#type: node
+#context: sop
+#internal: transferguides
+
+"""Перенос направляющих волос между геометриями."""
+
+Этот оператор позволяет переносить массив направляющих волос на новую геометрию кожи. Используя метод переноса на основе UV, перенос становится возможным, даже если геометрия находится в разных местах и имеет разную топологию.
+
+@parameters
+
+== Transfer ==
+
+Match Method:
+    #id: matchmethod
+    Direct (Matching Topology):
+	    Предполагает идентичную топологию исходной и целевой геометрии.
+	    
+    Use UV:
+	    Переносит направляющие на основе UV-координат. Позволяет переносить геометрию кожи с различной топологией.
+
+Attribute Class:
+    #id: uvattribclass
+    Класс UV атрибута (__Точка__ или __Вершина__).
+
+UV Attribute:
+    #id: uvattrib
+    Имя UV атрибута.
+
+== Deformation ==
+
+Deform Guides:
+    #id: deform
+    Смешивает два метода переноса. При значении `0` направляющие переносятся от корневой точки, при значении `1` направляющие деформируются с помощью [Point Deform SOP|Node:sop/pointdeform].
+    
+Radius:
+    #id: pointdeform_radius
+    Радиус действия метода деформации (когда __Deform Guides__ не равно `0`).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidetransfer]

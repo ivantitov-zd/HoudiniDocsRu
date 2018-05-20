@@ -1,0 +1,49 @@
+#type:     node
+#context:  sop
+#internal: guideskinattriblookup
+#icon:     SOP/guideskinattriblookup
+
+= Guide Skin Attribute Lookup =
+
+"""Считывает атрибуты геометрии кожи в корневой точке направляющих кривых."""
+
+Использует существующие индексы примитивов и атрибуты UV на кривых для считывания значений атрибутов на геометрии кожи в месте, ближайшем к корню кривой.
+
+Если индекс примитива или атрибут UV не существует, они вычисляются на основе текущей кривой и позиции на геометрии.
+
+@parameters
+
+Prim Num Attribute:
+    #id: primnumattrib
+
+    Считывает атрибуты примитива, указанного этим атрибутом.
+
+Prim UVW Attribute:
+    #id: primuvwattrib
+
+    Считывает значения атрибутов в местоположении UVW в примитиве, указанном этим атрибутом.
+
+Point Attributes:
+    #id: pointattribs
+
+    Интерполируемые атрибуты в классе точек.
+
+Vertex Attributes:
+    #id: vertattribs
+
+    Интерполируемые атрибуты в классе вершин.
+
+Primitive Attributes:
+    #id: primattribs
+
+    Интерполируемые атрибуты в классе примитивов.
+
+Detail Attributes:
+    #id: detailattribs
+
+    Интерполируемые атрибуты в классе Detail.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guideskinattriblookup]

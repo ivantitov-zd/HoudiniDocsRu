@@ -1,0 +1,25 @@
+﻿= Hair tab =
+
+"""Инструменты на вкладке Hair позволяют добавить и уложить шерсть на объекте."""
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/hair]
+
+@subtopics Shelf items
+#display: show-icons
+
+:: [groom_addfur]
+:: [addparting]
+:: [paintfurdensity]
+:: [paintfurthickness]
+:: [paintbasecolor]
+:: [paintfurfrizz]
+:: [paintfurfrizzfrequency]
+:: [paintfurfrizzroughness]
+:: [paintfurclumping]
+:: [paintwhitehairdensity]
+:: [paintguardhairdensity]
+:: [paintguardhairlength]
+:: [furdynamics]

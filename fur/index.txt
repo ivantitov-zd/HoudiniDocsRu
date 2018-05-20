@@ -1,0 +1,85 @@
+= Волосы и Шерсть =
+
+#bestbet: fur
+#billboard: /images/billboards/amarok.png
+
+"""Как создавать прически, и добавлять динамику волосам и шерсти."""
+
+Инструменты, которые находятся на полке [Hair Utils|/shelf/hairtools], позволяют быстро настроить на объектах волосы и шерсть, перемещаться между объектами, а также анимировать и создавать симуляции. Для укладки шерсти используются инструменты, находящиеся на полках 'Guide Process' и 'Guide Brush'. 
+
+Основное отличие состоит в том, что инструменты на полке [Guide Process|/shelf/guideprocess] позволяют влиять на размещение и ориентацию направляющих волос (Hair Guides) путем рисования атрибутов на поверхности, в то время как на полке [Guide Brush|/shelf/guidebrushes] используются инструменты для непосредственной укладки волос, что позволяет художественно управлять процессом.
+
+Чтобы создать шерсть, выберите геометрический объект и используйте инструмент [Add Fur|/shelf/groom_addfur] на полке __Hair Utils__. По умолчанию будут созданы две ноды: [Guide Groom|Node:obj/guidegroom] и [Hair Generate|Node:obj/hairgen].
+
+[Image:/images/fur/nodes.png]
+
+Сети 'Guide Groom' и 'Hair Generate' имеют то же устройство и тот же рабочий процесс, за исключением того, что сеть генерации волос имеет меньшее количество выходов. Это делает инструмент очень простым в использовании, поскольку все делается в контекстах 'SOP' с кривыми. Нода [Guide Process|Node:sop/guideprocess] позволяет выполнять много разных операций и очень легко контролировать, выполняется ли действие с кривой с помощью рампы или путем рисования атрибутов на поверхности. Это позволяет быстро создавать реалистичные волосы и шерсть.
+
+Одно из усовершенствований заключается в том, что больше не существует разделения между манипуляцией с направляющими и рисованием атрибутами на поверхности. Все проходит через один граф. Все компоненты прически отображаются в одной сети. Каждая из нод имеет не менее 3 входов и 3 выходов, что позволяет передавать 3 типа данных через ноды. Это приводит к очень чистой и удобной для чтения сети и устраняет необходимость ссылаться на другие ноды. Другим преимуществом является то, что операторы могут быть размещены в любом порядке, что дает вам полный контроль и гибкость. 
+
+[Image:/images/fur/furballs.jpg]
+
+NOTE:
+    Мантра использует SOP-сеть предназначенную для груминга и готовит ноды (в SOP-сети) во время рендеринга. Она делает это не обращаясь к лицензии, которая позволяет рендерить с помощью движка для волос, шерсти и всего остального, что состоит из кривых и точек (травы). 
+    
+NOTE:
+    Груминг должен всегда выполняться только на статической геометрии, а не на анимированной. 
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/fur/index]
+
+@subtopics
+
+== Работа с шерстью ==
+
+::[Fur workflow|/fur/workflow]
+::[Creating and styling fur with guide processes|/fur/teddybear]
+::[Painting masks to control attributes|/fur/masking]
+
+== Инструменты для создания шерсти ==
+
+::[/shelf/groom_addfur]
+::[/shelf/groom_guidegroom]
+::[/shelf/drawhair]
+
+
+== Инструменты для создания укладки на полке во вкладке Guide Process ==
+
+:: [/shelf/sop_groom_guideinit]
+:: [/shelf/sop_groom_curveadvect]
+:: [/shelf/reguide]
+:: [/shelf/sop_groom_guideprocess_setdir]
+:: [/shelf/sop_groom_guideprocess_length]
+:: [/shelf/sop_groom_guideprocess_lift]
+:: [/shelf/sop_groom_guideprocess_straighten]
+:: [/shelf/sop_groom_guideprocess_smooth]
+:: [/shelf/sop_groom_guideprocess_frizz]
+:: [/shelf/sop_groom_guideprocess_bend]
+:: [/shelf/sop_groom_hairclump]
+:: [/shelf/drawpartingline]
+:: [/shelf/sop_groom_whitehair]
+
+
+== Инструменты для создания укладки на полке во вкладке Guide Brushes ==
+
+::[/shelf/screenbrush]
+::[/shelf/surfacebrush]
+::[/shelf/lifthair]
+::[/shelf/clumphair]
+::[/shelf/parthair]
+::[/shelf/lengthadjust]
+::[/shelf/smoothhair]
+::[/shelf/cuthair]
+::[/shelf/extendhair]
+::[/shelf/groom_recachestrokes]
+
+== Инструменты для анимации и симуляции шерсти ==
+
+:: [/shelf/groom_animateguides]
+:: [/shelf/groom_simguides]
+
+== Как ==
+
+::[Как создать дреды|hairstyle_rasta]

@@ -1,0 +1,25 @@
+#icon: FUR/length
+#parent: guidebrushes
+
+= Extend Hair =
+
+"""Позволяет интерактивно удлинять волосы."""
+
+Этот инструмент позволяет интерактивно удлинять существующие волосы. Этот инструмент воздействует на любые волосы, находящиеся в радиусе кисти, и вытягивает их с помощью курсора.
+
+
+== Using Extend Hair == (includeme)
+
+    # Нажмите на инструмент [Icon:FUR/length][Extend Hair|Node:obj/guidegroom] на вкладке __Grooming__.
+
+    # Удерживайте ((LMB)) и тяните курсор, чтобы удлинить волосы.
+
+    TIP:
+        Скроллинг колеса мыши или удерживание ((Shift)) при перетаскивании ((LMB)) позволит вам изменить размер кисти.
+
+    Для получения подробной информации о параметрах см. справку [Guide Groom|Node:obj/guidegroom].
+
+    :bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/extendhair]

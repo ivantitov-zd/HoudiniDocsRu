@@ -1,0 +1,16 @@
+= Hair Growth Field =
+
+#type: node
+#context: sop
+#internal: hairgrowthfield
+#icon: SOP/hairgrowthfield
+#tags: fur, volumes, advect, lowlevel
+
+"""Создает поле скоростей, основанное на примитивах мазков."""
+
+Данная нода используется внутри [Draw Hair Guides|Node:sop/drawhairguides], для генерации полей VDB, чтобы деформировать волосы в соответствии с ними.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/hairgrowthfield]

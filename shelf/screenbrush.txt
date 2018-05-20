@@ -1,0 +1,33 @@
+#icon: FUR/screen_brush
+#parent: guidebrushes
+
+= Screen Brush =
+
+"""Позволяет интерактивно укладывать волосы в экранной плоскости."""
+
+Этот инструмент позволяет интерактивно укладывать волосы в экранной плоскости. Дает возможность более тонко настроить форму волос. Этот инструмент отличается от [Icon:FUR/surface_brush][Surface Brush|/shelf/surfacebrush], так как дает больше свободы действий. [Surface Brush|/shelf/surfacebrush] позволяет производить укладку только вдоль поверхности геометрии.
+
+:col:
+    :vimeo:Grooming hair 1
+        #id: 116178807
+:col:
+    :vimeo:Grooming hair 2
+        #id: 116889293
+
+== Использование Screen Brush == (includeme)
+
+# Нажмите на инструмент [Icon:FUR/screen_brush] [Screen Brush|Node:obj/guidegroom] на вкладке __Grooming__.
+
+# Выберите направляющие, и нажмите ((Enter)), чтобы подтвердить выбор.
+
+# Удерживайте ((LMB)) и перемещайте курсор по экранному пространству, чтобы расчесать и уложить волосы.
+
+TIP:
+    Скроллинг колеса мыши или удерживание ((Shift)) при перетаскивании ((LMB)) позволит вам изменить размер кисти.
+        
+Для получения подробной информации о параметрах см. справку [Guide Groom|Node:obj/guidegroom].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/screenbrush]

@@ -1,0 +1,29 @@
+#icon: FUR/paint_white_density
+#parent: guideprocess
+
+= Add White Hairs =
+
+"""Добавляет определенный атрибут, который воспринимается в стандартном шейдере волос как белые волосы."""
+
+Этот инструмент задает определенному проценту волос атрибут `whitehair`. Этот атрибут подхватывается шейдером. Любая кривая с атрибутом, имеющим значение `1`, назначает цвет __White Hair__, указанный в шейдере.
+
+Для получения дополнительной информации см. справку [Работа с шерстью|/fur/workflow].
+
+== Использование Add White Hairs == (includeme)
+
+    # Нажмите на инструмент [Icon:FUR/paint_white_density]__Add White Hairs__ на вкладке __Guide Process__.
+
+    # Выберите объект [Hair Generate|Node:/obj/hairgen], к которому вы хотите добавить белые волосы, и нажмите ((Enter)), чтобы подтвердить выбор.
+    
+    NOTE:
+        Вы можете изменить процент белых волос, с помощью параметра __Fraction__ на вкладке __Additional Masks__ ноды [Guide Mask|Node:sop/guidemask].
+    
+    [Image:/images/fur/whitehair1.png]
+    [Image:/images/fur/whitehair2.png]
+
+    Для получения дополнительной информации см. справку [Guide Mask|Node:sop/guidemask].
+    
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/sop_groom_whitehair]

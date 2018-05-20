@@ -1,0 +1,28 @@
+#icon: FUR/hairgen
+#parent: hairtools
+
+= Generate Hair =
+
+"""Генерирует волосы на основе ноды с данными груминга."""
+
+Этот инструмент создает объект [Hair Generate|Node:obj/hairgen], который генерирует волосы на основе данных груминга, состоящих из направляющих кривых и геометрии кожи.
+
+NOTE:
+    Вы не сможете сгенерировать волосы на своем персонаже, если у вас нет направляющих, на основе которых интерполируется шерсть.
+    
+Для получения дополнительной информации см. справку [Работа с шерстью|/fur/workflow].
+
+== Использование Generate Hair == (includeme)
+
+    # Нажмите на инструмент [Icon:FUR/hairgen]__Generate Hair__ на вкладке __Hair Utils__.
+
+    # Выберите объекты груминга, для которых создаются волосы, и нажмите ((Enter)), чтобы подтвердить выбор.
+    
+    [Image:/images/fur/hairgen.png]
+
+    Для получения справки по определенному параметру см. справку по ноде [Hair Generate|Node:obj/hairgen].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_togglehairdisplay]

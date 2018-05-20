@@ -1,0 +1,20 @@
+#icon: FUR/recache_strokes
+#parent: hairtools
+
+= Recache Strokes =
+
+"""Пересоздает кэш записаных мазков для всех нод Guide Groom SOP внутри объекта груминга."""
+
+Этот инструмент находит все [Guide Groom SOPs|Node:sop/guidegroom] внутри объекта груминга и заново кэширует их в порядке зависимости. Это гарантирует, что изменения, внесенные в геометрию на входе [Guide Groom SOPs|Node:sop/guidegroom] отразятся и на выходе.
+
+Например, если вы причесываете персонажа, а затем вернетесь на уровень объектов и поменяете плотность шерсти, то можно нажать на кнопку [Icon:FUR/recache_strokes] __Recache Strokes__ на вкладке __Guide Brushes__, чтобы автоматически повторно применить все мазки, совершенные при укладке.
+
+NOTE:
+    Это то же самое, что и нажатие кнопки  __Recache__ на каждом операторе.
+    
+В качестве альтернативы, если персонаж изменен, то можно повторно применить мазки, совершенные при укладке.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_recachestrokes]

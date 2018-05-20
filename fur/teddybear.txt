@@ -1,0 +1,47 @@
+= Создание и укладка шерсти с помощью инструментов на полке во вкладке Guide Process =
+
+:vimeo: Guide process
+    #id: 204584593
+
+[Image:/images/fur/workflow.png]
+
+Чтобы создать шерсть, начните с выбора геометрии, используйте инструмент [Add Fur|/shelf/groom_addfur] на полке во вкладке __Hair Utils__. По умолчанию создаются две ноды: [Guide Groom|Node:obj/guidegroom] и [Hair Generate|Node:obj/hairgen].
+
+Красные кривые в окне просмотра представляют собой направляющие волос, которым можно сделать укладку. Для этого можно использовать инструменты на вкладке __Guide Process__. Обычно первое, что вам нужно сделать, это задать направление шерсти с помощью инструмента [Initialize Guides|/shelf/sop_groom_guideinit]. Затем используйте параметр __Wind Direction__, чтобы задать направление шерсти и параметр __Lift__, чтобы настроить первоначальный вид.
+
+[Image:/images/fur/workflow1.png]
+
+Инструмент [Set Length|/shelf/sop_groom_guideprocess_length] удлиняет или укорачивает волосы. Включение параметра __Randomize__ придаст волоскам разную длину, создавая более естественный вид.
+
+Инструмент [Bend|/shelf/sop_groom_guideprocess_bend] на полке во вкладке __Guide Groom__ изгибает волосы. Параметр __Curve Mask Ramp__ позволяет определить в каком месте волосок начнет загибаться (например, на кончике), а параметр __Angle__ насколько сильным будет изгиб.
+
+[Image:/images/fur/workflow4.png]
+
+Как только законченв укладка волос, можно отключить флаг 'display' на объекта [Guide Groom|Node:obj/guidegroom]. Объект [Hair Generate|Node:obj/hairgen] в любом случае использует направляющие кривые и генерирует волосы. 
+
+TIP:
+    Нода [Hair Generate|Node:obj/hairgen] использует данные ноды [Guide Groom|Node:obj/guidegroom], поэтому перед рендерингом, вам необходимо снова включить на нем флаг 'display'.
+
+В объекте [Hair Generate|Node:obj/hairgen] есть флажок __Limit to bounding box__, который позволяет генерировать шерсть на определенном участке и сосредоточиться на работе с ним. В данном случае не придется ждать, пока обновится шерсть на всей геометрии. что приводит к ускорению работы.
+
+Для получения не обходимого результата, доступны параметры __Thickness__ и __Density__.
+
+[Image:/images/fur/workflow3.png]
+
+TIP:
+    Включите [Icon:VIEW/lighting_high]__High Quality Lighting__ на панели инструментов Display options в правой части вьюпорта, чтобы корректно увидеть сгененрированные волосы. Также убедитесь, что включен __Ambient Occlusion__, нажав ((RMB)).
+
+Также можно войти внутрь объекта [Hair Generate|Node:obj/hairgen] и нажать на инструмент [Clump tool|/shelf/sop_groom_hairclump] на полке во вкладке __Guide Process__, чтобы добавить клочки (пряди) на шерсти. Чтобы клочки выглядели более естественно, необходимо настроить __Clump Size__ и __Iterations__ на вкладке __Fractal Clumping__. Включение параметра __Curling__ также придаст шерсти более естественный вид. По умолчанию значение __Amplitude__ установлено равным `0`, поэтому на начальном этапе не видно никаких изменений.
+
+[Image:/images/fur/workflow5.png]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/fur/teddybear]
+
+== Masterclass ==
+
+:vimeo_ref: H16 Masterclass: Hair and fur
+    #id: 207704687
+

@@ -1,0 +1,17 @@
+#icon: FUR/toggle_display
+#parent: hairtools
+
+= Toggle Hair Display =
+
+"""Включает и выключает флаг 'display' на объекте Hair Generate."""
+
+Этот инструмент переключает отображение всех выбранных сгенерированных волос, или которые ссылаются на текущую или выбранную ноду. Инструмент также работает, когда вы находитесь внутри ссылающейся ноды.
+
+Отключение отображения объекта [Hair Generate|Node:obj/hairgen] отключает генерацию волос во вьюпорте и используется для ускорения работы с направляющими.
+
+Для получения дополнительной информации см. справку [Hair Generate|Node:obj/hairgen].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_togglehairdisplay]

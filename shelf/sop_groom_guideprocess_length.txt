@@ -1,0 +1,18 @@
+#icon: FUR/paint_length
+#parent: guideprocess
+
+= Set Length =
+
+"""Удлиняет или укорачивает направляющие волос."""
+
+Этот инструмент удлинняет или укорачивает кривые. Можно установить абсолютную длину, умножить на коэффициент существующую длину, добавить или вычесть длину.
+
+NOTE:
+    Установив __Length__ в 0 полностью удалит волосы.
+
+Нажав [Icon:FUR/paint_length] __Set Length__ на вкладке __Guide Process__, будет создана нода [Guide Process SOP|Node:sop/guideprocess], и в параметре __Operation__ установлено значение __Set Length__. Для получения дополнительной информации см. справку [Guide Process SOP|Node:sop/guideprocess].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/sop_groom_guideprocess_length]

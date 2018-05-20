@@ -1,0 +1,20 @@
+#type:     node
+#context:  sop
+#internal: unpackgroom
+#icon:     SOP/unpackgroom
+
+= Groom Unpack =
+
+"""Распаковывает компоненты груминга из запакованного груминга."""
+
+Груминг может быть распакован с помощью [Unpack Groom SOP|Node:sop/unpackgroom].
+
+Пакет может содержать как статичные, так и анимированные кривые и геометрии кожи.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/unpackgroom]
+
+@related
+- [Node:sop/packgroom]
