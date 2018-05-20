@@ -21,6 +21,11 @@ Parting Lines Group:
 
     Вычитает любые примитивы в указанной группе из __Guides Group__.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidegroup.html]
+
 @related
 - [Node:sop/guidepartition]
 - [Node:sop/guideprocess]

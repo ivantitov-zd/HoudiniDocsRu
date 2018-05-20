@@ -24,4 +24,7 @@
     TIP:
         Если вы выберете другой объект [Guide Groom|Node:obj/guidegroom] для работы и вновь запустите этот инструмент, то он скроет предыдущий и отобразит только новый.
         
-
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_isolateparts.html]

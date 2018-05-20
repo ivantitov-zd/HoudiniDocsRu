@@ -22,3 +22,8 @@
         Plant Guides интерполирует длину и форму направляющих, основываясь на окружающих направляющих. Если отсутствуют какие-либо направляющие, то первая направляющая будет перпендикулярна поверхности кожи сдлиной по умолчанию 0,1.
 
     Для получения подробной информации о параметрах см. справку [Guide Groom|Node:obj/guidegroom].
+
+    :bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/plantguides.html]

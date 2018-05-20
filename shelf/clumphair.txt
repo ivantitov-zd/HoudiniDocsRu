@@ -24,3 +24,8 @@ TIP:
 == Tips ==
 
 * Чтобы избавиться от прядей, можно использовать инструмент [Smooth Hair|/shelf/smoothhair] на полке для разглаживания укладки волос.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/clumphair.html]

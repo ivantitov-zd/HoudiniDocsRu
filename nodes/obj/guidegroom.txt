@@ -161,6 +161,10 @@ Detail Attributes:
 
     Смотрите [File Cache SOP|Node:sop/filecache] для получения дополнительной информации.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/guidegroom.html]
 
 @related
 - [Node:obj/guidedeform]

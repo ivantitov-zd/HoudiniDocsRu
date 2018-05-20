@@ -13,3 +13,8 @@ NOTE:
     Это то же самое, что и нажатие кнопки  __Recache__ на каждом операторе.
     
 В качестве альтернативы, если персонаж изменен, то можно повторно применить мазки, совершенные при укладке.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_recachestrokes.html]

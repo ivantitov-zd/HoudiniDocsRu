@@ -30,4 +30,8 @@ NOTE:
 TIP:
     Вы можете добавить несколько нод [Hair Generate|Node:/obj/hairgen] или [Guide Deform|Node:obj/guidedeform] после объединения, чтобы продолжить работу над отдельными частями.
 
-
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_groommerge.html]
+    

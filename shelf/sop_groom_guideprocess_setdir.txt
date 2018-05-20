@@ -9,3 +9,7 @@
 
 Нажав [Icon:FUR/comb] __Set Direction__ на вкладке __Guide Process__, будет создана нода [Guide Process SOP|Node:sop/guideprocess], и в параметре __Operation__ установлено значение __Set Direction__.  Для получения дополнительной информации см. справку [Guide Process SOP|Node:sop/guideprocess].
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/sop_groom_guideprocess_setdir.html]

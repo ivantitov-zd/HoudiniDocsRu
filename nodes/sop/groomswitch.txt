@@ -17,6 +17,11 @@ Select Input:
 
     Когда выбрана `1`, то на выход подаются вторые 3 входа.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomswitch.html]
+
 @related
 - [Node:sop/guidemask]
 - [Node:sop/groomblend]

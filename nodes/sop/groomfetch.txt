@@ -23,6 +23,11 @@ Fetch Input:
 
     Параметр включает получение данных объекта груминга не с выхода, а со входа.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomfetch.html]
+
 @related
 - [Unpack Groom SOP|Node:/sop/unpackgroom]
 - [Pack Groom SOP|Node:/sop/packgroom]

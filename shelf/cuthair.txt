@@ -23,3 +23,8 @@ TIP:
     Скроллинг колеса мыши или удерживание ((Shift)) при перетаскивании ((LMB)) позволит вам изменить размер кисти.
 
 Для получения подробной информации о параметрах см. справку [Guide Groom|Node:obj/guidegroom].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/cuthair.html]

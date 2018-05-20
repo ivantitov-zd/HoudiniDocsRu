@@ -8,3 +8,8 @@
 Этот инструмент создает объект [Guide Deform|Node:obj/guidedeform], который перемещает статичные направляющие в соответствии с анимированной геометрией кожи.
 
 Для получения дополнительной информации см. справку [Guide Deform|Node:obj/guidedeform] или [Работа с шерстью|/fur/workflow].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_animateguides.html]

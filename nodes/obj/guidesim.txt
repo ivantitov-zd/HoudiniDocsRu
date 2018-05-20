@@ -314,6 +314,11 @@ Volume SOP:
 
     Смотрите [File Cache SOP|Node:sop/filecache] для получения дополнительной информации.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this pagehttp://www.sidefx.com/docs/houdini16.5/nodes/obj/guidesim.html]
+
 @locals
 
 

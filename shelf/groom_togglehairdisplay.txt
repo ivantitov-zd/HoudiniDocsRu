@@ -10,3 +10,8 @@
 Отключение отображения объекта [Hair Generate|Node:obj/hairgen] отключает генерацию волос во вьюпорте и используется для ускорения работы с направляющими.
 
 Для получения дополнительной информации см. справку [Hair Generate|Node:obj/hairgen].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_togglehairdisplay.html]

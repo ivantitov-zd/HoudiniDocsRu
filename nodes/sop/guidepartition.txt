@@ -36,3 +36,7 @@ Segment Length:
     #id: resampleseglength
     Длина сегмента для пересчета.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidepartition.html]

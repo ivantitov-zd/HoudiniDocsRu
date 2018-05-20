@@ -102,7 +102,10 @@ Point Attributes:
 
     Атрибуты, которые находятся на разных поверхностях геометрии объединяются используя атрибут max. Хорошо работает с атрибутами масок.
 
-
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/obj/groommerge.html]
 
 @related
 - [Node:obj/guidedeform]

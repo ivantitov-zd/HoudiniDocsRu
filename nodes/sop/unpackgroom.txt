@@ -11,6 +11,10 @@
 
 Пакет может содержать как статичные, так и анимированные кривые и геометрии кожи.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/unpackgroom.html]
 
 @related
 - [Node:sop/packgroom]

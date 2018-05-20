@@ -13,6 +13,10 @@
 
 Такие объекты груминга, как [Guide Deform|Node:obj/guidedeform], [Guide Sim|Node:obj/guidesim] и [Hair Generate|Node:obj/hairgen] могут читать запакованный груминг из файла и распаковывать его для дальнейшей обработки или генерации волос и рендеринга.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/packgroom.html]
 
 @related
 - [Node:sop/unpackgroom]

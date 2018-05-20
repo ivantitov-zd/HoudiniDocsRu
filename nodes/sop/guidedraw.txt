@@ -129,6 +129,11 @@ Samples:
 NOTE:
     Если вас интересует техническая характеристика техники адвекции волос, пожалуйста обратитесь к оригинальному выступлению на 2013 Siggraph [__Hair growth by means of sparse volumetric modeling and advection__ by Ashraf Ghoniem and Ken Museth, DreamWorks Animation|http://ken.museth.org/Publications_files/Ghoniem-Museth_SIG13.pdf].
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidedraw.html]
+
 @related
 
-- [Node:sop/curvegroom]
+- [Node:sop/guidegroom]

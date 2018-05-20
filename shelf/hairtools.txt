@@ -2,6 +2,11 @@
 
 """Инструменты на вкладке Hair Utils позволяют быстро настроить волосы или шерсть на объектах."""
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/hairtools.html]
+
 @subtopics Shelf tools
 #display: show-icons
 

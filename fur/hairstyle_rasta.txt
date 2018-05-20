@@ -119,3 +119,8 @@ NOTE:
 [Image:/images/howto/hair_rasta_step5.png]
 
 Чтобы уложить волосы, используйте инструменты на полке во вкладке [Grooming Shelf|/shelf/guidebrushes].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/fur/hairstyle_rasta.html]

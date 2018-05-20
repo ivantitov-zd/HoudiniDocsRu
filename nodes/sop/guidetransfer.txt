@@ -37,3 +37,8 @@ Deform Guides:
 Radius:
     #id: pointdeform_radius
     Радиус действия метода деформации (когда __Deform Guides__ не равно `0`).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidetransfer.html]

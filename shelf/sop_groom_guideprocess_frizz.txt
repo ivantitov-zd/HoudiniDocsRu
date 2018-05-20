@@ -9,3 +9,7 @@
 
 Нажав [Icon:FUR/paint_frizz] __Frizz__ на вкладке __Guide Process__, будет создана нода [Guide Process SOP|Node:sop/guideprocess], и в параметре __Operation__ установлено значение __Frizz__. Для получения дополнительной информации см. справку [Guide Process SOP|Node:sop/guideprocess].
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/sop_groom_guideprocess_frizz.html]

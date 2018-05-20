@@ -66,6 +66,11 @@ Points:
 
     Атрибуты точек геометрии кожи, требующие объединения.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/groomblend.html]
+
 @related
 - [Node:sop/guidemask]
 - [Node:sop/groomswitch]

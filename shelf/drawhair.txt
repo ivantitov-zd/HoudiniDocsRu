@@ -66,3 +66,8 @@ NOTE:
         
 :task:Скрыть направляющие, оставив видимыми только точки корней:
     Включите __Display Roots Points Only__ во вкладке __Root Creation__.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/drawhair.html]

@@ -567,6 +567,11 @@ VEXpression:
 
     См. [VEX сниппеты|/vex/snippets] для получения информации о специальном синтаксисе в параметре сниппета. См. [раздел VEX|/vex/] для получения информации о языке VEX.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guideprocess.html]
+
 @related
 - [Node:sop/guidegroom]
 - [Node:sop/hairclump]

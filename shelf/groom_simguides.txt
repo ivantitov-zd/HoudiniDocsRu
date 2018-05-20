@@ -8,3 +8,8 @@
 Этот инструмент запускает симуляцию для направляющих, которые изначально статичны, либо деформированы при помощи инструмента [Deform Guides tool|/shelf/groom_animateguides]. Он создает объект [Guide Simulate|Node:obj/guidesim], в котором производится настройка физических свойств симуляции.
 
 Для получения дополнительной информации см. справку [Guide Simulate|Node:obj/guidesim] или [Работа с шерстью|/fur/workflow].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/groom_simguides.html]

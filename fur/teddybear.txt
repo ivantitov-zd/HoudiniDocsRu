@@ -35,7 +35,13 @@ TIP:
 
 [Image:/images/fur/workflow5.png]
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/fur/teddybear.html]
+
 == Masterclass ==
 
 :vimeo_ref: H16 Masterclass: Hair and fur
     #id: 207704687
+

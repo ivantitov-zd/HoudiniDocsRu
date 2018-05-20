@@ -8,3 +8,8 @@
 Этот инструмент позволяет нарисовать линию на геометрии кожи, которая не дает направляющим, находящимся по одну сторону линии пробора влиять на направляющие по другую сторону. Позволяет получить четкое разделение вдоль линии, например, когда направляющие уложены в противоположных направлениях.
 
 Нажав на [Icon:FUR/addparting] __Part__ на вкладке __Guide Process__, добавятся [Draw Curve SOP|Node:sop/hairclump] и [Guide Partition SOP|Node:sop/guidepartition], с помощью которых можно рисовать на поверхности геометрии кожи. Для получения дополнительной информации см. справочную страницу [Guide Partition SOP|Node:sop/guidepartition].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/drawpartingline.html]

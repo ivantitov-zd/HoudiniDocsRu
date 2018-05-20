@@ -409,6 +409,11 @@ Curve Mask Ramp:
 
     Управляет силой воздействия на точку вдоль кривой. Можно контролировать напрямую или задавать с помощью приведенных выше параметров.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidemask.html]
+
 @related
 - [Node:sop/guideprocess]
 - [Node:sop/hairclump]

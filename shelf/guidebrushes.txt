@@ -13,6 +13,11 @@
 
 Инструменты на полке [Hair|/shelf/hair] добавляют атрибуты на геометрии с помощью рисования, которые затем используются интрументами груминга, чтобы создавать/изменять шерсть полностью процедурным способом, в то время как инструменты на полке Grooming напрямую воздействуют на волосы, что позволяет создавать прически с индивидуальным стилем.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/guidebrushes.html]
+
 @subtopics Shelf tools
 #display: show-icons
 

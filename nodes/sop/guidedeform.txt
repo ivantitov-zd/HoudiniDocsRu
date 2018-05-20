@@ -124,3 +124,8 @@ Attributes to Transform:
     #id: xformattribs
 
     Атрибуты геометрии с первого входа, подлежащей деформации.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/nodes/sop/guidedeform.html]
