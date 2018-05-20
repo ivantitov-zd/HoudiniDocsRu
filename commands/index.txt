@@ -9,6 +9,11 @@ HScript по-прежнему доступен в Houdini для совмест�
 
 Смотрите [руководство по языку HScript|_guide] для получения дополнительной информации.
 
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/]
+
 @subtopics Commands
 
 :list:
