@@ -10,7 +10,7 @@
 :usage: `int avg(int a)`
 :usage: `float avg(float a)`
 
-    Returns `a`.
+    Возвращает `a`.
 
 :usage: `float avg(float a, float b, ...)`
 

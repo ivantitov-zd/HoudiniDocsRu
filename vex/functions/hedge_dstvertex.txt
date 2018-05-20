@@ -1,0 +1,37 @@
+= hedge_dstvertex =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает конечную вершину полуребра."""
+
+:usage: `int hedge_dstvertex(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает номер конечной вершины полуребра `hedge`.
+    Возвращает `-1`, если полуребро недействительно.
+
+
+@examples
+
+{{{
+#!vex
+
+int dstvtx;
+
+// Получает номер конечной вершины полуребра номер 3.
+dstvtx = hedge_dstvertex("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_dstvertex]

@@ -1,0 +1,36 @@
+= hedge_srcpoint =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает начальную точку полуребра."""
+
+:usage: `int hedge_srcpoint(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает номер начальной точки `hedge`.
+    Возвращает `-1`, если полуребро недействительно.
+
+@examples
+
+{{{
+#!vex
+
+int srcpnt;
+
+// Получает начальную точку полуребра номер 3.
+srcpnt = hedge_srcpoint("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_srcpoint]

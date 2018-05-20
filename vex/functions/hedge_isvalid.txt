@@ -1,0 +1,37 @@
+= hedge_isvalid =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Определяет, соответствует ли номер полуребра действительному полуребру."""
+
+:usage: `int hedge_isvalid(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает `1`, если `hedge` представляет действительное полуребро в указанной геометрии или `0` в противном случае.
+
+
+@examples
+
+{{{
+#!vex
+
+int srcpt;
+
+// находит начальную точку полуребра с номером 3, если оно существует
+if (hedge_isvalid("defgeo.bgeo", 3))
+srcpt = hedge_srcpoint("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_isvalid]

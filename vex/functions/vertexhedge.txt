@@ -1,0 +1,37 @@
+= vertexhedge =
+
+#type: vex
+#context: all
+#tags: vertex, hedge
+#group: hedge
+
+"""Возвращает полуребро с заданной начальной вершиной."""
+
+:usage: `int vertexhedge(<geometry>, int vertex)`
+
+[Include:_common#geometry]
+
+:arg:vertex:
+    Линейный номер вершины в геометрии. `0` - первая вершина.
+
+:returns:
+    Возвращает номер полуребра с началом в `vertex` и концом в следующей за `vertex` вершине в данном примитиве.
+    Возвращает `-1`, если не удалось найти соответствующую вершину.
+
+
+@examples
+
+{{{
+#!vex
+
+int vtxhedge;
+
+// Получает полуребро с началом в вершине 2.
+vtxhedge = vertexhedge("defgeo.bgeo", 2);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/vertexhedge]

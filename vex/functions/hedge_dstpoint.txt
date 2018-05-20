@@ -1,0 +1,36 @@
+= hedge_dstpoint =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает конечную точку полуребра."""
+
+:usage: `int hedge_dstpoint(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает номер конечной точки полуребра `hedge`.
+    Возвращает `-1`, если полуребро недействительно.
+
+@examples
+
+{{{
+#!vex
+
+int dstpt;
+
+// Получает номер конечной точки полуребра номер 3.
+dstpt = hedge_dstpoint("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_dstpoint]

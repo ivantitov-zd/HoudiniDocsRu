@@ -1,0 +1,51 @@
+= pointhedge =
+
+#type: vex
+#context: all
+#tags: hedge, point
+#group: hedge
+
+"""Находит и возвращает полуребро с заданной начальной точкой или с заданными начальной и конечной точками."""
+
+:usage: `int pointhedge(<geometry>, int point)`
+:usage: `int pointhedge(<geometry>, int srcpoint, int dstpoint)`
+
+
+[Include:_common#geometry]
+
+:arg:`point`
+    Номер начальной точки возвращаемого полуребра. `0` - первая точка.
+
+:arg:`srcpoint`, `dstpoint`:
+    Номера начальной и конечной точек возвращаемого полуребра. `0` - первая точка.
+
+:returns:
+     Номер полуребра с начальной точкой `point` или начальной `srcpoint` и конечной `dstpoint` точками.
+     В первом случае, используя функцию [Vex:pointhedgenext], можно перебрать все полуребра, которые имеют точку `point` в качестве начальной.
+     Возвращает `-1`, если полуребро недействительно.
+
+@examples
+
+{{{
+#!vex
+
+int edge_count = 0;
+
+// Считает количество ребер (не полуребер) смежных с точкой под номером 23.
+int hout = pointhedge("defgeo.bgeo", 23);
+while ( hout != -1 )
+{
+    if (hedge_isprimary("defgeo.bgeo", hout))
+        edge_count++;
+    int hin = hedge_prev("defgeo.bgeo", hout);
+    if (hedge_isprimary("defgeo.bgeo", hin))
+        edge_count++;
+    hout = pointhedgenext("defgeo", hout);
+};
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/pointhedge]

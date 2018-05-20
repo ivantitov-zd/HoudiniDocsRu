@@ -1,0 +1,43 @@
+= hedge_isequiv =
+
+#type: vex
+#context: all
+#tags: hedge    
+#group: hedge
+
+"""Определяет, являются ли два полуребра эквивалентными (представлены одним и тем же ребром)."""
+
+:usage: `int hedge_isequiv(<geometry>, int hedge1, int hedge2)`
+
+[Include:_common#geometry]
+
+:arg:hedge1:
+    Целое число, представляющее первое полуребро.
+
+:arg:hedge2:
+    Целое число, представляющее второе полуребро.
+
+:returns:
+    Возвращает `1`, если `hedge1` и `hedge2` эквивалентны, то есть относятся к одному и тому же ребру геометрии. Это тот случай, когда либо начальные и конечные точки `hedge1` и `hedge2` являются соответственно одинаковыми, либо начальные точки каждого из `hedge1` и `hedge2` совпадают с конечными точками другого полуребра.
+
+
+@examples
+
+{{{
+#!vex
+
+int opposite = 0;
+
+// Проверяет, являются ли полуребра 2 и 3 противоположно направленными эквивалентными полуребрами
+if (hedge_isequiv("defgeo.bgeo", 2, 3))
+{
+if (hedge_srcpoint("defgeo.bgeo", 2) == hedge_dstpoint("defgeo.bgeo", 3))
+opposite = 1;
+}
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_isequiv]

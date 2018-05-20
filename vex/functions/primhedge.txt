@@ -1,0 +1,24 @@
+= primhedge =
+
+#type: vex
+#context: all
+#tags: prim, hedge
+#group: hedge
+
+"""Возвращает *одно* из полуребер, содержащихся в примитиве."""
+
+:usage: `int primhedge(<geometry>, int prim)`
+
+[Include:_common#geometry]
+
+:arg:prim:
+    Номер примитива в геометрии. `0` - первый примитив.
+
+:returns:
+    Возвращает номер произвольного полуребра, содержащегося в `prim`.
+    Возвращает `-1`, если номер примитива недействителен.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/primhedge]

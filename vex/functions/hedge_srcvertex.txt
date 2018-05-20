@@ -1,0 +1,37 @@
+= hedge_srcvertex =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает начальную вершину полуребра."""
+
+:usage: `int hedge_srcvertex(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает номер начальной вершины `hedge`.
+    Возвращает `-1`, если полуребро недействительно.
+
+
+@examples
+
+{{{
+#!vex
+
+int srcvtx;
+
+// Получает начальную вершину полуребра номер 3.
+srcvtx = hedge_srcvertex("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_srcvertex]

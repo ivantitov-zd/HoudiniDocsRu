@@ -1,0 +1,49 @@
+= pointhedgenext =
+
+#type: vex
+#context: all
+#tags: hedge, point
+#group: hedge
+
+"""Возвращает *следующее* полуребро с той же начальной точкой, что и у заданного полуребра."""
+
+:usage: `int pointhedgenext(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает следующее полуребро с той же начальной точкой, что и у `hedge`.
+    
+    Последовательные вызовы этой функции позволяют перебрать все исходящие полуребра из одной и той же точки. Порядок не обязательно согласуется с порядком ребер вокруг точки в разнообразном окружении.
+    
+    Возвращает `-1`, если `hedge` недействителен или больше нет общих вершин с начальной вершиной заданного полуребра (то же, что функция [Vex:vertexnext]).
+
+
+@examples
+
+{{{
+#!vex
+
+int edge_count = 0;
+
+// Считает количество ребер (не полуребер) смежных с точкой под номером 23.
+int hout = pointhedge("defgeo.bgeo", 23);
+while ( hout != -1 )
+{
+    if (hedge_isprimary("defgeo.bgeo", hout))
+        edge_count++;
+    int hin = hedge_prev("defgeo.bgeo", hout);
+    if (hedge_isprimary("defgeo.bgeo", hin))
+        edge_count++;
+    hout = pointhedgenext("defgeo", hout);
+}
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/pointhedgenext]

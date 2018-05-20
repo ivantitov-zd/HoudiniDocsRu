@@ -1,0 +1,37 @@
+= hedge_postdstpoint =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает точку, в которую подключена вершина, следующая за конечной вершиной полуребра в его примитиве."""
+
+:usage: `int hedge_postdstpoint(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает номер точки, в которую подключена вершина, следующая за конечной вершиной полуребра `hedge` в примитиве, который содержит `hedge`.
+    Возвращает `-1`, если полуребро недействительно.
+
+
+@examples
+
+{{{
+#!vex
+
+int postdstpt;
+
+// Получает конечную точку полуребра номер 3.
+postdstpt = hedge_postdstpoint("defgeo.bgeo", 3);
+
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_postdstpoint]

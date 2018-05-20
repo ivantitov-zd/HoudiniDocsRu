@@ -1,0 +1,41 @@
+= hedge_nextequiv =
+
+#type: vex
+#context: all
+#tags: hedge
+#group: hedge
+
+"""Возвращает следующие полуребра, эквивалентные заданному полуребру."""
+
+:usage: `int hedge_nextequiv(<geometry>, int hedge)`
+
+[Include:_common#geometry]
+
+:arg:hedge:
+    Целое число, представляющее полуребро.
+
+:returns:
+    Возвращает следующее полуребро, эквивалентное `hedge` или сам `hedge`, если нет других полуребер, эквивалентных ему.
+    Последовательные вызовы этой функции позволяют перебрать все эквивалентные полуребра.
+    Возвращает `-1`, если полуребро недействительно.
+
+
+@examples
+
+{{{
+#!vex
+
+// Определяет количество полуребер, которые эквивалентны полуребру номер 3 (включая себя).
+int num_equiv = 0;
+int h = 3;
+do
+{
+h = hedge_nextequiv("defgeo.bgeo", h);
+num_equiv++;
+} while (h != 3);
+}}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/hedge_nextequiv]
