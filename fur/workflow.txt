@@ -1,4 +1,4 @@
-= Fur workflow =
+= Работа с шерстью =
 
 Инструмент [Add Fur|/shelf/groom_addfur] на полке во вкладке __Hair Utils__ является хорошей отправной точкой для начала груминга, поскольку он автоматически создает объекты [Guide Groom|Node:obj/guidegroom] и [Hair Generate|Node:obj/hairgen] для выбранной геометрии кожи. Также можно выбрать анимированную версию геометрии, и инструмент создаст объект [Guide Deform object|Node:obj/guidedeform], который перемещает направляющие [Guide Groom|Node:obj/guidegroom] в соответствии с анимированной геометрией кожи. Объект [Hair Generate|Node:obj/hairgen] генерирует анимированные волосы из этих направляющих.
 

@@ -45,7 +45,7 @@ NOTE:
 ::[/shelf/drawhair]
 
 
-== Tools for styling with guide processes ==
+== Инструменты для создания укладки на полке во вкладке Guide Process ==
 
 :: [/shelf/sop_groom_guideinit]
 :: [/shelf/sop_groom_curveadvect]
@@ -62,7 +62,7 @@ NOTE:
 :: [/shelf/sop_groom_whitehair]
 
 
-== Tools for styling with brushes ==
+== Инструменты для создания укладки на полке во вкладке Guide Brushes ==
 
 ::[/shelf/screenbrush]
 ::[/shelf/surfacebrush]

@@ -1,4 +1,4 @@
-= Painting masks to control attributes =
+= Создание масок для управления атрибутами =
 
 :vimeo: Guide process
     #id: 204584550

@@ -19,7 +19,7 @@
 
     Для получения дополнительной информации см. справку [Guide Groom|Node:obj/guidegroom].
 
-    :bubble:
-    #dir: right
-    #display: gray
-    [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/lengthadjust]
+:bubble:
+#dir: right
+#display: gray
+[English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/lengthadjust]

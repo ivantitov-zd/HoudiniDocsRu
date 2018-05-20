@@ -1,4 +1,4 @@
-= Creating and styling fur with guide processes =
+= Создание и укладка шерсти с помощью инструментов на полке во вкладке Guide Process =
 
 :vimeo: Guide process
     #id: 204584593
