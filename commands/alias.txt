@@ -1,0 +1,39 @@
+#type: hscript
+
+= alias =
+
+"""Создает псевдоним для команды или последовательности команд."""
+
+:usage: `alias <<псевдоним>> <<команда>> `
+:usage: `alias -u <<псевдоним>> `
+:usage: `alias -s`
+
+@options
+
+`-s`:
+    Печатает текущие псевдонимы в форме, полезной для хранения в скриптовых файлах.
+`-u <<псевдоним>> `:
+    Сбрасывает заданный псевдоним.
+
+@examples
+
+{{{
+#!hscript
+alias ls opls
+}}}
+
+{{{
+#!hscript
+alias -u ls
+}}}
+
+{{{
+#!hscript
+alias -s
+}}}
+
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/alias]
