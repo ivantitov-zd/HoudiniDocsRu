@@ -1,0 +1,10 @@
+#icon: FUR/lift_hair
+#parent: guideprocess
+
+= Lift =
+
+"""Поднимает кривые от поверхности кожи или выравнивает их вдоль нее."""
+
+Этот инструмент поднимает кривые от поверхности кожи или выравнивает их вдоль нее. По сути происходит вращение направляющей, подобно действию инструмента [Set Direction|sop_groom_guideprocess_setdir].
+
+Нажав [Icon:FUR/lift_hair] __Lift__ на вкладке __Guide Process__, будет создана нода [Guide Process SOP|Node:sop/guideprocess], и в параметре __Operation__ установлено значение __Set Lift__. Для получения дополнительной информации см. справку [Guide Process SOP|Node:sop/guideprocess].
