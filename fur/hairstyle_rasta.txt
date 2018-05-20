@@ -6,7 +6,7 @@
 
 # Войдите в объект sphere и установите значения в __Rows__ и __Columns__ равные `50` чтобы получить более круглую сферу.
 
-# Добавьте на сферу волосы используя инструмент [Icon:FUR/add_fur][Add Fur|/shelf/addfur] на полке во вкладке __Hair__.
+# Добавьте на сферу волосы используя инструмент [Icon:FUR/add_fur][Add Fur|/shelf/groom_addfur] на полке во вкладке __Hair__.
 
 # На объекте fur установите __Length__ равное `0.6`.
 
@@ -39,7 +39,7 @@ NOTE:
 
 # Войдите в объект fur > ноду guides.
 
-# Присоедините [Icon:SOP/attribwrangle][Primitive Wrangle|/nodes/sop/attribwrangle] к ноде `INPUT_GUIDES`, и убедитесь, что на ней установлен [display flag|Node:sop].
+# Присоедините [Icon:SOP/attribwrangle][Primitive Wrangle|/nodes/sop/attribwrangle] к ноде `INPUT_GUIDES`, и убедитесь, что на ней установлен [display flag|/nodes/sop/].
 
 # Установите `i@clusterid = @primnum;` в параметр __VEXpression__. Это добавит индекс каждого примитива (`@primnum`) в атрибут `clusterid` (`i@clusterid`), и поэтому каждый примитив будет иметь различное значение.
 
@@ -118,4 +118,4 @@ NOTE:
 
 [Image:/images/howto/hair_rasta_step5.png]
 
-Чтобы уложить волосы, используйте инструменты на полке во вкладке [Grooming Shelf|/shelf/grooming].
+Чтобы уложить волосы, используйте инструменты на полке во вкладке [Grooming Shelf|/shelf/guidebrushes].
