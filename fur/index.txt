@@ -34,9 +34,9 @@ NOTE:
 
 == Работа с шерстью ==
 
-::[Fur workflow|/fur/workflow]
-::[Creating and styling fur with guide processes|/fur/teddybear]
-::[Painting masks to control attributes|/fur/masking]
+::[Работа с шерстью|/fur/workflow]
+::[Создание и укладка шерсти с помощью инструментов на полке во вкладке Guide Process|/fur/teddybear]
+::[Создание масок для управления атрибутами|/fur/masking]
 
 == Инструменты для создания шерсти ==
 
