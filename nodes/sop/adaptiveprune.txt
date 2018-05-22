@@ -1,0 +1,136 @@
+#type:     node
+#context:  sop
+#internal: adaptiveprune
+#icon:     SOP/adaptiveprune
+
+= Adaptive Prune =
+
+"""Removes elements while trying to maintain the overall appearance."""
+
+This operator prunes elements (points, curves or packed primitives) based on camera distance.
+
+When elements become more distant, they are scaled down and eventually deleted.
+
+Remaining elements are scaled up to preserve the visual density of the collection of elements as a whole.
+
+@parameters
+
+== General ==
+
+Group:
+    #id: group
+
+    The group of elements to operate on.
+
+Element Type:
+    #id: elemtype
+
+    Points:
+	    Operate on points. Points are scaled by modifying the __Point Scale__ attribute (`pscale` by default).
+
+    Curves:
+	    Operate on curves. Curves are scaled by modifying the __Width Attribute__ (`width` by default).
+
+    Packed Primitives:
+	    Operate on packed primitives. Packed primtives are scaled by modifying their intrinsic transform data.
+
+== Pruning Criteria ==
+
+Global Seed:
+    #id: seed
+
+    The seed value used in addition to the __Seed Attribute__ to randomize pruning per element.
+
+Seed Attribute:
+    #id: seedattrib
+
+    The value of this attribute is used to randomize pruning per element. This is required to achieve consistent results throughout an animation when the input has changing point numbers.
+
+Scale Attribute:
+    #id: pointscaleattrib
+
+    The scale attribute used for points.
+
+Width Attribute:
+    #id: curvewidthattrib
+
+    The width attribute used for curves.
+
+Camera:
+    #id: cam
+
+    Камера выбранная для вычисления расстояния между элементами.
+
+Size Unit:
+    #id: screensizeunit
+
+    Единицы, в которых указаны размеры элементов.
+
+    Fraction Of Screen Width:
+	    Определяет размер элемента как отношение его габаритов к ширине экрана. Элемент, заполняющий всю ширину экрана, имеет размер 1.0.
+
+	    Используйте этот режим, если вы предпочитаете, чтобы настройки не зависели от разрешения камеры.
+
+    Pixels:
+	    Определяет размер элемента в пикселях. Используйте это, если вы предпочитаете, чтобы сокрытие элементов зависело от разрешения камеры. Установка более низкого разрешения приведет к сокрытию большего количества элементов.
+
+
+Size Threshold:
+    #id: screensizethresh
+    Размер, при котором начинается сокрытие.
+    
+    Определяется как отношение к ширине экрана или размер в пикселях в зависимости от режима, установленного в __Size Unit__.
+
+Aggressiveness:
+    #id: screenagg
+
+    Управляет тем, насколько резко начинают скрываться элементы, по мере того как они становятся меньше порогового значения.
+
+    Более высокие значения приводят к более быстрому сокрытию, по мере их уменьшения.
+
+== Output ==
+
+Delete Elements:
+    #id: delete
+
+    Delete elements once they fade to a scale of `0`.
+
+    TIP:
+	    Deleting can be a slow operation when the input has a lot of elements.
+
+	    When you prune points in preparation for use with the [Copy to Points SOP|Node:/sop/copytopoints] or another operator than can use a group of points, it is often faster to disable this and create a __Keep Group__ to use as the target group.
+
+Scale Elements:
+    #id: scale
+
+    Scale elements to fade them out before pruning and scale up remaining elements to compensate for pruned ones.
+
+Create Prune Group:
+    #id: createprunegroup
+
+    Create a group of pruned elements. This is only available when __Delete Elements__ is disabled.
+
+Prune Group:
+    #id: prunegroup
+
+    The name of the group of pruned elements.
+
+Create Keep Group:
+    #id: createkeepgroup
+
+    Create a group of kept elements.
+
+Keep Group:
+    #id: keepgroup
+
+    The name of the group of kept elements. This is especially useful for identifying remaining elements when __Delete Elements__ is disabled.
+
+Output Scale Factor:
+    #id: outputscalefactor
+
+    Output the factor by which elements are scaled as an attribute.
+
+Scale Factor Attrib:
+    #id: scalefactorattrib
+
+    The name of the scale factor attribute.
