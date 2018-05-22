@@ -70,7 +70,7 @@ Density:
 Scatter Seed:
     #id: scatterseed
 
-    Разбрасывает направляющие используя это значение seed.
+    Разбрасывает направляющие используя данное значение [seed|Wp:Seed_(programming)].
 
 
 Relax Iterations:
