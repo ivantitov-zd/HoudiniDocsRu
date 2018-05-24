@@ -1,0 +1,261 @@
+#type: node
+#context: obj
+#internal: dopnet
+#icon: OBJ/dopnet
+
+#tags: dynamics
+#bestbet: autodopnetwork
+
+= Dop Network =
+
+""" The DOP Network Object contains a dynamic simulation. """
+
+The DOP Network Object contains a DOP simulation. Simulations can
+consist of any number of simulation objects (which do not correspond to
+Objects that appear in /obj). These simulation objects are built and
+controlled by the DOP nodes contained in this node.
+
+Simulation-wide controls are provided on this node, such as caching
+options and time step controls. The entire simulation can also be
+transformed using the Transform parameters of this node. Transforming a
+simulation at this level does not affect the simulation at all. The
+Transform is applied after the simulation occurs.
+
+TIP:
+    To improve the playback of cached fluids, increase the __Cache Memory__ on the __Simulation__ tab.
+
+@parameters
+
+Playback Simulation:
+    Turns the DOP network into a player for simulation files.
+    Enabling playback mode will cause the result of the DOP
+    network to be given by the simulation files selected. The
+    internal nodes of the network will be ignored.
+    One way to create simulation files to play using this option
+    is the [Output Node|Node:dop/output] inside the DOP network.
+
+== Simulation ==
+
+Reset Simulation:
+    #id: resimulate
+    Полностью очищает кэш симуляции. В момент просмотра сети DOP над вьюпортом с правой стороны будет активирована кнопка. Нажатие этой кнопки выполняет те же действия, что и нажатие кнопки Reset Simulation.
+
+Display:
+    #id: display
+    Whether the simulation is displayed in the viewport.
+
+Initial State:
+    #id: initialstate
+    The name of a file that is used as the initial state of the
+    simulation. This file must be a simulation state file
+    created by either a File DOP or a Dynamics Output Driver. If
+    this parameter is set, then the DOP nodes inside this
+    network are not processed on the first simulation timestep.
+
+Timestep:
+    #id: timestep
+    Controls the length of a simulation timestep. Usually this
+    value will be some multiple of a frame time, but it is not
+    required. By specifying a larger timestep the simulation
+    will run faster but will be less accurate and less stable.
+    Smaller timesteps give better result but calculate more
+    slowly.
+
+Substeps:
+    #id: substep
+    The default timestep expression will use this parameter to
+    control how many substeps the dop simulation should perform
+    every frame.  This can be easier to adjust than working with
+    the 1/$FPS parameter in timestep.
+
+Offset Time:
+    #id: timeoffset
+    Specifies an offset in seconds between the simulation time
+    for this simulation and the global time displayed on the
+    playbar. If this parameter is set to 1, then this simulation
+    will not start cooking until frame 25. At that global time
+    of 1 second, the simulation time will be 0. Several
+    expression functions such as `doptime` exist for converting
+    from global times to simulation times and vice versa.
+
+Start Frame:
+    #id: startframe
+    Выражение по смещению времени ссылается на этот параметр. Это позволяет установить время начала симуляции в кадрах, а не в секундах, что в некоторых случаях может быть более удобным. Если для начального кадра установлено значение 24, симуляция не начнется до 24 кадра. Обратите внимание, что если вы используете этот параметр, то переменные $SF и $F больше не будут ссылаться на то же время внутри симуляции.
+
+Scale Time:
+    #id: timescale
+    Указывает множитель, который соотносит глобальное время с временем внутри симуляции для данной сети DOP. Значение больше единицы означает, что время симуляции протекает быстрее, чем глобальное время. Значение меньше единицы приводит к тому, что симуляция происходит в замедленном движении относительно глобального времени. Существуют несколько выражений функций, таких как `doptime`, для преобразования глобального времени в время внутри симуляции и обратно.
+
+Max Feedback Loops:
+    #id: maxfeedback
+    When simulation objects using different solvers are made to
+    be mutual affectors (such as a cloth object and an RBD
+    object), this parameter controls the maximum number of
+    iterations to perform while attempting to resolve the two
+    solvers. Increasing this number in situations where
+    different solvers are mutual affectors increases the ability
+    of the simulation to reach a satisfactory result, but can
+    increase the simulation calculation time.
+
+    In the case of fluid simulations, since the fluid cannot adapt
+    to the feedback forces that are applied, a value of 2 should
+    be used rather than higher values.  Higher values will just
+    make the fluid artificially stronger and take considerable
+    time.
+
+Enable Automatic Resimulation:
+    #id: autoresim
+    When any parameter inside a DOP simulation is changed, or
+    when any referenced external node is changed, the cache of
+    the simulation is marked as invalid. If this parameter is
+    turned on, the next time the playbar is moved to reach a
+    simulation time of 0, the cache will be cleared and the
+    first simulation timestep will be recalculated. If the cache
+    is invalidated while at a simulation time of 0, the initial
+    state is recalculated immediately. If the current time is
+    beyond time 0, then the most recent timestep will be
+    recooked, and the cache beyond the current time will be
+    cleared. But all prior timesteps will be left untouched
+    other than to be marked invalid. If this parameter is off,
+    the cache is marked as invalid in exactly the same way, but
+    the cache is never cleared automatically. To recook a
+    simulation in this mode, the Recook Simulation button on
+    this parameter dialog or above the viewport must be used.
+
+Provide Data Hints:
+    #id: datahints
+    Rules governing allowed simulation data relationships are
+    stored in a files called dophints.cmd in the scripts
+    directory. If this option is turned on, at the end of each
+    timestep the simulation state is compared against the rules
+    in that file. If any rules are broken, warnings are added to
+    the appropriate DOP nodes. This can be very useful when
+    learning to use DOPs or when debugging problems with a
+    simulation. Turning this option off will improve the
+    performance of your simulation by skipping this validation
+    step at the end of each timestep.
+
+Interpolate Display Data:
+    #id: interpolate
+    If the global time is set to a value that does not line up
+    with a simulation timestep boundary, this parameter controls
+    how the simulation should be displayed. If this parameter is
+    turned off, the closest simulation timestep contents are
+    displayed. If this parameter is turned on, the contents of
+    the previous and next simulation timesteps are interpolated
+    to create an approximation of the simulation as it would
+    have actually been at the current time. This option allows
+    the simulation to appear smooth in the viewport even if the
+    simulation timesteps do not line up with the global frame
+    times.
+
+== Cache ==
+
+Cache Simulation:
+    #id: cacheenabled
+    Активирует кэш симуляции. Если эта опция не включена, многие солверы не будут работать должным образом. Однако для очень больших симуляций выключение этой опции - лучший способ гарантировать наименьший возможный объем памяти для симуляции.
+
+Compress .sim Files:
+    Determines if .sim files written to disk for caching will be
+    compressed.  Compression can reduce the size of the disk cache
+    significantly, but can also increase the time to cache
+    significantly.  If loading or writing to cache seems slow, try
+    using blosc compressed .sim files or uncompressed .sim files,
+    especially with fluid sims.
+
+Allow Caching To Disk:
+    If the maximum size of the cache in memory is reached, the
+    DOP Network can either delete old cache entries to make room
+    for new entries, or old entries can be saved to disk. If
+    this option is on, the old cache entries are saved to disk
+    and will be reloaded from disk if needed. This mode will be
+    slower than simply throwing away the old cache entries, but
+    it ensures that the entire simulation history is always
+    available regardless of the in-memory cache size.
+
+Cache to Disk in Non Interactive Sessions:
+    In non-interactive sessions, such as hscript or hython, one
+    may often not want the entire simulation history to be
+    available.  Their default behavior is to ignore the Allow
+    Caching to Disk and not cache to disk.  This behavior can be
+    overridden with this toggle.  Saving old simulation states to
+    disk can often become very expensive and, since one will not
+    be scrubbing the playbar on the result, a waste of disk space.
+
+Cache Substep Data:
+    Some solvers perform their own internal subsampling of time
+    to get better results. This option controls whether or not
+    the substep data created during this internal subsampling
+    should be kept as part of the cache, or discarded as soon as
+    the simulation timestep has finished computing. Having this
+    option on can be useful for debugging purposes, or if
+    accurate display of sub-timestep data is desired. Using the
+    actual substep data will give more accurate results that
+    displaying interpolated data.
+
+Cache Memory (MB):
+    Specifies how much memory in megabytes can be consumed by the cache for
+    this simulation. Once this limit is exceeded, old cache entries are
+    either deleted or saved to disk to make more room, depending on the
+    value of the Allow Caching To Disk parameter value above.
+
+Timeless (No History):
+    Each frame the simulation is started fresh as if it were the
+    first frame.  This means $SF is always 1.  It also means,
+    however, if the network consists of a File DOP with a $F based
+    .sim file, only the current frame will have to be loaded,
+    allowing for fast random access of baked simulations.  Note
+    that when in this mode only one frame is kept in the cache.
+
+Save Checkpoints:
+    Normally when the Allow Caching to Disk is enabled and the
+    simulation hits the memory limit, the simulation is saved to
+    files in the temp directory.  While these are valid .sim
+    files, they can be hard to manage. When this options is on,
+    each frame is immediately cached to the specified directory.
+    It is still kept in memory until the Cache Memory is hit, but
+    at that point it is not saved to disk (since it's already on
+    disk).  The advantage of checkpointing is that if a cache
+    frame already exists DOPs will not cook that frame, even if the
+    simulation has been reset. Instead it will load that frame.
+    Further, it only needs to cook the frames after the last valid
+    checkpoint frame before the requested frame.  So if you
+    have cache_50.sim and try to cook frame 100, cooking can start
+    at frame 50.
+
+    Using save checkpoints is similar to using a File DOP in Automatic
+    Mode.  However, when you try to jump to frame 50 with a File
+    DOP it must load the first 50 frames.  With checkpoints it can
+    skip this step.
+
+Checkpoint Files:
+    The file sequence to save the checkpoints to.  These are
+    .sim files, loadable with the File DOP or File SOP.  The
+    variable $SF must be used to specify the frame number - $F
+    cannot be used because this is working in simulation space.
+    $SF4 is also supported.
+
+Checkpoint Trail Length:
+    How much of a history to keep before the checkpoint files
+    are deleted.  A value of 0 will never delete cache files.
+    Otherwise, frames older than this value will be erased from
+    disk.
+
+    Note that only checkpoint files created by this session of Houdini
+    will be deleted.  If you restart Houdini with an existent
+    cache files, they will not be deleted.  This is done because
+    you were likely restarting from a crashed location and will
+    want to guarantee you can once again restart there if it
+    crashes again.
+
+Checkpoint Interval:
+    The frame interval between checkpoints. Setting this to a
+    value of 1 will save a checkpoint every frame. Setting this to
+    higher values will save a checkpoint after every number of
+    frames specified. For example setting this to 5 will save a
+    checkpoint every 5 frames.
+
+    This can be done to save disk space if you are running a large
+    simulation. 
+
+[Include:common#transform_tab]
