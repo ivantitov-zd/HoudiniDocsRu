@@ -65,7 +65,7 @@ Freeze Frame:
 Display As Subdivision Curves:
     #id: displayassubd
 
-    Подразделяет кривые во вьюпорте для более сглаженного вида.
+    Делит кривые на более мелкие сегменты во вьюпорте для более сглаженного вида.
 
 Display Color:
     #id: displaycolor
