@@ -1,0 +1,14 @@
+#type: hscript
+
+= job =
+
+"""Получает или задает переменную $JOB."""
+
+:usage: `job [<<unix_путь>>]`
+
+Печатает значение переменной $JOB, если путь не указан, в противном случае устанавливает в переменную $JOB указанный путь.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/job]

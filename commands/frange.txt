@@ -1,0 +1,23 @@
+#type: hscript
+
+= frange =
+
+"""Устанавливает диапазон воспроизведения на панели воспроизведения."""
+
+:usage: `frange [<<начало>> <<конец>>]`
+
+Если начало и конец не определены, выводится текущий диапазон кадров.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/frange]
+
+@related
+    - [fcur|Cmd:fcur]
+    - [fps|Cmd:fps]
+    - [fset|Cmd:fset]
+    - [ftimecode|Cmd:ftimecode]
+    - [tcur|Cmd:tcur]
+    - [tset|Cmd:tset]
+

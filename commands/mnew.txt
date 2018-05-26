@@ -1,0 +1,26 @@
+#type: hscript
+
+= mnew =
+
+"""Сбрасывает сессию."""
+
+:usage: `mnew `
+
+Текущая сессия будет заменена пустой сессией. Это эквивалентно "File -> New" в интерактивной сессии.
+
+@examples
+    {{{
+    #!hscript
+    mnew
+    }}}
+    Очищает текущую сессию.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/mnew]
+
+@related
+    - [mwrite|Cmd:mwrite]
+    - [opread|Cmd:opread]
+    - [source|Cmd:source]

@@ -1,0 +1,19 @@
+#type: hscript
+
+= autosave =
+
+"""Включает/отключает автосохранение."""
+
+:usage: `autosave on|off`
+
+Включите автосохранение для периодического сохранения копии текущего файла. Интервал между сохранениями и другие параметры задаются в разделе __Save Options__ окна [Houdini Preferences|/ref/windows/mainprefs#save].
+
+Данная команда недоступна в hscript.
+
+NOTE:
+    При перезапуске Houdini автосохранение вернется к выключенному (off).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/autosave]

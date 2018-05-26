@@ -1,0 +1,20 @@
+#type: hscript
+
+= closeport =
+
+"""Закрывает коммуникационный порт, созданный с помощью команды openport."""
+
+:usage: `closeport [-i] <<номер_порта>> `
+
+@options
+    `-i`:
+        Немедленно закрывает порт вместо закрытия его сообщением в очереди событий. Этот параметр используется внутри Houdini, вам не нужно использовать его.
+
+@related
+    - [openport|Cmd:openport]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/closeport]
+

@@ -1,0 +1,19 @@
+#type: hscript
+
+= echo =
+
+"""Распечатывает текст в textport."""
+
+:usage: `echo [-n] text`
+
+@options
+    `-n`:
+        Не печатать новую строку в конце текста. Это позволяет печатать несколько эх в одной строке.
+
+@related
+    - [message|Cmd:message]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/echo]

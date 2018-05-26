@@ -1,0 +1,27 @@
+#type: hscript
+
+= fset =
+
+"""Устанавливает диапазон воспроизведения на определенную длину."""
+
+:usage: `fset [<<количество_кадров>>]`
+
+Если количество кадров не указано, выводится текущий диапазон кадров глобальной анимации. В противном случае для диапазона кадров глобальной анимации устанавливается указанное значение.
+
+Для большего контроля над тем, как настроен глобальный диапазон анимации смотрите [tset|Cmd:tset].
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/fset]
+
+@related
+    - [tset|Cmd:tset]
+    - [fcur|Cmd:fcur]
+    - [fplayback|Cmd:fplayback]
+    - [fps|Cmd:fps]
+    - [frange|Cmd:frange]
+    - [fset|Cmd:fset]
+    - [ftimecode|Cmd:ftimecode]
+    - [tcur|Cmd:tcur]
+

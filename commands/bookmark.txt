@@ -1,0 +1,23 @@
+#type: hscript
+
+= bookmark =
+
+"""Добавляет, перечисляет или удаляет закладки."""
+
+:usage: `bookmark -a <<путь>> `
+:usage: `bookmark -l`
+:usage: `bookmark -r <<шаблон_пути>> `
+
+@options
+    `-a <<путь>> `:
+        Добавляет путь в закладки.
+    `-l`:
+        Выводит список текущих закладок.
+    `-r <<шаблон_пути>> `:
+        Удаляет путь или несколько путей из закладок. В шаблоне доступны символы: `*`,
+        `?` и `[]`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/bookmark]

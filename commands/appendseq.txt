@@ -1,0 +1,38 @@
+#type: hscript
+
+= appendseq =
+
+"""Добавляет серию файлов в текущую последовательность в mplay."""
+
+:usage: `appendseq [-u] [-f <<начало>> <<конец>>] <<filepattern>> `
+
+Длина последовательности увеличивается на количество загруженных изображений.
+
+NOTE:
+    Эта команда доступна только в MPlay.
+
+@options
+    `-u`:
+        Загрузить последовательность без буферизации. Изображения не будут кэшироваться.
+    `-f <<начало>> <<конец>>`:
+        Загрузить последовательность, используя заданные начальный и конечный кадры.
+
+@examples
+    {{{
+    #!hscript
+    appendseq ~/shot1/frame\$F.pic
+    }}}
+    
+    {{{
+    #!hscript
+    appendseq -u ~/shot1/frame*.pic
+    }}}
+
+@related
+    - [loadseq|Cmd:loadseq]
+    - [prependseq|Cmd:prependseq]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/appendseq]

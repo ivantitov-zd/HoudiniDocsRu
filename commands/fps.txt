@@ -1,0 +1,24 @@
+#type: hscript
+
+= fps =
+
+"""Получает или задает текущую скорость воспроизведения."""
+
+:usage: `fps [<<кадры_в_секунду>>]`
+
+Если кадры_в_секунду не указаны, печатаются текущее значение кадров в секунду. В противном случае для кадров в секунду устанавливается указанное значение.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/fps]
+
+@related
+    - [fcur|Cmd:fcur]
+    - [fplayback|Cmd:fplayback]
+    - [frange|Cmd:frange]
+    - [fset|Cmd:fset]
+    - [ftimecode|Cmd:ftimecode]
+    - [tcur|Cmd:tcur]
+    - [tset|Cmd:tset]
+

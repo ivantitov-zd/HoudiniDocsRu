@@ -1,0 +1,26 @@
+#type: hscript
+
+= fcur =
+
+"""Получает или задает номер текущего кадра."""
+
+:usage: `fcur [<<кадр>>]`
+
+Если кадр не указан, печатается текущий кадр. В противном случае устанавливает указанный кадр текущим.
+
+@options
+    `<<кадр>>`:
+        Задает текущий кадр.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/fcur]
+
+@related
+    - [fplayback|Cmd:fplayback]
+    - [fps|Cmd:fps]
+    - [frange|Cmd:frange]
+    - [fset|Cmd:fset]
+    - [tcur|Cmd:tcur]
+    - [tset|Cmd:tset]

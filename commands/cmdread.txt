@@ -1,0 +1,21 @@
+#type: hscript
+
+= cmdread =
+
+"""Выполняет команды в указанном файле."""
+
+:usage: `cmdread [-q] [-v] <<путь_до_файла>> `
+
+@options
+    `-q`:
+        (Quiet) Подавить предупреждение, если файл не существует.
+    `-v`:
+        (Verbose) Печатать каждую команду при выполнении.
+
+@related
+    - [source|Cmd:source]
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/cmdread]

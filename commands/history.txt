@@ -1,0 +1,18 @@
+#type: hscript
+
+= history =
+
+"""Распечатывает историю команд."""
+
+:usage: `history [-c]`
+
+Это соответствует истории Ctrl-RMB, но отличается от истории стрелкой вверх/вниз. История стрелок вверх/вниз заменяет повторяющиеся команды, в то время как это показывает полную историю.
+
+@options
+    `-c`:
+        Очищает историю команд.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/history]

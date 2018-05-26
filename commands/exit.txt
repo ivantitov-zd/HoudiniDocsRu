@@ -1,0 +1,15 @@
+#type: hscript
+
+= exit =
+
+"""Останавливает выполнение скриптового файла. Если указывается дополнительный код состояния, он устанавливает в переменную 'status' заданное целое число."""
+
+:usage: `exit [<<статус_код>>]`
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/exit]
+
+@related
+    - [quit|Cmd:quit]

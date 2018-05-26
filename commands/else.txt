@@ -1,0 +1,12 @@
+#type: hscript
+
+= else =
+
+"""Обратное условие для оператора if."""
+
+:usage: `else [ if (<<условие>>) then ]`
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/else]

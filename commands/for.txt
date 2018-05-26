@@ -1,0 +1,31 @@
+﻿#type: hscript
+
+= for =
+
+"""Перебирает блок команд по счетчику."""
+
+:usage: `for <<переменная>> = <<начало>> to <<конец>> [step <<шаг>>] ... end`
+
+Выполняет инструкции между операторами for и end, увеличивая заданную переменную в конце каждого цикла.
+
+@examples
+    {{{
+    #!hscript
+    for i = 1 to 3
+        echo $i
+    end
+    for i = 1 to 100 step 3
+        echo $i
+    end
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/for]
+
+@related
+
+- [Cmd:foreach]
+- [Cmd:while]
+

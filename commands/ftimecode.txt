@@ -1,0 +1,24 @@
+#type: hscript
+
+= ftimecode =
+
+"""Получает или задает текущий кадр в формате временного кода."""
+
+:usage: `ftimecode [<<таймкод>>]`
+
+Если таймкод не задан, текущий кадр выводится в формате временного кода. В противном случае задается указанный таймкод.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/ftimecode]
+
+@related
+    - [fcur|Cmd:fcur]
+    - [fplayback|Cmd:fplayback]
+    - [fps|Cmd:fps]
+    - [frange|Cmd:frange]
+    - [fset|Cmd:fset]
+    - [tcur|Cmd:tcur]
+    - [tset|Cmd:tset]
+

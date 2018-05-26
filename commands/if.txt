@@ -1,0 +1,27 @@
+#type: hscript
+
+= if =
+
+"""Выполняет блок команд, если условие истинно."""
+
+:usage: `if (<<условие>>) [then] ... [else if | else ] ... endif`
+
+Если <<условие>> истинно, выполняется содержимое if.
+
+NOTE:
+    В настоящее время операторы внутри конструкции if должны выполняться в отдельных строках. То есть такие конструкции, как "if ($F == 1) echo Frame One", не будут работать.
+
+@examples
+    {{{
+    #!hscript
+    if ( $F == 1 ) then
+        echo Frame One
+    else
+        echo Not Frame One
+    endif
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/if]

@@ -1,0 +1,12 @@
+#type: hscript
+
+= endif =
+
+"""Конец оператора if."""
+
+:usage: `endif`
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/endif]

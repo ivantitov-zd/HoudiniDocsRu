@@ -1,0 +1,31 @@
+﻿#type: hscript
+
+= foreach =
+
+"""Выполняет блок команд для каждого элемента в списке."""
+
+:usage: `foreach <<переменная>> ( <<список>> ) ... end`
+
+Перебирает содержимое заданного списка, записывая очередной элемент списка в заданную переменную в конце каждого цикла (итерации).
+
+@examples
+    {{{
+    #!hscript
+    foreach i ( a b c )
+        echo $i
+    end
+    
+    foreach object ( `execute("opls -d")` )
+        echo Object $object
+    end
+    }}}
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/foreach]
+
+@related
+    - [for|Cmd:for]
+    - [while|Cmd:while]
+

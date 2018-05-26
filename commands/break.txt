@@ -1,0 +1,15 @@
+#type: hscript
+
+= break =
+
+"""Выходит из текущего цикла."""
+
+:usage: `break [<<уровни>>]`
+
+NOTE:
+    Дополнительно вы можете указать количество родительских циклов, из которых следует выйти.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/break]

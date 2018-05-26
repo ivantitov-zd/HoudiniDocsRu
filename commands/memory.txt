@@ -1,0 +1,16 @@
+#type: hscript
+
+= memory =
+
+"""Распечатывает текущее использование памяти."""
+
+:usage: `memory [-b]`
+
+@options
+    `-b`:
+	Печатать текущее использование памяти в байтах.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/memory]

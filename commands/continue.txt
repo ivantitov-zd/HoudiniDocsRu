@@ -1,0 +1,15 @@
+#type: hscript
+
+= continue =
+
+"""Пропускает последующие инструкции в данной итерации цикла."""
+
+:usage: `continue [<<уровни>>]`
+
+NOTE:
+    Дополнительно вы можете указать количество родительских циклов для пропуска.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/commands/continue]
