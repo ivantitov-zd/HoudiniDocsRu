@@ -15,7 +15,7 @@
     
     [Image:/images/hair/initilaizeguides.png]
 
-    Этот инсрумент создаст ноду [Guide Initialize SOP|Node:sop/guideinit], в которой можно изменить направление или параметры UV.
+    Этот инструмент создаст ноду [Guide Initialize SOP|Node:sop/guideinit], в которой можно изменить направление или параметры UV.
 
     :bubble:
     #dir: right

@@ -8,7 +8,7 @@ div id="opblend">>
 
 div id="groomdata">>
     NOTE:
-	Данные груминга, предназначенные для записи и чтения из файлов, должны быть упакованы и названы определенным образом. Ноды объектов груминга, такие как [Guide Groom | Node: obj / guidegroom], [Guide deform | Node: obj / managedeform] или [Guide Sim | Node: obj / guideim] записывают данные в строго определенном формате.
+	Данные груминга, предназначенные для записи и чтения из файлов, должны быть упакованы и названы определенным образом. Ноды объектов груминга, такие как [Guide Groom|Node:obj/guidegroom], [Guide Deform|Node:obj/guidedeform] или [Guide Sim|Node:obj/guidesim] записывают данные в строго определенном формате.
 
 	Для создания запакованных объектов груминга эти ноды используют [Guide Pack SOP|Node:sop/guidepack], и [Guide Unpack SOP|Node:sop/guideunpack] для распаковки и извлечения из них информации.
 
@@ -19,7 +19,7 @@ Use Curve Mask:
     #id: usecurvemask
     Управляет силой воздействия операции вдоль каждой кривой.
 
-    Включает маску кривых. В выключеном состоянии все остальные параметры скрыты.
+    Включает маску кривых. В выключенном состоянии все остальные параметры скрыты.
 
 Range In Absolute Length:
     #id: curvemaskabsrange
@@ -115,7 +115,7 @@ Parameters for __File__ mode:
 File:
     #id: vdbfile
 
-    Загружает VDB поверхности кожи из этого пути к файлу.
+    Загружает VDB поверхность кожи из файла по этому пути.
 
 Group:
     #id: vdbfilegroup

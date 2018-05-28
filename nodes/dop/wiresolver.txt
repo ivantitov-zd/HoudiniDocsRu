@@ -1,0 +1,132 @@
+#type: node
+#context: dop
+#internal: wiresolver
+#icon: DOP/wiresolver
+
+= Wire Solver =
+
+"""Sets and configures a Wire solver."""
+
+The Wire Solver DOP sets objects to use the Wire solver.
+
+If an object has this DOP as its `Solver` subdata, it will evolve itself
+as a dynamic wire object.
+
+This solver recognizes the following special subdata, if present:
+
+* Wire Physical Parameters data with the name `PhysicalParms`
+
+* Wire Elasticity data with the name `Elasticity`
+
+* Wire Plasticity data with the name `Plasticity`
+
+It also recognizes most standard subdata:
+
+* Position data with the name `Position`
+
+* Geometry data with the name `Geometry`
+
+* constraint data
+
+* force data
+
+* collider data
+
+* impact data
+
+NOTE:
+    If the value of a force, including gravity, is so small that if falls within the wire solver's __Solve Tolerance__ the solver will not apply the force. For example, the default L-system with __Point Attributes__ turned on is so light the wire solver will not apply gravity to it. You can decrease the __Solve Tolerance__ or increase the weight of your dynamic object to work around this.
+
+TIP:
+    Elasticity cannot be entirely removed from the wire solver's dynamics behavior. However, you can use a [Multiple Solver DOP|Node:dop/multisolver] to attach both a Wire Solver and [SOP Solver|Node:dop/sopsolver] to remove stretching by moving points.  For example, the [SOP Solver|Node:dop/sopsolver] could simply walk along each curve from root to tip and re-position each vertex so the length matches the rest length. However, the more the [SOP Solver|Node:dop/sopsolver] moves vertices to enforce the non-stretch constraint, the more the resulting dynamics will be affected.
+
+    Artifacts from this two stage process can be reduced by increasing the __Sub Steps__ parameter on the DOP network. 
+
+NOTE:
+    The Wire Solver will constrain certain points if it finds a point attribute called `pintoanimation` or `gluetoanimation` on the Geometry subdata. This can be used to release point constraints on a per-point basis.
+
+@parameters
+
+== Integrator ==
+
+These parameters control how the integrator determines substeps and overall dynamics.
+
+Spatial Scale:
+    #id: spatialscale
+    Указывает масштаб симуляции. Очень важно установить здесь правильное значение, в противном случае такие параметры, как жесткость и затухание, для которых установлены значения по умолчанию, не будут работать должным образом. Если объект смоделирован в метрах, то по умолчанию используется значение 1, а если в сантиметрах, то необходимо установить в параметре __Spatial Scale__ значение 0,01.
+    NOTE:
+	Перед созданием сети DOP необходимо правильно выбрать __Unit Length__ в __Edit__ > __Preferences__ > __Hip File Options__. В этом случае, при создании солвер автоматически получит правильный __Spatial Scale__.
+
+Minimum Substeps:
+    #id: minsubsteps
+    Ограничивает минимальное количество промежуточных расчетов за один кадр. Более высокие значения могут быть более точными, но могут потребовать больших вычислений.
+
+Solve Tolerance:
+    #id: tol
+    Определяет, насколько точно солвер должен выполнить вычисления, прежде чем перейти к расчету другого кадра.
+
+    Меньшее значение даст более высокое качество, но при этом будет работать медленнее. Большее значение будет работать быстрее, но вычисления могут быть не такими точными.
+
+== Capabilities ==
+
+These parameters control attribute creation on the wire object. 
+
+Create Internal Force Attributes:
+    If set, the wire solver will create attributes on each point
+    showing the force applied to resist stretching and bending. 
+    
+    This is required for wire visualization to work, but can be disabled
+    to save memory during simulation.
+
+Create External Force Attributes:
+    If set, the wire solver will create attributes on each point
+    showing the force applied by Force DOPs, and applied to meet
+    constraints, prevent collisions and create friction. 
+
+    This is required for wire visualization to work, but can be disabled to
+    save memory during simulation.
+
+Enable Plastic Deformation:
+    If set, the wire solver will create and modify attributes on Wire
+    Object geometry for describing plastic deformation information.
+
+Collision Handling:
+    #id: collisionhandling
+
+    Определяет расчет столкновений и стратегию решений Wire солвера.
+
+    SDF:
+	Стратегия, при которой жесткие тела представлены как поля SDF.
+
+    Local Geometric:
+	Стратегия реакции на столкновения, которая игнорирует влияние тел, находящихся вдали от столкновений. Эта стратегия быстрее, чем "Global Geometric", но может стать причиной появления артефактов.
+
+    Global Geometric:
+	Стратегия реакции на столкновения, которая учитывает влияние всех элементов.
+
+== Accuracy ==
+
+These parameters control the accuracy of the discovery and resolution of collisions.
+
+Max Collision Resolve Passes:
+    #id: resolvemaxpasses
+    Максимальное количество проходов при решении столкновений. Когда это число установлено слишком низко, есть вероятность того, что не все столкновения будут решены корректно, что может привести к взаимным проникновениям.
+
+[Include:standard_solver_parms]
+
+@inputs
+    [Include:standard_data_inputs]
+
+@outputs
+    [Include:standard_data_outputs]
+
+@locals
+    [Include:standard_data_locals]
+
+    [Include:standard_locals]
+
+
+@related
+    - [Node:dop/wireobject]
+    - [Node:dop/wirevisualization]
+

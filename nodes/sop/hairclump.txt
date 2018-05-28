@@ -1,0 +1,184 @@
+#type:     node
+#context:  sop
+#internal: hairclump
+#icon:     FUR/paint_clumping
+
+= Hair Clump =
+
+"""Собирает в пряди направляющие кривые."""
+
+В качестве центральных направляющих могут быть использованы кривые, предоставленные объектом груминга, или любые импортированные кривые.
+
+@parameters
+
+== General ==
+
+=== General ===
+
+Blend:
+    [Include:fur_common#opblend]
+
+[Include:/nodes/sop/fur_common#useskinmask]
+
+[Include:/nodes/sop/fur_common#skinmaskattrib]
+
+Clump Size:
+    #id: clumpsize
+
+    Создает пряди указанного размера. Если направляющие не предоставлены, то используется существующий набор кривых, поступающий на первый вход, и выбирается приблизительный интервал, указанный в параметре.
+
+    Если направляющие подаются на первый вход, то на волосы оказывается воздействие в данном радиусе.
+
+    [Include:fur_common#parmoverride]
+
+Search Beyond Clump Radius:
+    #id: searchbeyondradius
+
+    На кривые оказывается воздействие, даже если они находятся за пределами радиуса, указанного в параметре `Clump Size`.
+
+Crossover Rate:
+    #id: crossoverrate
+
+    [Include:fur_common#parmoverride]
+
+Random Seed:
+    #id: seed
+
+    Данный [seed|Wp:Seed_(programming)] будет использован во всех операциях, где используются случайные значения.
+
+=== Shape ===
+
+Preserve Length Differences:
+    #id: preservelength
+
+    Обеспечивает сохранение относительных различий длины между направляющими. При отключении параметра, точки на кончиках кривых в точности повторяют положение точки на центральной направляющей пряди. Вычисления становятся быстрее, но результат выглядит менее естественно.
+
+Extend To Match:
+    #id: extendtomatch
+
+    Удлиняет кривые таким образом, что самая длинная кривая достигает кончика центральной направляющей.
+
+Shorten To Match:
+    #id: shortentomatch
+
+    Укорачивает кривые таким образом, что самая длинная кривая не превышает длины центральной направляющей.
+
+Accurate Bundling:
+    #id: accuratebundling
+
+    Учитывает ширину кривых при сборке в пряди (атрибут `width`). Это предотвращает сжатие кривых до толщины в одну направляющую, в случае, когда параметр `tightness` равен `1.0`.
+
+Hair Width:
+    #id: hairwidth
+
+    Использует данную ширину в параметре __Accurate Bundling__, в случае, когда у кривых нет атрибута `width`.
+
+Hair Width Scale:
+    #id: hairwidthscale
+
+    Умножает ширину кривой на данное значение для использования в параметре __Accurate Bundling__.
+
+Tightness:
+    #id: tightness
+
+    Управляет плотностью пряди.
+
+    [Include:fur_common#parmoverride]
+
+Stray Amount:
+    #id: amount
+
+    Сила отклонения кривых от центральной направляющей. Высокие значения делают сборку в пряди менее плотной. Параметром __Stray Rate__ определяется процент отклоняемых кривых.
+
+    [Include:fur_common#parmoverride]
+
+Stray Rate:
+    #id: strayrate
+
+    Процент кривых, которым разрешено отклоняться от центральной направляющей.
+
+    [Include:fur_common#parmoverride]
+
+Stray Falloff:
+    #id: strayfalloff
+
+    Управляет силой отклонения в зависимости от расстояния до центральной направляющей. Более высокие значения приводят к тому, что кривые, которые ближе к центральной направляющей, отклоняются меньше.
+
+Clump Profile:
+    #id: clumpprofile
+
+    Управляет плотностью пряди вдоль ее длины.
+
+== Fractal Clumping ==
+
+Выполняет несколько итераций сборки в пряди, уменьшая с каждой итерацией размер пряди.
+
+При предоставлении направляющих, они используются для первой итерации. Последующие итерации используют подмножество кривых, полученных из входящих кривых. Плотность и размер этих прядей определяется параметром __Clump Size__.
+
+Iterations:
+    #id: iterations
+
+    Выполняет сборку в пряди данное количество раз.
+
+    [Include:fur_common#parmoverride]
+
+Goal Feedback:
+    #id: goalfeedback
+
+    Управляет тем, как результат итерации сборки в пряди передается на следующую итерацию.
+
+    При значении `0.0`, каждая итерация выполняется так, как если бы ничего не выполнялось до нее.
+
+    При значении `1.0`, используются формы кривых, вычисленные в предыдущей итерации.
+
+    [Include:fur_common#parmoverride]
+
+Size Reduction:
+    #id: sizereduction
+
+    Уменьшает размер пряди на данный множитель после каждой итерации.
+
+    [Include:fur_common#parmoverride]
+
+Tightness Reduction:
+    #id: tightnessreduction
+
+    Уменьшает плотность на данный множитель после каждой итерации.
+
+    [Include:fur_common#parmoverride]
+
+== Curling ==
+
+Curling:
+    #id: enablecurling
+
+    Завивает центральную направляющую пряди, перед тем, как выполнить сборку в прядь.
+
+Amplitude:
+    #id: curlamp
+
+    Радиус завивки.
+
+    [Include:fur_common#parmoverride]
+
+Amplitude Ramp:
+    #id: curlampramp
+
+    Управляет изменением радиуса завивки вдоль кривой.
+
+Frequency:
+    #id: curlfreq
+
+    Частота завивки. Количество полных оборотов на единицу длины.
+
+    [Include:fur_common#parmoverride]
+
+Frequency Ramp:
+    #id: curlfreqramp
+
+    Управляет изменением частоты завивки вдоль кривой.
+
+@related
+- [Node:sop/guideprocess]
+- [Node:sop/guidegroom]
+- [Node:sop/guidecollidewithvdb]

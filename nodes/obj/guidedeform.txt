@@ -7,7 +7,7 @@
 
 """Смещает кривые груминга в соответствии с анимированной геометрией кожи (skin)."""
 
-Извлекает входящие кривые и исходную поверхность из объекта груминга такие как [Guide Groom|Node:obj/guidegroom] или [Guide Sim|Node:obj/guidesim].
+Извлекает входящие кривые и исходную поверхность из объектов груминга таких как [Guide Groom|Node:obj/guidegroom] или [Guide Sim|Node:obj/guidesim].
 
 
 @parameters

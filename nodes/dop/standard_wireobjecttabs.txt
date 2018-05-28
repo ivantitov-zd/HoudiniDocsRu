@@ -1,0 +1,176 @@
+#type: include
+
+Use Object Transform:
+    #id: usetransform
+
+    The transform of the object containing the chosen SOP is applied to the
+    geometry.
+
+SOP Path:
+    #id: soppath
+
+== Initial State ==
+
+        The path to a SOP (or an Object, in which case the display SOP
+        is used) which will be the initial pose for this simulation object.
+
+    Position:
+        #channels: /tx /ty /tz
+
+        Initial position in world space of the object.
+
+    Rotation:
+        #channels: /rx /ry /rz
+
+        Initial orientation of the object. This is in RX/RY/RZ format.
+
+    Pivot:
+        #channels: /px /py /pz
+
+        Local space position around which rotation is applied.
+
+    Velocity:
+        #channels: /velx /vely /velz
+
+        Initial velocity of the object.
+
+    Angular Velocity:
+        #channels: /angvelx /angvely /angvelz
+
+        Initial angular velocity of the object.
+
+== Geometry ==
+
+    Import Rest Geometry:
+	#id: animategeom
+
+        Causes the Rest Geometry to be re-evaluated each frame.
+
+    Rest Geometry:
+        #id: restgeometry
+
+        The path to a SOP (or an Object, in which case the display SOP
+        is used) which will be the rest geometry for this object.
+
+    Import Target Geometry:
+	#id: importtargetgeometry
+
+        Causes the Target Geometry to be re-evaluated each frame.
+
+    Target Geometry:
+        #id: targetgeometry
+
+        The path to a SOP (or an Object, in which case the display SOP
+        is used) which will be the target geometry for this object.
+
+    Target Stiffness:
+	#id: targetstiffness
+
+	Этот параметр определяет, насколько сильно wire объект сопротивляется деформации анимированной геометрии.
+
+    Target Damping:
+	#id: targetdamping
+
+	Этот параметр определяет, насколько сильно wire объект сопротивляется колебаниям из-за сил растяжения.
+
+== Material ==
+
+    == Physical ==
+
+	[Include:standard_wirephys_parms]
+
+
+    == Elasticity ==
+
+	[Include:standard_wireelasticity_parms]
+
+
+    == Plasticity ==
+
+	[Include:standard_wireplasticity_parms]
+
+== Fracturing ==
+
+    Enable Fracturing
+	#id: enablefracturing
+
+	If enabled, the wire object will break at shared points when a segment
+	stretches beyond the fracture threshold.
+
+    Fracture Threshold:
+        #id: fracturethreshold
+
+        This is the amount of relative stretch that will cause the geometry to
+	break up into separate parts during the simulation. For example, if the
+	threshold is set to 0.1, then the geometry may break in places where
+	there is more than 10% stretch compared to the rest geometry.
+
+== Collisions ==
+
+    Collide Independent:
+	If enabled, the wire object will be prevented from touching or
+	passing through any affectors that have a Volume collider label
+	(e.g., RBD Objects or the ground plane). This can make the
+	simulation slower.
+
+    Collide Codependent:
+	If enabled, the wire object will be prevented from touching or
+	passing through all of its wire affectors. This can make the
+	simulation much slower.
+
+    Collide Self:
+	If enabled, the wire object will be prevented from touching or
+	passing through itself. This can make the simulation much slower.
+
+    Repulsion:
+	#id: repulsion
+	Сила отталкивания применяется для аккуратного раздвигания пересекающейся геометрии (включая пересечения, установленные параметром Collision Width). Этот параметр регулирует эту силу.
+
+    Collision Width:
+	The width that is used to calculate whether the wire 
+	object has collided. This is scaled by the same point attributes 
+	as the width found in the __Physical__ tab. This width acts as a 
+	diameter, creating a cylinder of this diameter between the end points 
+	of a wire segment. 
+
+	When a wire object collides with a cloth object, the __Cloth Thickness__ 
+	parameter in the cloth object will be used (it is used in the same
+	way as described by the cloth object). 
+
+	When a wire object collides with a non-wire, non-cloth object, 
+	then only the wire object will have a film around it (the polygons
+	in the non-wire object will be treated as having a thickness of zero). 
+
+== Drag ==
+
+    Normal Drag:
+	#id: normaldrag
+
+	Оказывается сила сопротивления в направлениях перпендикулярных wire объекту. Увеличение этого параметра приведет к тому, что wire объект развиваться по ветру, дующему на него. Для реалистичного взаимодействия с ветром, Normal Drag следует выбирать больше (примерно в 10 раз), чем Tangent Drag.
+
+    Tangent Drag:
+	#id: tangentdrag
+
+	Оказывается сила сопротивления в направлениях касательных к wire объекту. Увеличение этого параметра приведет к тому, что wire объект будет следовать направлению ветра, не препятствуя ему.
+
+    External Velocity Field:
+	#id: externalvelocityfield
+
+	The name of the external velocity fields on affectors that the wire will
+	respond to. The default is `vel`, which will make the wire react to fluids
+	and smoke when the __Tangent Drag__ and the __Normal Drag__ have been
+	chosen sufficiently large. The __Tangent Drag__ and __Normal Drag__ forces
+	are computed by comparing the wire's velocity with the external velocity.
+
+    External Velocity Offset:
+	#id: externalvelocityoffset
+
+	This offset is added to any velocity that's read from the velocity field.
+	When there's no velocity field, then the offset can be used to create a
+	wind force which has constant velocity everywhere. This wind effect is
+	more realistic and more accurate than the wind that is generated by DOP
+	Forces.
+
+== Visualization ==
+
+    [Include:standard_wirevisualization_parms]
