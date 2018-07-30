@@ -2,11 +2,11 @@
 Stretch Threshold:
     #channels: /plasticstretchthreshold
 
-    Этот параметр определяет величину растяжения, до которой разрешено растянуться wire объекту.
+    Этот параметр определяет предел растяжения wire объекта.
 Stretch Rate:
     #channels: /plasticstretchrate
 
-    Этот параметр определяет, как быстро станет растянутым wire объект.
+    Этот параметр определяет, как быстро wire объект достигнет предела растяжения.
 Stretch Hardening:
     #channels: /plasticstretchhardening
 
@@ -14,11 +14,11 @@ Stretch Hardening:
 Bend Threshold:
     #channels: /plasticbendthreshold
 
-    Этот параметр определяет величину изгиба, до которой разрешено согнуться wire объекту.
+    Этот параметр определяет предел изгиба wire объекта.
 Bend Rate:
     #channels: /plasticbendrate
 
-    Этот параметр определяет, как быстро станет согнутым wire объект.
+    Этот параметр определяет, как быстро wire объект достигнет предела изгиба.
 Bend Hardening:
     #channels: /plasticbendhardening
 
