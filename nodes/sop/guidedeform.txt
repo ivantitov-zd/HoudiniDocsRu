@@ -63,7 +63,7 @@ Compute Radius From Guide Coverage:
 Radius:
     #id: radius
 
-    Когда __Compute Radius From Guide Coverage__ отключен, данный параметр устанавливает абсолютный радиус воздействия направляющих.
+    Если __Compute Radius From Guide Coverage__ отключен, данный параметр устанавливает абсолютный радиус воздействия направляющих.
 
 Limit Segments Per Guide:
     #id: limitguidesegs
@@ -108,7 +108,7 @@ Rigidly Transform Pieces:
 
     Вычисляет жесткое преобразование каждой части, которое как можно ближе соответствует мягкой деформации направляющей.
 
-    Части определяются по принципу связанности (connectivity) или с помощью существующего атрибута, когда активен параметр __Use Piece Attribute__.
+    Части определяются по принципу связанности (connectivity) или с помощью существующего атрибута, если активен параметр __Use Piece Attribute__.
 
 Use Piece Attribute:
     #id: usepieceattrib

@@ -263,12 +263,12 @@ Fill Interior:
 Interior Band:
     #id: skinvdbinteriorband
 
-    Глубина расчетов расстояний, когда отключен __Fill Interior__.
+    Глубина расчетов расстояний, если отключен __Fill Interior__.
 
 Volume SOP:
     #id: skinvdbsop
 
-    Путь до VDB в сети SOP, когда установлено значение __SOP Volume__ в __VDB Source__.
+    Путь до VDB в сети SOP, если установлено значение __SOP Volume__ в __VDB Source__.
 
 === External ===
 
@@ -303,12 +303,12 @@ Fill Interior:
 Interior Band:
     #id: extvdbinteriorband
 
-    Глубина расчетов расстояний, когда отключен __Fill Interior__.
+    Глубина расчетов расстояний, если отключен __Fill Interior__.
 
 Volume SOP:
     #id: extvdbsop
 
-    Путь до VDB в сети SOP, когда установлено значение __SOP Volume__ в __VDB Source__.
+    Путь до VDB в сети SOP, если установлено значение __SOP Volume__ в __VDB Source__.
 
 == Caching ==
 
