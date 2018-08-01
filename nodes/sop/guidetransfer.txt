@@ -36,7 +36,7 @@ Deform Guides:
     
 Radius:
     #id: pointdeform_radius
-    Радиус действия метода деформации (когда __Deform Guides__ не равно `0`).
+    Радиус действия метода деформации (если __Deform Guides__ не равно `0`).
 
 :bubble:
     #dir: right
