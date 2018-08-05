@@ -1,0 +1,58 @@
+= Создание ноды поверхности или частиц с помощью VOP/VEX =
+
+С помощью VOP/VEX вы можете создавать новые типы нод поверхности и частиц. Эти ноды выполняют свою внутреннюю сеть VOP или программу VEX для управления атрибутами точек на входящей геометрии/частицах.
+
+Вы можете определить, как нода изменяет входящую геометрию, используя сеть VOP или исходный текстовый код VEX.
+
+== Определение поведения ноды в сети VOP ==
+
+# В редакторе сетей перейдите на уровень __VEX Builder Networks__ (Нажмите правой кнопкой мышки на `obj` в пути и выберите __Other networks > vex__).
+
+# Создайте сеть [SOP Type|Node:vex/sop].
+
+# В редакторе параметров для ноды SOP Type укажите в __SOP type name__ имя, которое вы хотите, чтобы отображалось в Tab menu.
+
+# В редакторе сетей дважды нажмите на ноду SOP Type, чтобы войти внутрь и создать сеть VOP.
+
+== Определение поведения ноды с текстовым кодом VEX ==
+
+# Выберите __File > New Operator Type__.
+
+# Задайте имя и метку нового типа нод, установите __Operator style__ в __VEX type__ и установите __Network Type__ в __Geometry Operator__.
+
+# Нажмите __Accept__.
+
+# Используйте вкладку __Code__ нового цифрового ассета для редактирования определения VEX. Функция с возвращаемым типом `sop` - это "основная" функция, которую Houdini будет запускать для управления геометрией.
+
+== How to wire/write the VOPs/VEX ==
+
+* Parameter expressions in VOP nodes *are not evaluated per-point*. You must use VOPs to manipulate the point data.
+
+* You can use [Parameter VOP nodes|Node:vop/parameter] nodes (or function parameters in VEX) to create a user interface for the node (controls for the parameters appear in the VOP SOP node's parameter editor interface).
+
+* If an attribute exists on the input geometry with the same name as a parameter, the parameter value will be overridden by the attribute. (Note that this refers to the "internal" parameter name, not the human-readable parameter _label_.)
+
+* To access point attributes:
+
+    * In VOPs, create a [Global variables VOP node|Node:vop/global] to access common point attributes (from the VOP SOP node's first input) and feed it through other VOP nodes. For other attributes, you can use a parameter with the same name and type (so it will be overridden by the attribute) or use the [Import Attribute VOP|Node:vop/importattrib].
+
+    * In VEX, global variables are available for common point attributes (from the first input) such as `P`. For other attributes, you can use a parameter with the same name and type (so it will be overridden by the attribute) or use the [Vex:import] function.
+
+* Only the first input's geometry can be manipulated by the network/program. You can access information from the other inputs using the [Import Attribute VOP|Node:vop/importattrib] or the [Vex:import] function in VEX.
+
+* To add an attribute to the geometry...
+
+    In VOPs use a Parameter node and set __Export__ to __Always__ or __When input is connected__.
+
+    In VEX use a function parameter marked as `export` (e.g. `export float a = 0;`), or the [Vex:addattribute] function (especially to add/change an attribute whose name is not known at compile time, i.e. the attribute name is controlled by the user interface).
+
+* In VEX code, the function with a return type of `sop` or `pop` is the "main" function that Houdini will call. You can define other "helper" functions alongside this main function as needed.
+
+@related
+
+* [SOP context|/vex/contexts/sop]
+* [POP context|/vex/contexts/pop]
+* [VOP SOP|Node:sop/vopsop]
+* [Node:sop/vex]
+* [/hom/pythonsop]
+
