@@ -17,7 +17,7 @@
 
     Этот инструмент создаст ноду [Guide Initialize SOP|Node:sop/guideinit], в которой можно изменить направление или параметры UV.
 
-    :bubble:
+:bubble:
     #dir: right
     #display: gray
     [English version of this page|http://www.sidefx.com/docs/houdini16.5/shelf/sop_groom_guideinit]
