@@ -1,0 +1,25 @@
+= Merge =
+
+#type: node
+#context: sop
+#internal: merge
+#icon: SOP/merge
+#tags: merge
+
+"""Объединяет геометрии подающиеся на вход."""
+
+Эта нода объединяет несколько геометрий в единую геометрию, которую далее можно использовать другими нодами. Если необходимо в дальнейшем различать объединенные части геометрии, то перед объединением можно использовать ноду [Group|Node:sop/group], чтобы добавить эти части в различные группы.
+
+На вход можно подать до 9999 геометрий.
+
+NOTE:
+    При нажатии [флага bypass|/network/flags] передается геометрия только с первого входа.
+    
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini/nodes/sop/merge]
+
+@related
+
+- [Node:sop/object_merge]
