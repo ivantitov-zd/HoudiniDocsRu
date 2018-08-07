@@ -17,10 +17,10 @@
 
 [Image:/images/fur/workflow4.png]
 
-Как только закончена укладка шерсти, можно отключить [display flag|/nodes/sop/] на объекте [Guide Groom|Node:obj/guidegroom]. Это не помешает объекту [Hair Generate|Node:obj/hairgen] использовать направляющие кривые и сгенерировать волосы. 
+Как только закончена укладка шерсти, можно отключить [display flag|/network/flags] на объекте [Guide Groom|Node:obj/guidegroom]. Это не помешает объекту [Hair Generate|Node:obj/hairgen] использовать направляющие кривые и сгенерировать волосы. 
 
 TIP:
-    Нода [Hair Generate|Node:obj/hairgen] использует данные, полученные от ноды [Guide Groom|Node:obj/guidegroom], поэтому перед рендерингом, вам необходимо снова включить на нем [display flag|/nodes/sop/].
+    Нода [Hair Generate|Node:obj/hairgen] использует данные, полученные от ноды [Guide Groom|Node:obj/guidegroom], поэтому перед рендерингом, вам необходимо снова включить на нем [display flag|/network/flags].
 
 В объекте [Hair Generate|Node:obj/hairgen] есть флажок __Limit to bounding box__, который позволяет генерировать шерсть на определенном участке, чтобы быстро видеть результат изменений. В данном случае не придется ждать, пока обновится шерсть на всей геометрии, что приводит к ускорению работы.
 
