@@ -1,0 +1,44 @@
+= cracktransform =
+
+#type: vex
+#context: all
+#tags: math, matrix
+#group: convert
+
+"""В зависимости от значения c, возвращает translate (c=0), rotate
+(c=1), scale (c=2), или shears (c=3) компонент трансформации (xform)."""
+
+:usage: `vector cracktransform(int trs, int xyz, int c, vector pivot, vector pivot_rotate, matrix xform)`
+:usage: `vector cracktransform(int trs, int xyz, int c, vector pivot, matrix xform)`
+
+В зависимости от значения <<c>>, возвращает translate (`c=0`), rotate
+(`c=1`), scale (`c=2`) или shears (`c=3`) компонент трансформации (<<xform>>). Функция использует данный порядок трансформации и вращения (<<trs>> и
+<<xyz>>), данный pivot точки (<<pivot>>) и pivot вращения(опционально) (<<pr>>) для вычисления возвращаемого значения. Режимы <<trs>> и <<xyz>> параметров можно найти здесь: `$HFS/houdini/vex/include/math.h`.
+
+NOTE:
+    Углы вращения (где `c=1`) возвращаются в радианах, в то время как большинство других Vex функций используют радианы.
+    Вы можете использовать [radians|Vex:radians] VEX функцию для конвертации вектора углов в радианах в вектор углов в градусы.
+    Например: `vector angles = radians(cracktransform(XFORM_TRS, XFORM_XYZ, 1, {0,0,0}, M));`
+
+
+:usage: `void cracktransform(int trs, int xyz, vector pivot, vector pivot_rotate, matrix xform, vector &t, vector &r, vector &s, vector &shears)`
+
+Возвращает translate, rotate, scale, и shear компоненты <<xform>> в <<t>>, <<r>>, <<s>>, и <<shears>>, соответственно.
+Если требуется получить больше одного компонента, использовать такую перегрузку - более эффективный способ, чем множественный вызов этой функции с другими аргументами.
+
+:usage: `void cracktransform(int trs, int xyz, vector pivot, matrix xform, vector &t, vector &r, vector &s)`
+
+Возвращает translate, rotate, и scale <<xform>> в <<t>>, <<r>>, <<s>> соответственно.
+Эта перегрузка не поддерживает pivot_rotate или shears.
+Если требуется получить больше одного компонента, использовать такую перегрузку - более эффективный способ, чем множественный вызов этой функции с разными аргументами.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/cracktransform]
+
+@related
+- [Vex:quaternion]
+- [Vex:polardecomp]
+- [Vex:eulertoquaternion]
+- [Vex:qconvert]
