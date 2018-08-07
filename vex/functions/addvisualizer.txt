@@ -1,0 +1,29 @@
+= addvisualizer =
+
+#type: vex
+#context: all
+#tags: attrib
+#group: attrib
+
+"""Добавляет в геометрию detail атрибут visualizer."""
+
+Эта функция создает строковый массив в detail атрибуте `visualizer`, если он не существует, затем добавляет в него заданный визуализатор. Если строка визуализатора уже есть в массиве, функция не добавляет её снова.
+
+:usage: `int addvisualizer(int geohandle, string op_url)`
+
+:arg:geohandle:
+    Идентификатор геометрии для записи. Функция `geoself()` может быть использована для получения идентификатора текущей геометрии.
+
+:arg:op_url:
+    Строка в формате `"op:/путь/до/ноды"`. Геометрия будет использовать визуализаторы данной ноды.
+    
+* Houdini просматривает визуализаторы с помощью `op:` ссылкок, так что изменения визуализаторов на на ссылочных узлах будут отражены в визуализации геометрии.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/addvisualizer]
+
+@related
+
+- [Vex:adddetailattrib]
