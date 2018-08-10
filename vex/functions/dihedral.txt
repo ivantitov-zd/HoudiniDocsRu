@@ -1,0 +1,21 @@
+= dihedral =
+
+#type: vex
+#context: all
+#tags: matrix, quaternion
+#group: transform
+
+"""Вычисляет матрицу поворота или кватернион, который вращает вектор a к вектору b."""
+
+:usage: `matrix3 dihedral(vector a, vector b)`
+
+Вычисляет матрицу поворота, которая вращает вектор <<a>> к вектору <<b>>.
+
+:usage: `vector4 dihedral(vector a, vector b)`
+
+Вычисляет кватернион, который вращает вектор <<a>> к вектору <<b>>.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/dihedral]
