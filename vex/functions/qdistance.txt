@@ -1,0 +1,17 @@
+= qdistance =
+
+#type: vex
+#context: all
+#tags: quaternion, measure
+#group: math
+
+"""Находит расстояние между двумя кватернионами."""
+
+:usage: `float qdistance(vector4 q1, vector4 q2)`
+
+Возвращает примерный угол в радианах между двумя кватернионами.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/qdistance]

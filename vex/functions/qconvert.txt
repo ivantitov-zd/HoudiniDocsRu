@@ -1,0 +1,21 @@
+= qconvert =
+
+#type: vex
+#context: all
+#tags: quaternion
+#group: convert
+
+"""Конвертирует кватернион, представленный vector4, в matrix3."""
+
+:usage: `matrix3 qconvert(vector4 quaternion)`
+
+Конвертирует кватернион, представленный vector4, в matrix3.
+
+:usage: `vector qconvert(vector4 quaternion)`
+
+Конвертирует кватернион, представленный vector4, в угол/ось вектор.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/qconvert]

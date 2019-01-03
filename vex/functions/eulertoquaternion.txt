@@ -1,0 +1,26 @@
+= eulertoquaternion =
+
+#type: vex
+#context: all
+#tags: quaternion
+#group: convert
+
+"""Создаёт vector4, который является кватернионом, созданным из углов Эйлера."""
+
+:usage: `vector4 eulertoquaternion(vector rotations, int order)`
+
+Создаёт vector4, который является кватернионом, созданным из вектора, представленного вращениями Эйлера по X, Y, и Z.
+
+Углы должны быть указаны в радианах. Используйте функцию `radians()`, чтобы преобразовать градусы в радианы.
+
+Определяет порядок вращений целым числом <<order>>. Используйте константы, определённые в `$HH/vex/include/math.h` (например, `XFORM_XYZ`).
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/eulertoquaternion]
+
+@related
+- [dihedral|Vex:dihedral]
+- [qconvert|Vex:qconvert]
+- [quaternion|Vex:quaternion]

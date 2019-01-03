@@ -1,0 +1,23 @@
+= slerp =
+
+#type: vex
+#context: all
+#tags: quaternion, interp
+#group: interp
+
+"""Возвращает кватернион между q1 и q2, в зависимости от bias."""
+
+:usage: `vector4 slerp(vector4 q1, vector4 q2, float bias)`
+
+    Возвращает кватернион между <<q1>> и <<q2>> в зависимости от <<bias>>.
+
+:usage: `vector4 slerp(vector4 qs[], float weights[])`
+
+    Возвращает кватернион, расположенный между любым количеством кватернионов, в соответствии с их весами.
+
+`slerp(q1,q2,bias)` является примерным эквивалентом `slerp(array(q1,q2), array(1.0-bias,bias))`.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/slerp]

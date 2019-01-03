@@ -1,0 +1,32 @@
+= quaternion =
+
+#type: vex
+#context: all
+#tags: quaternion
+#group: math
+
+"""Создаёт vector4, который представляет кватернион."""
+
+:usage: `vector4 quaternion(matrix3 rotations)`
+
+Из матрицы вращения 3x3 cоздаёт vector4, представляющий кватернион.
+
+:usage: `vector4 quaternion(float angle, vector axis)`
+
+Из <<angle>> и <<axis>> создаёт vector4, представляющий кватернион. <<angle>> определён в радианах.
+
+:usage: `vector4 quaternion(vector angleaxis)`
+
+Создаёт vector4 представляющий кватернион из комбинирования угл\ось. Это нормализованная ось вращения, умноженная на угол вращения в радианах.
+
+Раньше существовала четвёртая форма, которая принимала вектор вращения. Она была заменена на `eulertoquaternion` и теперь принимает радианы.
+
+:bubble:
+    #dir: right
+    #display: gray
+    [English version of this page|http://www.sidefx.com/docs/houdini16.5/vex/functions/quaternion]
+
+@related
+- [Vex:dihedral]
+- [Vex:qconvert]
+- [Vex:eulertoquaternion]
